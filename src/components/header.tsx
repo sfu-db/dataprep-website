@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import headerStyles from "../styles/header.module.scss"
+import style from "../styles/header.module.sass"
 import logo from "../images/dataprep-logo.png"
 
 type HeaderListItem = {
@@ -14,13 +14,8 @@ const Header: React.FC<HeaderListItem> = ({ link }) => {
     </li>
   ))
   return (
-    <div className={headerStyles.navbar}>
-      <img
-        src={logo}
-        alt="Data Prep"
-        className={headerStyles.logo}
-        width="270"
-      />
+    <div className={style.navbar}>
+      <img src={logo} alt="Data Prep" className={style.logo} width="270" />
       <ul>{listItem}</ul>
     </div>
   )

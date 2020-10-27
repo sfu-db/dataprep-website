@@ -1,20 +1,18 @@
 import React from "react"
-import "../styles/featureCard.module.scss"
+import style from "../styles/featureCard.module.sass"
 
 type CardContent = {
-  title: string
+  title?: string
   subtitle?: string
   desc: string
 }
 
 const featureCard: React.FC<CardContent> = ({ title, subtitle, desc }) => {
   return (
-    <div>
-      <div>
-        <h1>{title}</h1>
-        {subtitle && <h2>{subtitle}</h2>}
-        <p>{desc}</p>
-      </div>
+    <div className={style["feature-card"]}>
+      <h1>{title}</h1>
+      {subtitle && <h2>{subtitle}</h2>}
+      <p>{desc}</p>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from "react"
-import "../styles/layout.scss"
+import "../styles/layout.sass"
 
 const Layout: React.FC<React.ReactNode> = ({ children }) => {
   return (
