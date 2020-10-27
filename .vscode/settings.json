@@ -1,0 +1,8 @@
+{
+    "[json]": {
+        "editor.formatOnSave": true // Let Prettier format JSON files
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+}
