@@ -1,0 +1,59 @@
+{
+  "columns": [
+    "title",
+    "venue",
+    "publisher",
+    "year",
+    "type",
+    "..."
+  ],
+  "index": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "data": [
+    [
+      "Advances in Neural Information Processing Systems 33 - Annual Conference on Neural Information Processing Systems 2020, NeurIPS 2020, December 6-12, 2020, virtual.",
+      "['NeurIPS']",
+      "None",
+      "2020",
+      "Editorship",
+      "..."
+    ],
+    [
+      "Proceedings of the Crowd Science Workshop - Remoteness, Fairness, and Mechanisms as Challenges of Data Supply by Humans for Automation co-located with 34th Conference on Neural Information Processing Systems, CSWs@NeurIPS 2020, Vancouver, BC, Canada / Online Event, December 11, 2020.",
+      "['CSW@NeurIPS', 'CEUR Workshop Proceedings']",
+      "CEUR-WS.org",
+      "2020",
+      "Editorship",
+      "..."
+    ],
+    [
+      "Diagnostic Questions - The NeurIPS 2020 Education Challenge.",
+      "['CoRR']",
+      "None",
+      "2020",
+      "Informal Publications",
+      "..."
+    ],
+    [
+      "Proceedings of NeurIPS 2020 Workshop on Artificial Intelligence for Humanitarian Assistance and Disaster Response.",
+      "['CoRR']",
+      "None",
+      "2020",
+      "Informal Publications",
+      "..."
+    ],
+    [
+      "NeurIPS 2020 Competition - Predicting Generalization in Deep Learning.",
+      "['CoRR']",
+      "None",
+      "2020",
+      "Informal Publications",
+      "..."
+    ]
+  ]
+}

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.codeArea ol {
+  counter-reset: item;
+}
+.codeArea li {
+  text-indent: -1.2em;
+}
+.codeArea li::before {
+  content: "";
+  user-select: none;
+  color: #eae9ea;
+  content: counter(item) " ";
+  counter-increment: item;
+}
