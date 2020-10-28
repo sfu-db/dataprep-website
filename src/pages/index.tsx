@@ -3,40 +3,68 @@ import Header from "../components/header"
 import FeatureCard from "../components/featureCard"
 import Layout from "../components/layout"
 import InstallCard from "../components/installCard"
+import { useStaticQuery, graphql } from "gatsby"
 
-const item: Array<string> = ["Documentation", "Commnutiy", "GitHub", "Brand"]
-const content: { title: string; subtitle?: string; desc: string } = {
-  title: "DataPrep",
-  subtitle: "The fastest way to do data preparation in python",
-  desc:
-    "DataPrep aims to provide the fastest and the easiest way for data scientists to prepare data in a few lines of code.",
+interface FeatureDataItem {
+  subtitle: string
+  description: string
+  snippet: string | null
+  id: string
 }
 
-const lorem: { title?: string; subtitle?: string; desc: string } = {
-  subtitle: "lorem lorem",
-  desc:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto pariatur delectus blanditiis, eveniet vero tenetur aliquid quos! Harum cupiditate iure ipsam omnis veniam quasi, nesciunt aspernatur saepe quis incidunt repudiandae!",
+const Index: React.FC = () => {
+  const data = useStaticQuery(graphql`
+    query DataItemsQuery {
+      allFeatureItemsJson {
+        nodes {
+          description
+          subtitle
+          id
+        }
+      }
+      allIntroItemsJson {
+        nodes {
+          description
+          snippet
+          subtitle
+          title
+        }
+      }
+      allNavbarItemsJson {
+        nodes {
+          id
+          text
+          link
+        }
+      }
+    }
+  `)
+  const introData = data.allIntroItemsJson.nodes[0] // We only have one intro section
+  const featureData = data.allFeatureItemsJson.nodes
+  const navbarData = data.allNavbarItemsJson.nodes
+  return (
+    <>
+      <Header linkArray={navbarData} />
+      <Layout>
+        <FeatureCard
+          title={introData.title}
+          subtitle={introData.subtitle}
+          desc={introData.description}
+        />
+        <InstallCard
+          title="Get started instantly"
+          command="pip install -U dataprep"
+          desc="And then check out documentation and examples!"
+        />
+        {featureData.map((item: FeatureDataItem) => (
+          <FeatureCard
+            key={item.id}
+            subtitle={item.subtitle}
+            desc={item.description}
+          />
+        ))}
+      </Layout>
+    </>
+  )
 }
-
-const Index: React.FC = () => (
-  <>
-    <Header link={item} />
-    <Layout>
-      <FeatureCard
-        title={content.title}
-        subtitle={content.subtitle}
-        desc={content.desc}
-      />
-      <InstallCard
-        title="Get started instantly"
-        command="pip install -U dataprep"
-        desc="And then check out documentation and examples!"
-      />
-      <FeatureCard subtitle={lorem.subtitle} desc={lorem.desc} />
-      <FeatureCard subtitle={lorem.subtitle} desc={lorem.desc} />
-      <FeatureCard subtitle={lorem.subtitle} desc={lorem.desc} />
-      <FeatureCard subtitle={lorem.subtitle} desc={lorem.desc} />
-    </Layout>
-  </>
-)
 export default Index

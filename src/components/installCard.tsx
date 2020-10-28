@@ -9,9 +9,11 @@ type InstallContent = {
 
 const featureCard: React.FC<InstallContent> = ({ title, command, desc }) => {
   return (
-    <div className={style["install-content"]}>
+    <div className={style.installationContent}>
       <h1>{title}</h1>
-      <h2>{command}</h2>
+      <h2>
+        <span>{command}</span>
+      </h2>
       <p>{desc}</p>
     </div>
   )
