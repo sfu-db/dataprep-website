@@ -4,7 +4,7 @@
         "noImplicitAny": true,
         "module": "commonjs",
         "strict": true,
-        "noEmit": true, // you don't need to emit TS files on compile
+        "noEmit": true,
         "target": "esnext",
         "jsx": "react",
         "allowJs": true,
@@ -20,10 +20,10 @@
         "./node_modules",
         "./public",
         "./.cache",
-        "./gatsby-config.ts",
-        "./gatsby-node.ts",
-        "./gatsby-browser.ts",
-        "./gatsby-ssr.ts"
+        // "./gatsby-config.ts",
+        // "./gatsby-node.ts",
+        // "./gatsby-browser.ts",
+        // "./gatsby-ssr.ts"
     ],
     "include": [
         "./src/**/*"
