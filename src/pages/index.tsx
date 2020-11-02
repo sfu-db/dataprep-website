@@ -3,6 +3,7 @@ import Header from "../components/header"
 import FeatureCard from "../components/featureCard"
 import Layout from "../components/layout"
 import TopSectionLayout from "../components/topSectionLayout"
+import BottomSectionLayout from "../components/bottomSectionLayout"
 import InstallCard from "../components/installCard"
 import { useStaticQuery, graphql } from "gatsby"
 import FooterCard from "../components/footerCard"
@@ -75,13 +76,15 @@ const Index: React.FC = () => {
         command="pip install -U dataprep"
         desc="And then check out documentation and examples!"
       />
-      {featureData.map((item: FeatureDataItem) => (
-        <FeatureCard
-          key={item.id}
-          subtitle={item.subtitle}
-          desc={item.description}
-        />
-      ))}
+      <BottomSectionLayout>
+        {featureData.map((item: FeatureDataItem) => (
+          <FeatureCard
+            key={item.id}
+            subtitle={item.subtitle}
+            desc={item.description}
+          />
+        ))}
+      </BottomSectionLayout>
       <div
         className="footerCardContainer"
         style={{
