@@ -7,7 +7,7 @@ type InstallContent = {
   desc: string
 }
 
-const featureCard: React.FC<InstallContent> = ({ title, command, desc }) => {
+const InstallCard: React.FC<InstallContent> = ({ title, command, desc }) => {
   return (
     <div className={style.installationContent}>
       <h1>{title}</h1>
@@ -19,4 +19,4 @@ const featureCard: React.FC<InstallContent> = ({ title, command, desc }) => {
   )
 }
 
-export default featureCard
+export default InstallCard

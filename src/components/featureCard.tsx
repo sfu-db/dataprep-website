@@ -7,7 +7,7 @@ type CardContent = {
   desc: string
 }
 
-const featureCard: React.FC<CardContent> = ({ title, subtitle, desc }) => {
+const FeatureCard: React.FC<CardContent> = ({ title, subtitle, desc }) => {
   return (
     <div className={style.featureCardContainer}>
       <div className={style.featureCard}>
@@ -20,4 +20,4 @@ const featureCard: React.FC<CardContent> = ({ title, subtitle, desc }) => {
   )
 }
 
-export default featureCard
+export default FeatureCard

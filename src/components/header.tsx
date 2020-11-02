@@ -27,7 +27,9 @@ const Header: React.FC<{ linkArray: HeaderList }> = ({ linkArray }) => {
 
   return (
     <div className={style.navbar}>
-      <img src={logo} alt="Data Prep" className={style.logo} width="270" />
+      <div className={style.logo}>
+        <img src={logo} alt="Data Prep Logo" width="270" />
+      </div>
       <ul>{listItem}</ul>
     </div>
   )

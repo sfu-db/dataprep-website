@@ -1,22 +1,22 @@
 [
   {
-    "subtitle": "Parallel Computing",
-    "description": "DataPrep achieves high performance by leveraging the computation power of Dask.",
+    "subtitle": "Design for Notebook Users",
+    "description": "DataPrep is mainly designed for notebook users. The computation is fast. The output is interactive and shareable.",
     "snippet": ""
   },
   {
-    "subtitle": "Easy-to-use",
+    "subtitle": "Get Things Done in a Few Lines of Code",
     "description": "DataPrep provides high level APIs that are easy to use and easy to remember. Write a few lines of code to start the data preparation!",
     "snippet": ""
   },
   {
-    "subtitle": "All-in-one",
-    "description": "DataPrep aims to build a full pipeline of data preparation, including data collection, data cleaning, data analysis, feature engineering…",
+    "subtitle": "Integrate Seamlessly with PyData",
+    "description": "DataPrep is build in Python. It can be seamlessly integrated with other Python libraries.",
     "snippet": ""
   },
   {
-    "subtitle": "Python Ecosystem",
-    "description": "DataPrep is build in Python. It can be seamlessly integrated with other Python libraries.",
+    "subtitle": "Embrace Open Source",
+    "description": "DataPrep is open sourced and follows MIT licenses. You could use it free for any application!",
     "snippet": ""
   }
 ]
