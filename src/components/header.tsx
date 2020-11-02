@@ -3,15 +3,15 @@ import { Link } from "gatsby"
 import style from "../styles/header.module.sass"
 import logo from "../images/dataprep-logo.png"
 
-interface HeaderListItem {
+interface IHeaderListItem {
   text: string
   link: string | null
   id: string
 }
-type HeaderList = Array<HeaderListItem>
+type HeaderList = Array<IHeaderListItem>
 
 const Header: React.FC<{ linkArray: HeaderList }> = ({ linkArray }) => {
-  const listItem = linkArray.map((item: HeaderListItem) =>
+  const listItem = linkArray.map((item: IHeaderListItem) =>
     item.link ? (
       <li key={item.id}>
         <a href={item.link} target="_blank" rel="noreferrer">
@@ -20,7 +20,7 @@ const Header: React.FC<{ linkArray: HeaderList }> = ({ linkArray }) => {
       </li>
     ) : (
       <li key={item.id}>
-        <Link to={"/" + item.text}>{item.text}</Link>
+        <Link to={"/" + item.text.toLowerCase()}>{item.text}</Link>
       </li>
     )
   )

@@ -7,7 +7,7 @@ body
 .fade-section
   opacity: 0
   visibility: hidden
-  transition: opacity 3s ease
+  transition: opacity 0.8s ease-in-out
   will-change: opacity, visibility
 
 .fade-section.is-visible
@@ -22,3 +22,13 @@ h2
 
 p
   font-size: 25px
+
+.footer-container
+  // height: 400px
+  padding: 0 25px
+  display: flex
+  justify-content: space-around
+  align-items: baseline
+
+  div
+    flex: 0 1 30%

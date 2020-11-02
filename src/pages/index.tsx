@@ -8,15 +8,17 @@ import InstallCard from "../components/installCard"
 import { useStaticQuery, graphql } from "gatsby"
 import FooterCard from "../components/footerCard"
 import FadeSection from "../components/fadeSection"
+import FooterLayout from "../components/footerLayout"
+import CopyrightCard from "../components/copyrightCard"
 
-interface FeatureDataItem {
+interface IFeatureDataItem {
   subtitle: string
   description: string
   snippet: string | null
   id: string
 }
 
-interface FooterDataItem {
+interface IFooterDataItem {
   title: string
   description: string
   content: Array<string>
@@ -78,7 +80,7 @@ const Index: React.FC = () => {
         desc="And then check out documentation and examples!"
       />
       <BottomSectionLayout>
-        {featureData.map((item: FeatureDataItem) => (
+        {featureData.map((item: IFeatureDataItem) => (
           <FadeSection key={item.id}>
             <FeatureCard
               key={item.id}
@@ -88,15 +90,8 @@ const Index: React.FC = () => {
           </FadeSection>
         ))}
       </BottomSectionLayout>
-      <div
-        className="footerCardContainer"
-        style={{
-          display: `flex`,
-          justifyContent: `space-around`,
-          alignItems: `baseline`,
-        }}
-      >
-        {footerData.map((item: FooterDataItem) => (
+      <FooterLayout>
+        {footerData.map((item: IFooterDataItem) => (
           <FooterCard
             key={item.id}
             title={item.title}
@@ -104,7 +99,8 @@ const Index: React.FC = () => {
             content={item.content}
           />
         ))}
-      </div>
+      </FooterLayout>
+      <CopyrightCard />
     </Layout>
   )
 }
