@@ -2,13 +2,22 @@ import React from "react"
 import Header from "../components/header"
 import FeatureCard from "../components/featureCard"
 import Layout from "../components/layout"
+import TopSectionLayout from "../components/topSectionLayout"
 import InstallCard from "../components/installCard"
 import { useStaticQuery, graphql } from "gatsby"
+import FooterCard from "../components/footerCard"
 
 interface FeatureDataItem {
   subtitle: string
   description: string
   snippet: string | null
+  id: string
+}
+
+interface FooterDataItem {
+  title: string
+  description: string
+  content: Array<string>
   id: string
 }
 
@@ -37,34 +46,60 @@ const Index: React.FC = () => {
           link
         }
       }
+      allFooterItemsJson {
+        nodes {
+          description
+          title
+          content
+          id
+        }
+      }
     }
   `)
   const introData = data.allIntroItemsJson.nodes[0] // We only have one intro section
   const featureData = data.allFeatureItemsJson.nodes
   const navbarData = data.allNavbarItemsJson.nodes
+  const footerData = data.allFooterItemsJson.nodes
   return (
-    <>
-      <Header linkArray={navbarData} />
-      <Layout>
+    <Layout>
+      <TopSectionLayout>
+        <Header linkArray={navbarData} />
         <FeatureCard
           title={introData.title}
           subtitle={introData.subtitle}
           desc={introData.description}
         />
-        <InstallCard
-          title="Get started instantly"
-          command="pip install -U dataprep"
-          desc="And then check out documentation and examples!"
+      </TopSectionLayout>
+      <InstallCard
+        title="Get started instantly"
+        command="pip install -U dataprep"
+        desc="And then check out documentation and examples!"
+      />
+      {featureData.map((item: FeatureDataItem) => (
+        <FeatureCard
+          key={item.id}
+          subtitle={item.subtitle}
+          desc={item.description}
         />
-        {featureData.map((item: FeatureDataItem) => (
-          <FeatureCard
+      ))}
+      <div
+        className="footerCardContainer"
+        style={{
+          display: `flex`,
+          justifyContent: `space-around`,
+          alignItems: `baseline`,
+        }}
+      >
+        {footerData.map((item: FooterDataItem) => (
+          <FooterCard
             key={item.id}
-            subtitle={item.subtitle}
+            title={item.title}
             desc={item.description}
+            content={item.content}
           />
         ))}
-      </Layout>
-    </>
+      </div>
+    </Layout>
   )
 }
 export default Index
