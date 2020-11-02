@@ -1,3 +1,5 @@
+@import 'color'
+  
 .navbar
   width: 100%
   display: flex
@@ -5,16 +7,21 @@
   align-items: center
 
   ul
-    padding: 0 25px
     flex: 0 1 400px
     display: flex
     justify-content: space-between
     align-items: center
 
     li
-      flex: 0 1 auto
+      text-align: center
+      flex: 1 1 auto
       justify-content: space-evenly
       display: inline-block
+      padding: 5px 3px
+      transition: border 0.3s ease;
+      border-bottom: 3px solid transparent
+      &:hover
+        border-bottom: 3px solid $logo-color-1
       
       a
         text-decoration: none
