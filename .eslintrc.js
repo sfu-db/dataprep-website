@@ -14,10 +14,16 @@ module.exports = {
     },
   },
   rules: {
-    // Place to specify ESLint rules.
-    "@typescript-eslint/interface-name-prefix": [
+    "@typescript-eslint/naming-convention": [
       "error",
-      { prefixWithI: "always" },
+      {
+        selector: "interface",
+        format: ["PascalCase"],
+        custom: {
+          regex: "^I[A-Z]",
+          match: true,
+        },
+      },
     ],
     "react/prop-types": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
