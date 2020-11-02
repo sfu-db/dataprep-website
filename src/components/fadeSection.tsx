@@ -5,11 +5,13 @@ const FadeSection: React.FC<React.ReactNode> = ({ children }) => {
   const domRef = useRef(children)
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => setVisible(entry.isIntersecting))
+      entries.forEach(entry => {
+        setVisible(entry.isIntersecting)
+      })
     })
     observer.observe(domRef.current)
     return () => observer.unobserve(domRef.current)
-  })
+  }, [isVisible])
   return (
     <div
       className={`fade-section ${isVisible ? "is-visible" : ""}`}
