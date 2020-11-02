@@ -7,6 +7,7 @@ import BottomSectionLayout from "../components/bottomSectionLayout"
 import InstallCard from "../components/installCard"
 import { useStaticQuery, graphql } from "gatsby"
 import FooterCard from "../components/footerCard"
+import FadeSection from "../components/fadeSection"
 
 interface FeatureDataItem {
   subtitle: string
@@ -78,11 +79,13 @@ const Index: React.FC = () => {
       />
       <BottomSectionLayout>
         {featureData.map((item: FeatureDataItem) => (
-          <FeatureCard
-            key={item.id}
-            subtitle={item.subtitle}
-            desc={item.description}
-          />
+          <FadeSection key={item.id}>
+            <FeatureCard
+              key={item.id}
+              subtitle={item.subtitle}
+              desc={item.description}
+            />
+          </FadeSection>
         ))}
       </BottomSectionLayout>
       <div
