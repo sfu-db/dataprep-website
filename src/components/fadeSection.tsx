@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react"
 
 const FadeSection: React.FC<React.ReactNode> = ({ children }) => {
   const [isVisible, setVisible] = useState(true)
-  const domRef = useRef(children)
+  const domRef = useRef(children as Element)
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {

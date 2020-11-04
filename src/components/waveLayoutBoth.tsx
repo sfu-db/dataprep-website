@@ -1,7 +1,7 @@
 import React from "react"
-import "../styles/bottomSectionLayout.sass"
+import "../styles/waveLayoutBoth.sass"
 
-const TopSectionLayout: React.FC<React.ReactNode> = ({ children }) => {
+const WaveLayoutBoth: React.FC<React.ReactNode> = ({ children }) => {
   return (
     <div className="bottom-section-bg">
       <div className="divider-bottom-head">
@@ -35,4 +35,4 @@ const TopSectionLayout: React.FC<React.ReactNode> = ({ children }) => {
   )
 }
 
-export default TopSectionLayout
+export default WaveLayoutBoth

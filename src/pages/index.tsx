@@ -2,8 +2,8 @@ import React from "react"
 import Header from "../components/header"
 import FeatureCard from "../components/featureCard"
 import Layout from "../components/layout"
-import TopSectionLayout from "../components/topSectionLayout"
-import BottomSectionLayout from "../components/bottomSectionLayout"
+import WaveLayoutBottom from "../components/waveLayoutBottom"
+import WaveLayoutBoth from "../components/waveLayoutBoth"
 import InstallCard from "../components/installCard"
 import { useStaticQuery, graphql } from "gatsby"
 import FooterCard from "../components/footerCard"
@@ -66,20 +66,20 @@ const Index: React.FC = () => {
   const footerData = data.allFooterItemsJson.nodes
   return (
     <Layout>
-      <TopSectionLayout>
+      <WaveLayoutBottom>
         <Header linkArray={navbarData} />
         <FeatureCard
           title={introData.title}
           subtitle={introData.subtitle}
           desc={introData.description}
         />
-      </TopSectionLayout>
+      </WaveLayoutBottom>
       <InstallCard
         title="Get started instantly"
         command="pip install -U dataprep"
         desc="And then check out documentation and examples!"
       />
-      <BottomSectionLayout>
+      <WaveLayoutBoth>
         {featureData.map((item: IFeatureDataItem) => (
           <FadeSection key={item.id}>
             <FeatureCard
@@ -89,7 +89,7 @@ const Index: React.FC = () => {
             />
           </FadeSection>
         ))}
-      </BottomSectionLayout>
+      </WaveLayoutBoth>
       <FooterLayout>
         {footerData.map((item: IFooterDataItem) => (
           <FooterCard
