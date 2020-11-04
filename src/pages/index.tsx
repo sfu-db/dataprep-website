@@ -12,6 +12,7 @@ import FooterLayout from "../components/footerLayout"
 import CopyrightCard from "../components/copyrightCard"
 
 interface IFeatureDataItem {
+  title?: string
   subtitle: string
   description: string
   snippet: string | null
@@ -30,6 +31,7 @@ const Index: React.FC = () => {
     query DataItemsQuery {
       allFeatureItemsJson {
         nodes {
+          title
           description
           subtitle
           id
@@ -84,6 +86,7 @@ const Index: React.FC = () => {
           <FadeSection key={item.id}>
             <FeatureCard
               key={item.id}
+              title={item.title}
               subtitle={item.subtitle}
               desc={item.description}
             />
