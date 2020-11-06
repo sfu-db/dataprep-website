@@ -1,8 +1,28 @@
+@import 'metric'
+
 *
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 
 body
   margin: 0
+
+h1
+  font-size: 55px
+@include breakpoint(mobile)
+  h1
+    font-size: 25px
+
+h2
+  font-size: 40px
+@include breakpoint(mobile)
+  h2
+    font-size: 18px
+
+p
+  font-size: 25px
+@include breakpoint(mobile)
+  p
+    font-size: 14px
 
 .fade-section
   opacity: 0
@@ -14,20 +34,20 @@ body
   opacity: 1
   visibility: visible
 
-h1
-  font-size: 55px
-
-h2
-  font-size: 40px
-
-p
-  font-size: 25px
 
 .footer-container
-  // height: 400px
-  padding: 0 25px
+  @include breakpoint(desktop)
+    max-width: 1000px
+    margin: auto
+  @include breakpoint(tablet)
+    max-width: 90%
+    margin: auto
+  @include breakpoint(mobile)
+    max-width: 80%
+    margin: auto
+    flex-flow: column nowrap
   display: flex
-  justify-content: space-around
+  justify-content: space-between
   align-items: baseline
 
   div

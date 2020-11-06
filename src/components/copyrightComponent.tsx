@@ -1,9 +1,18 @@
 import React from "react"
-import style from "../styles/copyrightCcomponent.module.sass"
 
 const CopyrightCcomponent: React.FC = () => (
-  <div className={style.copyright}>
-    <p>© 2020 SFU Database System Lab. All rights reserved.</p>
+  <div
+    style={{ textAlign: "center", backgroundColor: "#c0c7df", height: "50px" }}
+  >
+    <p
+      style={{
+        fontSize: "2vh",
+        color: "#e6e9f2",
+        padding: "2vh 0",
+      }}
+    >
+      © 2020 SFU Database System Lab. All rights reserved.
+    </p>
   </div>
 )
 

@@ -1,8 +1,6 @@
 import React from "react"
 import Header from "../components/header"
-import Layout from "../components/layout"
 import WaveLayoutBottom from "../components/waveLayoutBottom"
-import WaveLayoutBoth from "../components/waveLayoutBoth"
 import { useStaticQuery, graphql } from "gatsby"
 import FooterComponent from "../components/footerComponent"
 import FadeSection from "../components/fadeSection"
@@ -58,21 +56,19 @@ const Index: React.FC = () => {
   `)
 
   return (
-    <Layout>
+    <>
       <WaveLayoutBottom>
         <Header linkArray={data.allNavbarItemsJson.nodes} />
         <SectionComponent type="intro" />
       </WaveLayoutBottom>
       <SectionComponent type="quote" />
-      <WaveLayoutBoth>
+      <SectionLayout>
         {data.allFeatureItemsJson.nodes.map((item: IFeatureDataItem) => (
           <FadeSection key={item.id}>
-            <SectionLayout>
-              <SectionComponent type="feature" data={item} />
-            </SectionLayout>
+            <SectionComponent type="feature" data={item} />
           </FadeSection>
         ))}
-      </WaveLayoutBoth>
+      </SectionLayout>
       <CompComponent />
       <SectionComponent type="install" />
       <FooterLayout>
@@ -86,7 +82,7 @@ const Index: React.FC = () => {
         ))}
       </FooterLayout>
       <CopyrightCcomponent />
-    </Layout>
+    </>
   )
 }
 export default Index

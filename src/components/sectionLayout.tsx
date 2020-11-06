@@ -1,8 +1,8 @@
 import React from "react"
 
 const style = {
-  width: "1000px",
-  margin: "auto",
+  backgroundColor: "#c0c7df",
+  paddingBottom: "1px",
 }
 
 const SectionLayout: React.FC<React.ReactNode> = ({ children }) => {

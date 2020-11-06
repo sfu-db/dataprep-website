@@ -1,8 +1,16 @@
 @import 'color'
+@import 'metric'
 
 .introContainer
-  width: 80vw
-  margin: auto
+  @include breakpoint(desktop)
+    max-width: 1000px
+    margin: auto
+  @include breakpoint(tablet)
+    max-width: 90%
+    margin: 100px auto
+  @include breakpoint(mobile)
+    max-width: 95%
+    margin: 0 auto
 
   .introTexts
     h1
@@ -13,10 +21,19 @@
     
 
 .featureContainer
+  @include breakpoint(desktop)
+    max-width: 1000px
+    margin: 200px auto
+  @include breakpoint(tablet)
+    max-width: 90%
+    margin: 100px auto
+  @include breakpoint(mobile)
+    max-width: 95%
+    margin: 80px auto
+    flex-flow: column nowrap
   display: flex
-  justify-content: space-around
+  justify-content: space-between
   align-items: center
-  margin: 200px 0
 
   .featureTexts
     h1
@@ -25,30 +42,45 @@
     h2
       font-weight: 300
       color: $logo-color-3
-      width: 300px
+      // width: 300px
     
     p
-      width: 500px
+      // width: 500px
 
 
 .installContainer
+  background-color: $primary-color-100
+  padding: 230px 300px
+  @include breakpoint(tablet)
+    padding: 150px 200px
+  @include breakpoint(mobile)
+    padding: 40px
   text-align: center
 
   .installTexts
+    background-color: #ffffff
+    padding: 10px 0
+
     h1
       font-weight: 800
-      font-size: 36px
 
     h2
       span
         font-family: Courier New, Courier, monospace
-        font-size: 15px
+        font-size: 16px
         background-color: #e5e5e5
         padding: 10px 10px
 
 .quoteContainer
-  width: 1000px
-  margin: auto
+  @include breakpoint(desktop)
+    max-width: 1000px
+    margin: auto
+  @include breakpoint(tablet)
+    max-width: 90%
+    margin: 100px auto
+  @include breakpoint(mobile)
+    max-width: 95%
+    margin: 50px auto
   text-align: center
   color: $logo-color-1
   

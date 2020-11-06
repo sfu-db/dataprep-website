@@ -24,10 +24,10 @@ export const IntegrationSnippet: React.FC = () => {
   return (
     <div
       style={{
-        width: "400px",
+        width: "350px",
       }}
     >
-      <img src={graph} alt="Integration" width="400" />
+      <img src={graph} alt="Integration" width="350" />
     </div>
   )
 }

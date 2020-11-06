@@ -1,19 +1,41 @@
 @import 'color'
+@import 'metric'
   
 .navbar
-  width: 100%
+  padding-top: 20px
+  @include breakpoint(desktop)
+    max-width: 1000px
+    margin: auto
+  @include breakpoint(tablet)
+    max-width: 90%
+    margin: auto
+  @include breakpoint(mobile)
+    max-width: 95%
+    margin: auto
+    flex-flow: column nowrap
+    justify-content: center
   display: flex
-  justify-content: space-around
+  justify-content: space-between
   align-items: center
 
+  .logo
+    flex: 0 1 270px
+    @include breakpoint(mobile)
+      flex: 0 1 auto
+
   ul
+    padding: 0
     flex: 0 1 400px
+    @include breakpoint(mobile)
+      flex: 0 1 auto
     display: flex
     justify-content: space-between
     align-items: center
 
     li
       font-size: large
+      @include breakpoint(mobile)
+        font-size: unset
       text-align: center
       flex: 1 1 auto
       justify-content: space-evenly
@@ -27,6 +49,3 @@
       a
         text-decoration: none
         color: black
-
-.logo
-  flex: 0 1 300px
