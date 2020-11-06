@@ -13,7 +13,7 @@
   {
     "featureSubtitle": "Integrate Seamlessly with PyData",
     "featureDesc": "DataPrep is build in Python. It can be seamlessly integrated with other Python libraries.",
-    "correspondingComponent": "pydataSnippetComponent"
+    "correspondingComponent": "integrationSnippetComponent"
   },
   {
     "featureSubtitle": "Embrace Open Source",

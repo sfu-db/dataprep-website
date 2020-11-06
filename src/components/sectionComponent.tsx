@@ -1,6 +1,9 @@
 import React from "react"
 import style from "../styles/SectionComponent.module.sass"
 import LogoSnippet from "../components/logoSnippetComponent"
+import OpensourceSnippet from "../components/opensourceSnippetComponent"
+import IntegrationSnippet from "../components/integrationSnippetComponent"
+import CodeSnippet from "../components/codeSnippetComponent"
 
 type SectionProp<T> = {
   type: "intro" | "feature" | "install" | "quote"
@@ -13,9 +16,11 @@ const SectionComponent: React.FC<SectionProp<any>> = ({ type, data }) => {
       <section className={style.introContainer}>
         <div className={style.introTexts}>
           <h1>
-            DataPrep.
+            <span>DataPrep.</span>
             <br />
-            The fastest way to do data preparation in Python
+            <span style={{ color: "#e30613" }}>
+              The fastest way to do data preparation in Python
+            </span>
           </h1>
           <p>
             DataPrep aims to provide the fastest and the easiest way for data
@@ -28,7 +33,14 @@ const SectionComponent: React.FC<SectionProp<any>> = ({ type, data }) => {
     let snippet
     if (data.correspondingComponent === "logoSnippetComponent") {
       snippet = <LogoSnippet />
+    } else if (data.correspondingComponent === "opensourceSnippetComponent") {
+      snippet = <OpensourceSnippet />
+    } else if (data.correspondingComponent === "integrationSnippetComponent") {
+      snippet = <IntegrationSnippet />
+    } else if (data.correspondingComponent === "codeSnippetComponent") {
+      snippet = <CodeSnippet />
     }
+
     return (
       <section className={style.featureContainer}>
         <div className={style.featureTexts}>
@@ -59,9 +71,8 @@ const SectionComponent: React.FC<SectionProp<any>> = ({ type, data }) => {
             “We were disappointed, if not surprised, to see that data wrangling
             still takes the <strong>lion’s share of time</strong> in a typical
             data professional’s day. Data preparation and cleansing takes
-            <strong>valuable time</strong> away from{" "}
-            <strong>real data science</strong> work and has a negative impact on
-            overall job satisfaction.”{" "}
+            <strong> real data science</strong> work and has a negative impact
+            on overall job satisfaction.”{" "}
           </h3>
           <h4>
             {" "}
