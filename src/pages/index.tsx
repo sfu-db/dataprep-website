@@ -4,11 +4,12 @@ import Layout from "../components/layout"
 import WaveLayoutBottom from "../components/waveLayoutBottom"
 import WaveLayoutBoth from "../components/waveLayoutBoth"
 import { useStaticQuery, graphql } from "gatsby"
-import FooterCard from "../components/footerCard"
+import FooterComponent from "../components/footerComponent"
 import FadeSection from "../components/fadeSection"
 import FooterLayout from "../components/footerLayout"
 import CopyrightCcomponent from "../components/copyrightComponent"
 import SectionComponent from "../components/sectionComponent"
+import CompComponent from "../components/compComponent"
 
 interface IFeatureDataItem {
   featureTitle?: string
@@ -70,10 +71,11 @@ const Index: React.FC = () => {
         ))}
       </WaveLayoutBoth>
       {/* component diagram */}
+      <CompComponent />
       <SectionComponent type="install" />
       <FooterLayout>
         {data.allFooterItemsJson.nodes.map((item: IFooterDataItem) => (
-          <FooterCard
+          <FooterComponent
             key={item.id}
             title={item.title}
             desc={item.description}

@@ -1,13 +1,13 @@
 import React from "react"
 import style from "../styles/footer.module.sass"
 
-type FooterContent = {
+type FooterProp = {
   title: string
   desc?: string
   content: Array<string>
 }
 
-const FooterCard: React.FC<FooterContent> = ({ title, desc, content }) => {
+const FooterComponent: React.FC<FooterProp> = ({ title, desc, content }) => {
   const contentList = content.map((item: string, index: number) => (
     <li key={index}>{item}</li>
   ))
@@ -21,4 +21,4 @@ const FooterCard: React.FC<FooterContent> = ({ title, desc, content }) => {
   )
 }
 
-export default FooterCard
+export default FooterComponent

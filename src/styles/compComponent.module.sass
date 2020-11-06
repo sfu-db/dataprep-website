@@ -1,0 +1,51 @@
+@import 'color'
+
+.compContainer
+  cursor: default
+  width: 800px
+  margin: auto
+  
+  h1
+    color: $logo-color-1
+
+.compContent
+  display: flex
+  flex-flow: column nowrap
+  align-items: center
+  justify-content: space-evenly
+  padding: 20px 0
+
+  .compType
+    flex: 0 1 auto
+    h3
+      font-weight: 400
+      text-align: center
+      margin-bottom: 0
+
+    .compDesc
+      width: 700px
+      height: 100px
+      border: 2px $secondary-color-100 dashed
+      border-radius: 5px
+      display: flex
+      justify-content: space-evenly
+      align-items: center
+      
+      div
+        text-align: center
+        width: 200px
+        flex: 0 1 auto
+        border: 2px solid
+        border-radius: 5px
+        padding: 20px 50px
+
+.compDesc1
+  border: 2px $logo-color-5 solid !important
+  color: $logo-color-5
+  // background-color: $primary-color-400
+
+.compDesc2
+  color: #9b9b9b
+
+.compDesc3
+  color: #9b9b9b
