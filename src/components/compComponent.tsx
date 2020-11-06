@@ -1,7 +1,7 @@
 import React from "react"
 import style from "../styles/CompComponent.module.sass"
 
-const CompComponent = () => {
+const CompComponent: React.FC = () => {
   return (
     <section className={style.compContainer}>
       <h1>DataPrep Components</h1>

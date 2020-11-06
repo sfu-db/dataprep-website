@@ -3,21 +3,21 @@
     "featureTitle": "THINK DIFFERENT!",
     "featureSubtitle": "Design for Notebook Users",
     "featureDesc": "DataPrep is mainly designed for notebook users. The computation is fast. The output is interactive and shareable.",
-    "featureSnippet": ""
+    "correspondingComponent": "logoSnippetComponent"
   },
   {
     "featureSubtitle": "Get Things Done in a Few Lines of Code",
     "featureDesc": "DataPrep provides high level APIs that are easy to use and easy to remember. Write a few lines of code to start the data preparation!",
-    "featureSnippet": ""
+    "correspondingComponent": "codeSnippetComponent"
   },
   {
     "featureSubtitle": "Integrate Seamlessly with PyData",
     "featureDesc": "DataPrep is build in Python. It can be seamlessly integrated with other Python libraries.",
-    "featureSnippet": ""
+    "correspondingComponent": "pydataSnippetComponent"
   },
   {
     "featureSubtitle": "Embrace Open Source",
     "featureDesc": "DataPrep is open sourced and follows MIT licenses. You could use it free for any application!",
-    "featureSnippet": ""
+    "correspondingComponent": "opensourceSnippetComponent"
   }
 ]

@@ -1,5 +1,6 @@
 import React from "react"
 import style from "../styles/SectionComponent.module.sass"
+import LogoSnippet from "../components/logoSnippetComponent"
 
 type SectionProp<T> = {
   type: "intro" | "feature" | "install" | "quote"
@@ -11,18 +12,23 @@ const SectionComponent: React.FC<SectionProp<any>> = ({ type, data }) => {
     return (
       <section className={style.introContainer}>
         <div className={style.introTexts}>
-          <h1>The fastest way to do data preparation in Python</h1>
+          <h1>
+            DataPrep.
+            <br />
+            The fastest way to do data preparation in Python
+          </h1>
           <p>
             DataPrep aims to provide the fastest and the easiest way for data
             scientists to prepare data in a few lines of code.
           </p>
         </div>
-        {/* WIP */}
-        <div className={style.introSnippets}></div>
-        {/* WIP */}
       </section>
     )
   } else if (type === "feature") {
+    let snippet
+    if (data.correspondingComponent === "logoSnippetComponent") {
+      snippet = <LogoSnippet />
+    }
     return (
       <section className={style.featureContainer}>
         <div className={style.featureTexts}>
@@ -30,9 +36,7 @@ const SectionComponent: React.FC<SectionProp<any>> = ({ type, data }) => {
           <h2>{data.featureSubtitle}</h2>
           <p>{data.featureDesc}</p>
         </div>
-        {/* WIP */}
-        <div className={style.featureSnippets}>{data.featureSnippet}</div>
-        {/* WIP */}
+        <div className={style.featureSnippets}>{snippet}</div>
       </section>
     )
   } else if (type === "install") {

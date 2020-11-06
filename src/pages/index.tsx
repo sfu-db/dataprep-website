@@ -10,6 +10,7 @@ import FooterLayout from "../components/footerLayout"
 import CopyrightCcomponent from "../components/copyrightComponent"
 import SectionComponent from "../components/sectionComponent"
 import CompComponent from "../components/compComponent"
+import SectionLayout from "../components/sectionLayout"
 
 interface IFeatureDataItem {
   featureTitle?: string
@@ -34,7 +35,7 @@ const Index: React.FC = () => {
           featureTitle
           featureSubtitle
           featureDesc
-          featureSnippet
+          correspondingComponent
           id
         }
       }
@@ -66,11 +67,12 @@ const Index: React.FC = () => {
       <WaveLayoutBoth>
         {data.allFeatureItemsJson.nodes.map((item: IFeatureDataItem) => (
           <FadeSection key={item.id}>
-            <SectionComponent type="feature" data={item} key={item.id} />
+            <SectionLayout>
+              <SectionComponent type="feature" data={item} />
+            </SectionLayout>
           </FadeSection>
         ))}
       </WaveLayoutBoth>
-      {/* component diagram */}
       <CompComponent />
       <SectionComponent type="install" />
       <FooterLayout>
