@@ -36,16 +36,24 @@
   align-items: center
 
   .featureTexts
+    flex: 0 100 auto
     h1
       color: $logo-color-1
     
     h2
       font-weight: 300
       color: $logo-color-3
-      // width: 300px
-    
-    p
-      // width: 500px
+  .featureSnippets
+    flex: 0 1 350px
+    width: 350px
+    height: 350px
+    border-radius: 350px
+    @include breakpoint(tablet)
+      flex: 0 1 250px
+      width: 250px
+      height: 250px
+      border-radius: 250px
+    background-color: #ffffff
 
 
 .installContainer
