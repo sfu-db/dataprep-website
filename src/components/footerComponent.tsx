@@ -1,13 +1,25 @@
 import React, { useEffect, useState } from "react"
 import style from "../styles/footer.module.sass"
 
-const NewsList: React.FC = ({ data }) => {
-  console.log(data)
-  if (!data || data.length === 0) return <p>No data found</p>
-  return (
-    <ul>
-      {data.slice(0, 10).map(item => {
-        return (
+type NewsProp = {
+  isLoading: boolean
+  data: Array<IResponse>
+}
+
+interface IResponse {
+  url: string
+  id: number
+  published_at: string
+  tag_name: string
+  html_url: string
+}
+
+const News: React.FC<NewsProp> | React.ReactNode = ({ isLoading, data }) => {
+  if (!isLoading) {
+    if (!data || data.length === 0) return <p>No data found</p>
+    return (
+      <ul>
+        {data.slice(0, 10).map(item => (
           <li key={item.id}>
             {item.published_at.split("T")[0]}: DataPrep{" "}
             <a href={item.html_url} target="_blank" rel="noreferrer">
@@ -15,14 +27,10 @@ const NewsList: React.FC = ({ data }) => {
             </a>{" "}
             is released.
           </li>
-        )
-      })}
-    </ul>
-  )
-}
-
-const News = ({ isLoading, ...prop }) => {
-  if (!isLoading) return <NewsList {...prop} />
+        ))}
+      </ul>
+    )
+  }
   return <p>Fetching data...</p>
 }
 
@@ -99,17 +107,19 @@ const GS: React.FC = () => (
 )
 
 const FooterComponent: React.FC = () => {
-  const [releaseData, setReleaseData] = useState({
+  const [releaseData, setReleaseData] = useState<{
+    loading: boolean
+    data: Array<IResponse | null> | null
+  }>({
     loading: false,
     data: null,
   })
   useEffect(() => {
     setReleaseData({ loading: true, data: null })
     fetch("https://api.github.com/repos/sfu-db/dataprep/releases")
-      .then(res => res.json())
-      .then(jsonData => {
-        setReleaseData({ loading: false, data: jsonData })
-      })
+      .then(response => response.json())
+      .then(data => setReleaseData({ loading: false, data: data }))
+      .catch(error => console.error(error))
   }, [setReleaseData])
   return (
     <section className={style.footerContainer}>

@@ -10,19 +10,12 @@ import CompComponent from "../components/compComponent"
 import SectionLayout from "../components/sectionLayout"
 import { Helmet } from "react-helmet"
 
-type FeatureDataItem = {
+interface IFeatureDataItem {
   featureTitle?: string
   featureSubtitle: string
   featureDesc: string
   correspondingComponent: string
   id?: string
-}
-
-type FooterDataItem = {
-  title: string
-  description: string
-  content: Array<string>
-  id: string
 }
 
 const Index: React.FC = () => {
@@ -55,7 +48,7 @@ const Index: React.FC = () => {
       </WaveLayoutBottom>
       <SectionComponent type="quote" />
       <SectionLayout>
-        {data.allFeatureItemsJson.nodes.map((item: FeatureDataItem) => (
+        {data.allFeatureItemsJson.nodes.map((item: IFeatureDataItem) => (
           <FadeSection key={item.id}>
             <SectionComponent type="feature" data={item} />
           </FadeSection>

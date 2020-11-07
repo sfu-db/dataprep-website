@@ -13,10 +13,11 @@ type SectionProp = {
 }
 
 type FeatureProp = {
-  correspondingComponent: string
-  featureTitle: string
+  featureTitle?: string
   featureSubtitle: string
   featureDesc: string
+  correspondingComponent: string
+  id?: string
 }
 
 const Intro: React.FC = () => {
