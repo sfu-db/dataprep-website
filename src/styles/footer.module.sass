@@ -2,12 +2,35 @@
 @import 'metric'
 
 .footerContainer
-    flex: 0 1 30%
+  display: flex
+  justify-content: space-between
+  align-items: baseline
+  @include breakpoint(desktop)
+    max-width: 1000px
+    margin: auto
+  @include breakpoint(tablet)
+    max-width: 90%
+    margin: auto
+  @include breakpoint(mobile)
+    max-width: 95%
+    margin: auto
+    flex-flow: column nowrap
+  div
+    flex: 0 1 33%
 
-    h3
-      color: $logo-color-3
-      font-weight: 400
+  ul
+    margin: 0
+    padding: 0
 
-    p
-      font-size: 14px
-      font-weight: 300
+  li
+    margin: 15px 0
+    list-style-type: none
+    list-style-position: inside
+    font-weight: 300
+
+  h3
+    color: $logo-color-3
+    font-weight: 400
+  
+  h4
+    font-weight: 400

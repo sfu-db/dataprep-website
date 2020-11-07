@@ -4,7 +4,6 @@ import WaveLayoutBottom from "../components/waveLayoutBottom"
 import { useStaticQuery, graphql } from "gatsby"
 import FooterComponent from "../components/footerComponent"
 import FadeSection from "../components/fadeSection"
-import FooterLayout from "../components/footerLayout"
 import CopyrightCcomponent from "../components/copyrightComponent"
 import SectionComponent from "../components/sectionComponent"
 import CompComponent from "../components/compComponent"
@@ -38,14 +37,6 @@ const Index: React.FC = () => {
           id
         }
       }
-      allFooterItemsJson {
-        nodes {
-          description
-          title
-          content
-          id
-        }
-      }
     }
   `)
 
@@ -72,16 +63,7 @@ const Index: React.FC = () => {
       </SectionLayout>
       <CompComponent />
       <SectionComponent type="install" />
-      <FooterLayout>
-        {data.allFooterItemsJson.nodes.map((item: FooterDataItem) => (
-          <FooterComponent
-            key={item.id}
-            title={item.title}
-            desc={item.description}
-            content={item.content}
-          />
-        ))}
-      </FooterLayout>
+      <FooterComponent />
       <CopyrightCcomponent />
     </>
   )
