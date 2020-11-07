@@ -9,6 +9,7 @@ import CopyrightCcomponent from "../components/copyrightComponent"
 import SectionComponent from "../components/sectionComponent"
 import CompComponent from "../components/compComponent"
 import SectionLayout from "../components/sectionLayout"
+import { Helmet } from "react-helmet"
 
 interface IFeatureDataItem {
   featureTitle?: string
@@ -57,6 +58,13 @@ const Index: React.FC = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          DataPrep -- The fastest way to do data preparation in Python
+        </title>
+        <link rel="canonical" href="http://dataprep.ai" />
+      </Helmet>
       <WaveLayoutBottom>
         <Header linkArray={data.allNavbarItemsJson.nodes} />
         <SectionComponent type="intro" />

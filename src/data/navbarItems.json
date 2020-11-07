@@ -1,5 +1,8 @@
 [
-  { "text": "Documentation" },
+  {
+    "text": "Documentation",
+    "link": "https://sfu-db.github.io/dataprep/index.html"
+  },
   { "text": "Commnutiy" },
   { "text": "GitHub", "link": "https://github.com/sfu-db/dataprep" },
   { "text": "Brand" }
