@@ -1,9 +1,5 @@
 import React from "react"
 import graph from "../images/integration.png"
-// import colabLogo from "../images/colab.png"
-// import jupyterLogo from "../images/jupyter.png"
-// import kaggleLogo from "../images/kaggle.png"
-// import vscodeLogo from "../images/vscode.png"
 import licenseIcon from "../images/license.svg"
 import logoSnippet from "../images/logoSnippet.svg"
 

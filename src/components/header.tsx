@@ -3,23 +3,31 @@ import { Link } from "gatsby"
 import style from "../styles/header.module.sass"
 import logo from "../images/dataprep-logo.png"
 
-interface IHeaderListItem {
+type LinkItem = {
   text: string
-  link: string | null
-  id: string
+  link?: string
 }
-type HeaderList = Array<IHeaderListItem>
 
-const Header: React.FC<{ linkArray: HeaderList }> = ({ linkArray }) => {
-  const listItem = linkArray.map((item: IHeaderListItem) =>
+const linkArray: Array<LinkItem> = [
+  {
+    text: "Documentation",
+    link: "https://sfu-db.github.io/dataprep/index.html",
+  },
+  // { text: "Commnutiy" },
+  { text: "GitHub", link: "https://github.com/sfu-db/dataprep" },
+  { text: "Brand" },
+]
+
+const Header: React.FC = () => {
+  const listItem = linkArray.map((item: LinkItem, key: number) =>
     item.link ? (
-      <li key={item.id}>
+      <li key={key}>
         <a href={item.link} target="_blank" rel="noreferrer">
           {item.text}
         </a>
       </li>
     ) : (
-      <li key={item.id}>
+      <li key={key}>
         <Link to={"/" + item.text.toLowerCase()}>{item.text}</Link>
       </li>
     )
@@ -28,7 +36,9 @@ const Header: React.FC<{ linkArray: HeaderList }> = ({ linkArray }) => {
   return (
     <div className={style.navbar}>
       <div className={style.logo}>
-        <img src={logo} alt="Data Prep Logo" width="270" />
+        <Link to="/">
+          <img src={logo} alt="Data Prep Logo" width="270" />
+        </Link>
       </div>
       <ul>{listItem}</ul>
     </div>

@@ -11,15 +11,15 @@ import CompComponent from "../components/compComponent"
 import SectionLayout from "../components/sectionLayout"
 import { Helmet } from "react-helmet"
 
-interface IFeatureDataItem {
+type FeatureDataItem = {
   featureTitle?: string
   featureSubtitle: string
   featureDesc: string
-  featureSnippet: string | null
-  id: string
+  correspondingComponent: string
+  id?: string
 }
 
-interface IFooterDataItem {
+type FooterDataItem = {
   title: string
   description: string
   content: Array<string>
@@ -36,13 +36,6 @@ const Index: React.FC = () => {
           featureDesc
           correspondingComponent
           id
-        }
-      }
-      allNavbarItemsJson {
-        nodes {
-          id
-          text
-          link
         }
       }
       allFooterItemsJson {
@@ -66,12 +59,12 @@ const Index: React.FC = () => {
         <link rel="canonical" href="http://dataprep.ai" />
       </Helmet>
       <WaveLayoutBottom>
-        <Header linkArray={data.allNavbarItemsJson.nodes} />
+        <Header />
         <SectionComponent type="intro" />
       </WaveLayoutBottom>
       <SectionComponent type="quote" />
       <SectionLayout>
-        {data.allFeatureItemsJson.nodes.map((item: IFeatureDataItem) => (
+        {data.allFeatureItemsJson.nodes.map((item: FeatureDataItem) => (
           <FadeSection key={item.id}>
             <SectionComponent type="feature" data={item} />
           </FadeSection>
@@ -80,7 +73,7 @@ const Index: React.FC = () => {
       <CompComponent />
       <SectionComponent type="install" />
       <FooterLayout>
-        {data.allFooterItemsJson.nodes.map((item: IFooterDataItem) => (
+        {data.allFooterItemsJson.nodes.map((item: FooterDataItem) => (
           <FooterComponent
             key={item.id}
             title={item.title}
