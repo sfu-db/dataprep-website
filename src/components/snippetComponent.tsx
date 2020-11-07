@@ -1,10 +1,11 @@
 import React from "react"
 import graph from "../images/integration.png"
-import colabLogo from "../images/colab.png"
-import jupyterLogo from "../images/jupyter.png"
-import kaggleLogo from "../images/kaggle.png"
-import vscodeLogo from "../images/vscode.png"
+// import colabLogo from "../images/colab.png"
+// import jupyterLogo from "../images/jupyter.png"
+// import kaggleLogo from "../images/kaggle.png"
+// import vscodeLogo from "../images/vscode.png"
 import licenseIcon from "../images/license.svg"
+import logoSnippet from "../images/logoSnippet.svg"
 
 export const CodeSnippet: React.FC = () => {
   return (
@@ -24,12 +25,11 @@ export const IntegrationSnippet: React.FC = () => {
   return (
     <div
       style={{
-        width: "350px",
         position: "relative",
-        top: "90px",
+        top: "60px",
       }}
     >
-      <img src={graph} alt="Integration" width="350" />
+      <img src={graph} alt="Integration" id="integration-snippet" />
     </div>
   )
 }
@@ -38,27 +38,12 @@ export const LogoSnippet: React.FC = () => {
   return (
     <div
       style={{
-        display: "flex",
-        flexFlow: "column wrap",
-        height: "250px",
-        justifyContent: "flex-start",
-        alignItems: "center",
         position: "relative",
-        top: "60px",
+        top: "40px",
+        left: "40px",
       }}
     >
-      <div style={{ flex: "0 1 150px" }}>
-        <img src={jupyterLogo} alt="Jupyter logo" width="100" />
-      </div>
-      <div style={{ flex: "0 1 80px" }}>
-        <img src={kaggleLogo} alt="Kaggle" width="120" />
-      </div>
-      <div style={{ flex: "0 1 150px" }}>
-        <img src={vscodeLogo} alt="VScode logo" width="100" />
-      </div>
-      <div style={{ flex: "0 1 150px" }}>
-        <img src={colabLogo} alt="Colab logo" width="150" />
-      </div>
+      <img src={logoSnippet} alt="Logo Snippet" id="logo-snippet" />
     </div>
   )
 }
@@ -69,11 +54,10 @@ export const OpensourceSnippet: React.FC = () => {
       style={{
         display: "flex",
         flexFlow: "column nowrap",
-        height: "150px",
-        justifyContent: "space-between",
         alignItems: "center",
-        position: "relative",
-        top: "100px",
+        justifyContent: "space-around",
+        width: "100%",
+        height: "100%",
       }}
     >
       <iframe

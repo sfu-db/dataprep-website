@@ -44,6 +44,8 @@
       font-weight: 300
       color: $logo-color-3
   .featureSnippets
+    position: relative
+    top: 45px
     flex: 0 1 350px
     width: 350px
     height: 350px
@@ -78,6 +80,9 @@
         font-size: 16px
         background-color: #e5e5e5
         padding: 10px 10px
+        user-select: all
+        &::selection
+          color: $secondary-color-700
 
 .quoteContainer
   @include breakpoint(desktop)
