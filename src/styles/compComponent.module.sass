@@ -15,9 +15,9 @@
     color: $primary-color-800
 
 .blockContainer
-  padding: 0 25px
+  background-color: $primary-color-100
+  padding: 1px 30px
   cursor: default
-  border: 5px $primary-color-800 solid
   h3
     color: $primary-color-400
     font-size: 22px
@@ -29,10 +29,12 @@
     @include breakpoint(mobile)
       font-size: 12px
   .blocks
+    h3
+      margin-bottom: 0
     text-align: center
     display: flex
     flex-flow: row wrap
-    justify-content: space-evenly
+    justify-content: space-between
     align-items: baseline
     height: 450px
     @include breakpoint(mobile)
@@ -40,14 +42,16 @@
 
     div
       height: 100px
-      flex: 0 1 40%
+      flex: 0 1 49%
       @include breakpoint(mobile)
         flex: 0 1 45%
         height: 80px
 
 
 .solidBlock
-  border: 5px $primary-color-800 solid
+  background-color: #ffffff
 
 .dashedBlock
+  box-sizing: border-box
   border: 5px $primary-color-400 dashed
+  background-color: $secondary-color-100
