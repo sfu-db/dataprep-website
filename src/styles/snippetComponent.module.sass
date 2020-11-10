@@ -1,0 +1,90 @@
+.terminalContainer
+  border-radius: 5px
+  box-shadow: 0 5px 25px rgba(0, 0, 0, .4)
+  width: 423px
+  height: 206px
+
+  .terminalCommand
+    display: inline-block
+    font-family: monospace
+    background: #ffffff
+    color: #000000
+    padding: 8px
+    overflow: auto
+    margin: 0
+    height: 162px
+    width: 390px
+    border-radius: 0 0 5px 0
+    line-height: 18px
+    p
+      font-family: monospace
+      font-size: 15px
+      margin: 0
+
+  .terminalTitleBar
+    cursor: default
+    background: rgb(251,251,251)
+    background: linear-gradient(180deg, rgba(251,251,251,1) 0%, rgba(232,230,231,1) 100%)
+    color: black
+    padding: 3px 5px 0px 5px
+    border-radius: 5px 5px 0 0
+    display: flex
+    justify-content: flex-start
+    align-items: center
+
+  .terminalBtns
+    flex: 0 1 200px
+
+    .terminalBtn
+      width: 12px
+      height: 12px
+      display: inline-block
+      border-radius: 15px
+      margin-left: 5px
+      border: 1px transparent solid
+    
+    .terminalBtnRed
+      background-color: #EC6A5F
+      border-color: #D04E42
+    .terminalBtnGreen
+      background-color: #64CC57
+      border-color: #4EA73B
+    .terminalBtnYellow
+      background-color: #F5C04F
+      border-color: #D6A13D
+
+  .terminalTitleContent
+    flex: 1 1 auto
+    text-align: center
+    font-family: sans-serif
+    font-size: 13px
+  
+  .terminalLineCount
+    cursor: default
+    padding: 8px 0
+    display: inline-block
+    width: auto
+    height: auto
+    writing-mode: vertical-rl
+    text-orientation: upright
+    font-family: monospace
+    font-size: 15px
+    letter-spacing: 1px
+    color: #eae9ea
+    background: #ffffff
+    border-radius: 0 0 0 5px
+
+  .terminalTitlePlacehodler
+    flex: 0 0 160px
+
+.declareSyntax
+  font-family: monospace
+  color: #00ab11
+
+.packageSyntax
+  font-family: monospace
+  color: #0024e3
+
+.paramSyntax
+  font-family: monospace
+  color: #bf2d2d

@@ -5,6 +5,8 @@ import {
   OpensourceSnippet,
   IntegrationSnippet,
   ChartSnippet,
+  TerminalSnippetPrimary,
+  TerminalSnippetSecondary,
 } from "../components/snippetComponent"
 
 type SectionProp = {
@@ -18,7 +20,18 @@ const Intro: React.FC = () => {
         <h1>The easiest way to prepare data in Python</h1>
       </div>
       <div className={style.introSnippets}>
-        <div>WIP</div>
+        <div>
+          <TerminalSnippetPrimary />
+        </div>
+        <div
+          style={{
+            position: "relative",
+            left: "120px",
+            bottom: "40px",
+          }}
+        >
+          <TerminalSnippetSecondary />
+        </div>
       </div>
     </section>
   )

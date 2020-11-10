@@ -1,8 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react"
 import graph from "../images/integration.png"
 import logoSnippet from "../images/logoSnippet.svg"
 import chart from "../images/chart.svg"
 import github from "../images/github.svg"
+import style from "../styles/snippetComponent.module.sass"
 
 export const ChartSnippet: React.FC = () => {
   return (
@@ -50,6 +52,108 @@ export const OpensourceSnippet: React.FC = () => {
         height="50"
         title="GitHub"
       ></iframe>
+    </div>
+  )
+}
+
+export const TerminalSnippetPrimary: React.FC = () => {
+  return (
+    <div className={style.terminalContainer}>
+      <div className={style.terminalTitleBar}>
+        <div className={style.terminalBtns}>
+          <span
+            className={`${style.terminalBtn} ${style.terminalBtnRed}`}
+          ></span>
+          <span
+            className={`${style.terminalBtn} ${style.terminalBtnGreen}`}
+          ></span>
+          <span
+            className={`${style.terminalBtn} ${style.terminalBtnYellow}`}
+          ></span>
+        </div>
+        <div className={style.terminalTitleContent}>dataprep_eda.py</div>
+        <div className={style.terminalTitlePlacehodler}></div>
+      </div>
+      <div className={style.terminalLineCount}>123456789</div>
+      <div className={style.terminalCommand}>
+        <p>
+          <span className={style.declareSyntax}>from</span>{" "}
+          <span className={style.packageSyntax}>dataprep.connector</span>{" "}
+          <span className={style.declareSyntax}>import</span> connector
+        </p>
+        <p>
+          <span className={style.declareSyntax}>from</span>{" "}
+          <span className={style.packageSyntax}>dataprep.eda</span>{" "}
+          <span className={style.declareSyntax}>import</span> plot
+        </p>
+        <p style={{ opacity: "0" }}>_</p>
+        <p>
+          dc = connector(<span className={style.paramSyntax}>"dblp"</span>)
+        </p>
+        <p>
+          df = dc.query(<span className={style.paramSyntax}>"publication"</span>
+          , q=<span className={style.paramSyntax}>"CVPR 2020"</span>, _count=
+          <span className={style.declareSyntax}>2000</span>)
+        </p>
+        <p>
+          plot(df, <span className={style.paramSyntax}>"title"</span>)
+        </p>
+      </div>
+    </div>
+  )
+}
+
+export const TerminalSnippetSecondary: React.FC = () => {
+  return (
+    <div className={style.terminalContainer}>
+      <div className={style.terminalTitleBar}>
+        <div className={style.terminalBtns}>
+          <span
+            className={`${style.terminalBtn} ${style.terminalBtnRed}`}
+          ></span>
+          <span
+            className={`${style.terminalBtn} ${style.terminalBtnGreen}`}
+          ></span>
+          <span
+            className={`${style.terminalBtn} ${style.terminalBtnYellow}`}
+          ></span>
+        </div>
+        <div className={style.terminalTitleContent}>dataprep_connector.py</div>
+        <div className={style.terminalTitlePlacehodler}></div>
+      </div>
+      <div className={style.terminalLineCount}>123456789</div>
+      <div className={style.terminalCommand}>
+        <p>
+          <span className={style.declareSyntax}>from</span>{" "}
+          <span className={style.packageSyntax}>dataprep.connector</span>{" "}
+          <span className={style.declareSyntax}>import</span> connector
+        </p>
+        <p style={{ opacity: "0" }}>_</p>
+        <p>
+          auth_token ={" "}
+          <span className={style.paramSyntax}>
+            "{"<"}your_access_token{">"}"
+          </span>
+        </p>
+        <p>
+          dc = connector(<span className={style.paramSyntax}>"youtube"</span>,
+          _auth={"{"}
+          <span className={style.paramSyntax}>"access_token"</span>: auth_token
+          {"}"})
+        </p>
+        <p style={{ opacity: "0" }}>_</p>
+        <p>
+          df = dc.query(<span className={style.paramSyntax}>"videos"</span>, q=
+          <span className={style.paramSyntax}>"Data Science"</span>, part=
+          <span className={style.paramSyntax}>"snippet"</span>,{" "}
+          <span className={style.declareSyntax}>type</span>=
+          <span className={style.paramSyntax}>"videos"</span>, _count=
+          <span className={style.declareSyntax}>40</span>)
+        </p>
+        <p>
+          plot(df, <span className={style.paramSyntax}>"title"</span>)
+        </p>
+      </div>
     </div>
   )
 }
