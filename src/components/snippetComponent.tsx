@@ -74,30 +74,35 @@ export const TerminalSnippetPrimary: React.FC = () => {
         <div className={style.terminalTitleContent}>dataprep_eda.py</div>
         <div className={style.terminalTitlePlacehodler}></div>
       </div>
-      <div className={style.terminalLineCount}>123456789</div>
-      <div className={style.terminalCommand}>
-        <p>
-          <span className={style.declareSyntax}>from</span>{" "}
-          <span className={style.packageSyntax}>dataprep.connector</span>{" "}
-          <span className={style.declareSyntax}>import</span> connector
-        </p>
-        <p>
-          <span className={style.declareSyntax}>from</span>{" "}
-          <span className={style.packageSyntax}>dataprep.eda</span>{" "}
-          <span className={style.declareSyntax}>import</span> plot
-        </p>
-        <p style={{ opacity: "0" }}>_</p>
-        <p>
-          dc = connector(<span className={style.paramSyntax}>"dblp"</span>)
-        </p>
-        <p>
-          df = dc.query(<span className={style.paramSyntax}>"publication"</span>
-          , q=<span className={style.paramSyntax}>"CVPR 2020"</span>, _count=
-          <span className={style.declareSyntax}>2000</span>)
-        </p>
-        <p>
-          plot(df, <span className={style.paramSyntax}>"title"</span>)
-        </p>
+      <div className={style.terminalDocumentContent}>
+        <ol className={style.terminalCommand}>
+          <li>
+            <span className={style.declareSyntax}>from</span>{" "}
+            <span className={style.packageSyntax}>dataprep.connector</span>{" "}
+            <span className={style.declareSyntax}>import</span> connector
+          </li>
+          <li>
+            <span className={style.declareSyntax}>from</span>{" "}
+            <span className={style.packageSyntax}>dataprep.eda</span>{" "}
+            <span className={style.declareSyntax}>import</span> plot
+          </li>
+          <li></li>
+          <li>
+            dc = connector(<span className={style.paramSyntax}>"dblp"</span>)
+          </li>
+          <li>
+            df = dc.query(
+            <span className={style.paramSyntax}>"publication"</span>, q=
+            <span className={style.paramSyntax}>"CVPR 2020"</span>, _count=
+            <span className={style.declareSyntax}>2000</span>)
+          </li>
+          <li>
+            plot(df, <span className={style.paramSyntax}>"title"</span>)
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
       </div>
     </div>
   )
@@ -121,35 +126,41 @@ export const TerminalSnippetSecondary: React.FC = () => {
         <div className={style.terminalTitleContent}>dataprep_connector.py</div>
         <div className={style.terminalTitlePlacehodler}></div>
       </div>
-      <div className={style.terminalLineCount}>123456789</div>
-      <div className={style.terminalCommand}>
-        <p>
-          <span className={style.declareSyntax}>from</span>{" "}
-          <span className={style.packageSyntax}>dataprep.connector</span>{" "}
-          <span className={style.declareSyntax}>import</span> connector
-        </p>
-        <p style={{ opacity: "0" }}>_</p>
-        <p>
-          auth_token ={" "}
-          <span className={style.paramSyntax}>
-            "{"<"}your_access_token{">"}"
-          </span>
-        </p>
-        <p>
-          dc = connector(<span className={style.paramSyntax}>"youtube"</span>,
-          _auth={"{"}
-          <span className={style.paramSyntax}>"access_token"</span>: auth_token
-          {"}"})
-        </p>
-        <p style={{ opacity: "0" }}>_</p>
-        <p>
-          df = dc.query(<span className={style.paramSyntax}>"videos"</span>, q=
-          <span className={style.paramSyntax}>"Data Science"</span>, part=
-          <span className={style.paramSyntax}>"snippet"</span>,{" "}
-          <span className={style.declareSyntax}>type</span>=
-          <span className={style.paramSyntax}>"videos"</span>, _count=
-          <span className={style.declareSyntax}>40</span>)
-        </p>
+      <div className={style.terminalDocumentContent}>
+        <ol className={style.terminalCommand}>
+          <li>
+            <span className={style.declareSyntax}>from</span>{" "}
+            <span className={style.packageSyntax}>dataprep.connector</span>{" "}
+            <span className={style.declareSyntax}>import</span> connector
+          </li>
+          <li></li>
+          <li>
+            auth_token ={" "}
+            <span className={style.paramSyntax}>
+              "{"<"}your_access_token{">"}"
+            </span>
+          </li>
+          <li>
+            dc = connector(<span className={style.paramSyntax}>"youtube"</span>,
+            _auth={"{"}
+            <span className={style.paramSyntax}>"access_token"</span>:
+            auth_token
+            {"}"})
+          </li>
+          <li></li>
+          <li>
+            df = dc.query(<span className={style.paramSyntax}>"videos"</span>,
+            q=
+            <span className={style.paramSyntax}>"Data Science"</span>, part=
+            <span className={style.paramSyntax}>"snippet"</span>,{" "}
+            <span className={style.declareSyntax}>type</span>=
+            <span className={style.paramSyntax}>"videos"</span>, _count=
+            <span className={style.declareSyntax}>40</span>)
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
       </div>
     </div>
   )
