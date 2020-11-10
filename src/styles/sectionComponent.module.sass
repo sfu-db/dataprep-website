@@ -2,8 +2,12 @@
 @import 'metric'
 
 .introContainer
+  height: 1000px
+  display: flex
+  justify-content: space-between
+  align-items: center
   @include breakpoint(desktop)
-    max-width: 1000px
+    max-width: 1300px
     margin: auto
   @include breakpoint(tablet)
     max-width: 90%
@@ -18,49 +22,99 @@
 
     p
       color: $logo-color-1
-    
 
-.featureContainer
+
+.integrationContainer
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  align-items: center
+  height: 550px
   @include breakpoint(desktop)
-    max-width: 1000px
-    margin: 200px auto
+    max-width: 1300px
+    margin: auto
   @include breakpoint(tablet)
     max-width: 90%
-    margin: 100px auto
+    margin: auto
   @include breakpoint(mobile)
     max-width: 95%
-    margin: 80px auto
+    margin: auto
     flex-flow: column nowrap
   display: flex
   justify-content: space-between
   align-items: center
 
-  .featureTexts
-    flex: 0 100 auto
-    h1
-      color: $logo-color-1
-    
-    h2
-      font-weight: 300
-      color: $logo-color-3
-  .featureSnippets
-    position: relative
-    top: 45px
-    flex: 0 1 350px
-    width: 350px
-    height: 350px
-    border-radius: 350px
-    @include breakpoint(tablet)
-      flex: 0 1 250px
-      width: 250px
-      height: 250px
-      border-radius: 250px
-    background-color: #ffffff
+  .integrationPart
+    flex: 0 1 30%
+    display: flex
+    flex-flow: column nowrap
+    justify-content: center
+    align-items: center
+
+    .integrationTexts
+      text-align: center
+      h3
+        color: $logo-color-1
+      
+      p
+        font-size: 18px
+        font-weight: 300
+        
+    .integrationSnippets
+      width: 245px
+      height: 245px
+      border-radius: 245px
+      @include breakpoint(tablet)
+        width: 205px
+        height: 205px
+        border-radius: 205px
+      background-color: $primary-color-50
+
+
+.featureContainer
+  @include breakpoint(desktop)
+    max-width: 1300px
+    margin: auto
+  @include breakpoint(tablet)
+    max-width: 90%
+    margin: auto
+  @include breakpoint(mobile)
+    max-width: 95%
+    margin: auto
+    flex-flow: column nowrap
+  display: flex
+  flex-flow: column nowrap
+  justify-content: space-between
+  align-items: center
+
+  .featurePart
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    .featureTexts
+      flex: 0 1 581px
+      h2
+        color: $logo-color-1
+        font-size: 36px
+
+    .featureSnippets
+      position: relative
+      top: 45px
+      flex: 0 1 350px
+      width: 350px
+      height: 350px
+      border-radius: 350px
+      @include breakpoint(tablet)
+        flex: 0 1 250px
+        width: 250px
+        height: 250px
+        border-radius: 250px
 
 
 .installContainer
-  background-color: $primary-color-100
-  padding: 230px 300px
+  background-color: $primary-color-50
+  padding: 150px 590px
   @include breakpoint(tablet)
     padding: 150px 200px
   @include breakpoint(mobile)
@@ -72,34 +126,18 @@
     padding: 10px 0
 
     h1
-      font-weight: 800
+      font-weight: bold
+      font-size: 36px
 
     h2
       span
         font-family: Courier New, Courier, monospace
-        font-size: 16px
+        font-size: 22px
         background-color: #e5e5e5
-        padding: 10px 10px
+        padding: 20px 10px
         user-select: all
         &::selection
           color: $secondary-color-700
 
-.quoteContainer
-  @include breakpoint(desktop)
-    max-width: 1000px
-    margin: auto
-  @include breakpoint(tablet)
-    max-width: 90%
-    margin: 100px auto
-  @include breakpoint(mobile)
-    max-width: 95%
-    margin: 50px auto
-  text-align: center
-  color: $logo-color-1
-  
-  .quoteTexts
-    h3
-      font-weight: 400
-    h4
-      text-align: right
-      font-weight: 300
+    p
+      font-size: 24px

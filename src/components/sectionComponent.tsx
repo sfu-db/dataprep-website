@@ -4,66 +4,108 @@ import {
   LogoSnippet,
   OpensourceSnippet,
   IntegrationSnippet,
-  CodeSnippet,
 } from "../components/snippetComponent"
 
 type SectionProp = {
-  type: "intro" | "feature" | "install" | "quote"
-  data?: FeatureProp
-}
-
-type FeatureProp = {
-  featureTitle?: string
-  featureSubtitle: string
-  featureDesc: string
-  correspondingComponent: string
-  id?: string
+  type: "intro" | "feature" | "install" | "integration"
 }
 
 const Intro: React.FC = () => {
   return (
     <section className={style.introContainer}>
       <div className={style.introTexts}>
-        <h1>
-          <span>DataPrep.</span>
-          <br />
-          <span style={{ color: "#e30613" }}>
-            The fastest way to do data preparation in Python
-          </span>
-        </h1>
-        <p>
-          DataPrep aims to provide the fastest and the easiest way for data
-          scientists to prepare data in a few lines of code.
-        </p>
+        <h1>The easiest way to prepare data in Python</h1>
+      </div>
+      <div className={style.introSnippets}>
+        <div>WIP</div>
       </div>
     </section>
   )
 }
 
-const Feature: React.FC<FeatureProp> = ({
-  correspondingComponent,
-  featureTitle,
-  featureSubtitle,
-  featureDesc,
-}) => {
-  let snippet: React.ReactNode
-  if (correspondingComponent === "logoSnippetComponent") {
-    snippet = <LogoSnippet />
-  } else if (correspondingComponent === "opensourceSnippetComponent") {
-    snippet = <OpensourceSnippet />
-  } else if (correspondingComponent === "integrationSnippetComponent") {
-    snippet = <IntegrationSnippet />
-  } else if (correspondingComponent === "codeSnippetComponent") {
-    snippet = <CodeSnippet />
-  }
+const Integration: React.FC = () => {
+  return (
+    <section className={style.integrationContainer}>
+      <div className={style.integrationPart}>
+        <div className={style.integrationSnippets}>
+          <LogoSnippet />
+        </div>
+        <div className={style.integrationTexts}>
+          <h3>Design for Notebook Users</h3>
+          <p>
+            DataPrep is designed and optimized for computational notebooks, the
+            most popular environment among data scientists.
+          </p>
+        </div>
+      </div>
+      <div className={style.integrationPart}>
+        <div className={style.integrationSnippets}>
+          <IntegrationSnippet />
+        </div>
+        <div className={style.integrationTexts}>
+          <h3>Integrate with PyData</h3>
+          <p>
+            DataPrep is built in Python. It can be seamlessly integrated with
+            other Python libraries.
+          </p>
+        </div>
+      </div>
+      <div className={style.integrationPart}>
+        <div className={style.integrationSnippets}>
+          <OpensourceSnippet />
+        </div>
+        <div className={style.integrationTexts}>
+          <h3>Embrace Open Source</h3>
+          <p>
+            DataPrep is free, open-source software released under the MIT
+            license. Anyone can reuse DataPrep code for any purpose.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+const Feature: React.FC = () => {
   return (
     <section className={style.featureContainer}>
-      <div className={style.featureTexts}>
-        {featureTitle && <h1>{featureTitle}</h1>}
-        <h2>{featureSubtitle}</h2>
-        <p>{featureDesc}</p>
+      <div className={style.featurePart}>
+        <div className={style.featureTexts}>
+          <h2>Why?</h2>
+          <p>
+            According to the 2020 State of Data Science survey conducted by
+            Annocada, data preparation still takes the majority of time in a
+            typical data professional’s day. To solve this issue in the next
+            decade, we have to THINK DIFFERENT.
+          </p>
+        </div>
+        <div className={style.featureSnippets}>
+          <LogoSnippet />
+        </div>
       </div>
-      <div className={style.featureSnippets}>{snippet}</div>
+      <div className={style.featurePart}>
+        <div className={style.featureSnippets}>
+          <div>WIP</div>
+        </div>
+        <div className={style.featureTexts}>
+          <h2>DataPrep.Connector</h2>
+          <p>
+            DataPrep.Connector is an intuitive, open-source API wrapper that
+            speeds up development by standardizing calls to multiple APIs as a
+            simple workflow. Streamline calls to multiple APIs through one
+            intuitive library.
+          </p>
+        </div>
+      </div>
+      <div className={style.featurePart}>
+        <div className={style.featureTexts}>
+          <h2>DataPrep.EDA</h2>
+          <p>Data understanding.</p>
+        </div>
+        <div className={style.featureSnippets}>
+          <div>WIP</div>
+        </div>
+      </div>
     </section>
   )
 }
@@ -82,44 +124,17 @@ const Installation: React.FC = () => {
   )
 }
 
-const Quote: React.FC = () => {
-  return (
-    <section className={style.quoteContainer}>
-      <div className={style.quoteTexts}>
-        <h3>
-          “We were disappointed, if not surprised, to see that data wrangling
-          still takes the <strong>lion’s share of time</strong> in a typical
-          data professional’s day. Data preparation and cleansing takes
-          <strong> real data science</strong> work and has a negative impact on
-          overall job satisfaction.”{" "}
-        </h3>
-        <h4>
-          {" "}
-          2020 State of Data Science: Moving From Hype Toward Maturity, Anaconda{" "}
-        </h4>
-      </div>
-    </section>
-  )
-}
-
-const SectionComponent: React.FC<SectionProp> = ({ type, data }) => {
+const SectionComponent: React.FC<SectionProp> = ({ type }) => {
   let toRender
 
   if (type === "intro") {
     toRender = <Intro />
-  } else if (type === "feature" && data) {
-    toRender = (
-      <Feature
-        correspondingComponent={data.correspondingComponent}
-        featureTitle={data.featureTitle}
-        featureSubtitle={data.featureSubtitle}
-        featureDesc={data.featureDesc}
-      />
-    )
+  } else if (type === "feature") {
+    toRender = <Feature />
   } else if (type === "install") {
     toRender = <Installation />
-  } else if (type === "quote") {
-    toRender = <Quote />
+  } else if (type === "integration") {
+    toRender = <Integration />
   }
 
   return toRender as React.ReactElement

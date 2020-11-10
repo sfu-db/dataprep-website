@@ -1,7 +1,6 @@
 import React from "react"
 import Header from "../components/header"
 import WaveLayoutBottom from "../components/waveLayoutBottom"
-import { useStaticQuery, graphql } from "gatsby"
 import FooterComponent from "../components/footerComponent"
 import FadeSection from "../components/fadeSection"
 import CopyrightCcomponent from "../components/copyrightComponent"
@@ -10,29 +9,7 @@ import CompComponent from "../components/compComponent"
 import SectionLayout from "../components/sectionLayout"
 import { Helmet } from "react-helmet"
 
-interface IFeatureDataItem {
-  featureTitle?: string
-  featureSubtitle: string
-  featureDesc: string
-  correspondingComponent: string
-  id?: string
-}
-
 const Index: React.FC = () => {
-  const data = useStaticQuery(graphql`
-    query DataItemsQuery {
-      allFeatureItemsJson {
-        nodes {
-          featureTitle
-          featureSubtitle
-          featureDesc
-          correspondingComponent
-          id
-        }
-      }
-    }
-  `)
-
   return (
     <>
       <Helmet>
@@ -46,13 +23,11 @@ const Index: React.FC = () => {
         <Header />
         <SectionComponent type="intro" />
       </WaveLayoutBottom>
-      <SectionComponent type="quote" />
+      <SectionComponent type="integration" />
       <SectionLayout>
-        {data.allFeatureItemsJson.nodes.map((item: IFeatureDataItem) => (
-          <FadeSection key={item.id}>
-            <SectionComponent type="feature" data={item} />
-          </FadeSection>
-        ))}
+        <FadeSection>
+          <SectionComponent type="feature" />
+        </FadeSection>
       </SectionLayout>
       <CompComponent />
       <SectionComponent type="install" />
