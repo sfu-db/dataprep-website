@@ -8,6 +8,7 @@ import {
   TerminalSnippetPrimary,
   TerminalSnippetSecondary,
 } from "../components/snippetComponent"
+import FadeSection from "../components/fadeSection"
 
 type SectionProp = {
   type: "intro" | "feature" | "install" | "integration"
@@ -23,13 +24,7 @@ const Intro: React.FC = () => {
         <div>
           <TerminalSnippetPrimary />
         </div>
-        <div
-          style={{
-            position: "relative",
-            left: "120px",
-            bottom: "40px",
-          }}
-        >
+        <div className={style.introSnippetDeviation}>
           <TerminalSnippetSecondary />
         </div>
       </div>
@@ -84,42 +79,48 @@ const Feature: React.FC = () => {
   return (
     <section className={style.featureContainer}>
       <h2>Why?</h2>
-      <div className={style.featurePart}>
-        <div className={style.featureTexts}>
-          <p>
-            According to the 2020 State of Data Science survey conducted by
-            Annocada, data preparation still takes the majority of time in a
-            typical data professional’s day. To solve this issue in the next
-            decade, we have to THINK DIFFERENT.
-          </p>
+      <FadeSection>
+        <div className={style.featurePart}>
+          <div className={style.featureTexts}>
+            <p>
+              According to the 2020 State of Data Science survey conducted by
+              Annocada, data preparation still takes the majority of time in a
+              typical data professional’s day. To solve this issue in the next
+              decade, we have to THINK DIFFERENT.
+            </p>
+          </div>
+          <div className={style.featureSnippets}>
+            <ChartSnippet />
+          </div>
         </div>
-        <div className={style.featureSnippets}>
-          <ChartSnippet />
+      </FadeSection>
+      <FadeSection>
+        <div className={style.featurePart}>
+          <div className={style.featureSnippets}>
+            <ChartSnippet />
+          </div>
+          <div className={style.featureTexts}>
+            <h2>DataPrep.Connector</h2>
+            <p>
+              DataPrep.Connector is an intuitive, open-source API wrapper that
+              speeds up development by standardizing calls to multiple APIs as a
+              simple workflow. Streamline calls to multiple APIs through one
+              intuitive library.
+            </p>
+          </div>
         </div>
-      </div>
-      <div className={style.featurePart}>
-        <div className={style.featureSnippets}>
-          <ChartSnippet />
+      </FadeSection>
+      <FadeSection>
+        <div className={style.featurePart}>
+          <div className={style.featureTexts}>
+            <h2>DataPrep.EDA</h2>
+            <p>Data understanding.</p>
+          </div>
+          <div className={style.featureSnippets}>
+            <ChartSnippet />
+          </div>
         </div>
-        <div className={style.featureTexts}>
-          <h2>DataPrep.Connector</h2>
-          <p>
-            DataPrep.Connector is an intuitive, open-source API wrapper that
-            speeds up development by standardizing calls to multiple APIs as a
-            simple workflow. Streamline calls to multiple APIs through one
-            intuitive library.
-          </p>
-        </div>
-      </div>
-      <div className={style.featurePart}>
-        <div className={style.featureTexts}>
-          <h2>DataPrep.EDA</h2>
-          <p>Data understanding.</p>
-        </div>
-        <div className={style.featureSnippets}>
-          <ChartSnippet />
-        </div>
-      </div>
+      </FadeSection>
     </section>
   )
 }

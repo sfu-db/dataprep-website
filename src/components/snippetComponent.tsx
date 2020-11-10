@@ -150,9 +150,6 @@ export const TerminalSnippetSecondary: React.FC = () => {
           <span className={style.paramSyntax}>"videos"</span>, _count=
           <span className={style.declareSyntax}>40</span>)
         </p>
-        <p>
-          plot(df, <span className={style.paramSyntax}>"title"</span>)
-        </p>
       </div>
     </div>
   )

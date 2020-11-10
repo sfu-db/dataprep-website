@@ -2,7 +2,6 @@ import React from "react"
 import Header from "../components/header"
 import WaveLayoutBottom from "../components/waveLayoutBottom"
 import FooterComponent from "../components/footerComponent"
-import FadeSection from "../components/fadeSection"
 import CopyrightCcomponent from "../components/copyrightComponent"
 import SectionComponent from "../components/sectionComponent"
 import CompComponent from "../components/compComponent"
@@ -25,9 +24,7 @@ const Index: React.FC = () => {
       </WaveLayoutBottom>
       <SectionComponent type="integration" />
       <SectionLayout>
-        <FadeSection>
-          <SectionComponent type="feature" />
-        </FadeSection>
+        <SectionComponent type="feature" />
       </SectionLayout>
       <CompComponent />
       <SectionComponent type="install" />

@@ -3,13 +3,10 @@
 
 .compContainer
   @include breakpoint(desktop)
-    max-width: 1300px
     margin: 100px auto
   @include breakpoint(tablet)
-    max-width: 90%
     margin: 100px auto
   @include breakpoint(mobile)
-    max-width: 95%
     margin: 50px auto
   h1
     color: $primary-color-800
@@ -21,24 +18,28 @@
   h3
     color: $primary-color-400
     font-size: 36px
-    @include breakpoint(mobile)
+    @include view(mobile)
       font-size: 18px
 
   .blocks
     h3
       font-size: 36px
       margin: 0
+      @include view(mobile)
+        font-size: 14px
     
     p
       margin: 0
+      @include view(mobile)
+        font-size: 10px
 
     text-align: center
     display: flex
     flex-flow: row wrap
     justify-content: space-between
     align-items: baseline
-    height: 773px
-    @include breakpoint(mobile)
+    height: 640px
+    @include view(mobile)
       height: 300px
 
     div
@@ -48,9 +49,9 @@
       align-items: center
       height: 167px
       flex: 0 1 49%
-      @include breakpoint(mobile)
+      @include view(mobile)
         flex: 0 1 45%
-        height: calc( 167 * 0.8 )px
+        height: 80px
 
 
 .solidBlock
@@ -58,7 +59,7 @@
 
 .dashedBlock
   box-sizing: border-box
-  border: 5px $primary-color-400 dashed
+  border: 8px $primary-color-400 dashed
   background-color: $secondary-color-100
 
   p

@@ -1,8 +1,12 @@
+@import 'metric'
+
 .terminalContainer
   border-radius: 5px
   box-shadow: 0 5px 25px rgba(0, 0, 0, .4)
   width: 423px
   height: 206px
+  @include view(mobile)
+    width: 330px
 
   .terminalCommand
     display: inline-block
@@ -14,6 +18,8 @@
     margin: 0
     height: 162px
     width: 390px
+    @include view(mobile)
+      width: 297px
     border-radius: 0 0 5px 0
     line-height: 18px
     p
@@ -34,6 +40,8 @@
 
   .terminalBtns
     flex: 0 1 200px
+    @include view(mobile)
+      flex: 0 1 80px
 
     .terminalBtn
       width: 12px
@@ -76,6 +84,8 @@
 
   .terminalTitlePlacehodler
     flex: 0 0 160px
+    @include view(mobile)
+      flex: 0 1 80px
 
 .declareSyntax
   font-family: monospace

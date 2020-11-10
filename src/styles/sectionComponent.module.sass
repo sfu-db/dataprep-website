@@ -2,48 +2,50 @@
 @import 'metric'
 
 .introContainer
-  height: 1000px
+  
   display: flex
   justify-content: space-between
   align-items: center
   @include breakpoint(desktop)
-    max-width: 1300px
-    margin: auto
   @include breakpoint(tablet)
-    max-width: 90%
-    margin: 100px auto
+      height: 800px
   @include breakpoint(mobile)
-    max-width: 95%
     margin: 0 auto
-
+    flex-flow: column nowrap
+    height: 400px
+  
   .introTexts
     flex: 0 1 758px
+    @include view(mobile)
+      flex: 0 1 auto
     h1
       color: $primary-color-500
   
   .introSnippets
     flex: 1 1 auto
 
+    .introSnippetDeviation
+      position: relative
+      left: 120px
+      bottom: 40px
+      @include view(tablet)
+        left: 50px
+        bottom: 40px
+      @include view(tablet)
+        display: none
+
 
 .integrationContainer
   display: flex
   flex-flow: row nowrap
   justify-content: space-between
-  align-items: center
+  align-items: flex-start
   height: 550px
   @include breakpoint(desktop)
-    max-width: 1300px
-    margin: auto
   @include breakpoint(tablet)
-    max-width: 90%
-    margin: auto
   @include breakpoint(mobile)
-    max-width: 95%
-    margin: auto
     flex-flow: column nowrap
-  display: flex
-  justify-content: space-between
-  align-items: center
+    height: 1350px
 
   .integrationPart
     flex: 0 1 30%
@@ -54,6 +56,8 @@
 
     .integrationTexts
       text-align: center
+      @include view(mobile)
+        max-width: 500px
       h3
         color: $primary-color-500
       
@@ -65,10 +69,6 @@
       width: 245px
       height: 245px
       border-radius: 245px
-      @include breakpoint(tablet)
-        width: 205px
-        height: 205px
-        border-radius: 205px
       background-color: $primary-color-50
 
 
@@ -77,14 +77,8 @@
     color: $primary-color-500
     font-size: 36px
   @include breakpoint(desktop)
-    max-width: 1300px
-    margin: auto
   @include breakpoint(tablet)
-    max-width: 90%
-    margin: auto
   @include breakpoint(mobile)
-    max-width: 95%
-    margin: auto
     flex-flow: column nowrap
   display: flex
   flex-flow: column nowrap
@@ -92,26 +86,38 @@
   align-items: flex-start
 
   .featurePart
+    margin: 0 0 200px 0
     display: flex
     justify-content: space-between
     align-items: center
+    @include view(mobile)
+      margin: 0
 
     .featureTexts
       flex: 0 0 581px
+      @include view(tablet)
+        flex: 0 1 581px
+      @include view(mobile)
+        flex: 0 1 auto
+
       h2
         color: $primary-color-500
         font-size: 36px
+        @include view(mobile)
+          font-size: 25px
 
     .featureSnippets
       flex: 0 1 600px
+      @include view(mobile)
+        display: none
 
 
 .installContainer
   background-color: $primary-color-50
   padding: 150px 590px
-  @include breakpoint(tablet)
+  @include view(tablet)
     padding: 150px 200px
-  @include breakpoint(mobile)
+  @include view(mobile)
     padding: 40px
   text-align: center
 
@@ -127,11 +133,19 @@
       span
         font-family: Courier New, Courier, monospace
         font-size: 22px
+        font-weight: 600
         background-color: #e5e5e5
         padding: 20px 10px
         user-select: all
         &::selection
-          color: $secondary-color-700
+          color: $primary-color-500
+        &:hover
+          background: rgba(0, 0, 0, .2)
+
+        &::before
+          content: "\00a0";
+          padding: 5px 0;
+          display: inline-block;
 
     p
       font-size: 24px

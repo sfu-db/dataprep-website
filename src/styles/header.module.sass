@@ -4,14 +4,8 @@
 .navbar
   padding-top: 20px
   @include breakpoint(desktop)
-    max-width: 1000px
-    margin: auto
   @include breakpoint(tablet)
-    max-width: 90%
-    margin: auto
   @include breakpoint(mobile)
-    max-width: 95%
-    margin: auto
     flex-flow: column nowrap
     justify-content: center
   display: flex
@@ -20,13 +14,13 @@
 
   .logo
     flex: 0 1 270px
-    @include breakpoint(mobile)
+    @include view(mobile)
       flex: 0 1 auto
 
   ul
     padding: 0
     flex: 0 1 400px
-    @include breakpoint(mobile)
+    @include view(mobile)
       flex: 0 1 auto
     display: flex
     justify-content: space-between
@@ -34,7 +28,7 @@
 
     li
       font-size: large
-      @include breakpoint(mobile)
+      @include view(mobile)
         font-size: unset
       text-align: center
       flex: 1 1 auto
@@ -44,7 +38,7 @@
       transition: border 0.3s ease;
       border-bottom: 3px solid transparent
       &:hover
-        border-bottom: 3px solid $logo-color-1
+        border-bottom: 3px solid $primary-color-500
       
       a
         text-decoration: none
