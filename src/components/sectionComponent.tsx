@@ -114,7 +114,11 @@ const Feature: React.FC = () => {
         <div className={style.featurePart}>
           <div className={style.featureTexts}>
             <h2>DataPrep.EDA</h2>
-            <p>Data understanding.</p>
+            <p>
+              DataPrep.EDA is the fastest and the easiest EDA tool in Python. It
+              allows data scientists to understand a Pandas/Dask DataFrame with
+              a few lines of code in seconds.
+            </p>
           </div>
           <div className={style.featureSnippets}>
             <ChartSnippet />
@@ -130,10 +134,10 @@ const Installation: React.FC = () => {
     <section className={style.installContainer}>
       <div className={style.installTexts}>
         <h1>Get started instantly</h1>
-        <h2>
+        <p>
           <span>pip install -U dataprep</span>
-        </h2>
-        <p>And then check out documentation and examples!</p>
+        </p>
+        <h3>And then check out documentation and examples!</h3>
       </div>
     </section>
   )

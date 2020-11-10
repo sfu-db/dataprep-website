@@ -2,27 +2,24 @@
 @import 'metric'
 
 .introContainer
-  
   display: flex
   justify-content: space-between
   align-items: center
   @include breakpoint(desktop)
   @include breakpoint(tablet)
-      height: 800px
+    height: 800px
   @include breakpoint(mobile)
     margin: 0 auto
     flex-flow: column nowrap
     height: 400px
   
   .introTexts
-    flex: 0 1 758px
-    @include view(mobile)
-      flex: 0 1 auto
+    flex: 0 1 auto
     h1
       color: $primary-color-500
   
   .introSnippets
-    flex: 1 1 auto
+    flex: 0 1 auto
 
     .introSnippetDeviation
       position: relative
@@ -31,7 +28,7 @@
       @include view(tablet)
         left: 50px
         bottom: 40px
-      @include view(tablet)
+      @include view(mobile)
         display: none
 
 
@@ -44,6 +41,7 @@
   @include breakpoint(desktop)
   @include breakpoint(tablet)
   @include breakpoint(mobile)
+    align-items: center
     flex-flow: column nowrap
     height: 1350px
 
@@ -62,7 +60,6 @@
         color: $primary-color-500
       
       p
-        font-size: 18px
         font-weight: 300
         
     .integrationSnippets
@@ -75,7 +72,6 @@
 .featureContainer
   h2
     color: $primary-color-500
-    font-size: 36px
   @include breakpoint(desktop)
   @include breakpoint(tablet)
   @include breakpoint(mobile)
@@ -102,9 +98,6 @@
 
       h2
         color: $primary-color-500
-        font-size: 36px
-        @include view(mobile)
-          font-size: 25px
 
     .featureSnippets
       flex: 0 1 600px
@@ -114,7 +107,7 @@
 
 .installContainer
   background-color: $primary-color-50
-  padding: 150px 590px
+  padding: 150px 20%
   @include view(tablet)
     padding: 150px 200px
   @include view(mobile)
@@ -127,12 +120,10 @@
 
     h1
       font-weight: bold
-      font-size: 36px
 
-    h2
+    p
       span
         font-family: Courier New, Courier, monospace
-        font-size: 22px
         font-weight: 600
         background-color: #e5e5e5
         padding: 20px 10px
@@ -142,10 +133,6 @@
         &:hover
           background: rgba(0, 0, 0, .2)
 
-        &::before
-          content: "\00a0";
-          padding: 5px 0;
-          display: inline-block;
-
-    p
-      font-size: 24px
+    h3
+      margin: 20px 0
+      font-weight: 300
