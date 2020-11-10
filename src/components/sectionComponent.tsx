@@ -4,6 +4,7 @@ import {
   LogoSnippet,
   OpensourceSnippet,
   IntegrationSnippet,
+  ChartSnippet,
 } from "../components/snippetComponent"
 
 type SectionProp = {
@@ -69,9 +70,9 @@ const Integration: React.FC = () => {
 const Feature: React.FC = () => {
   return (
     <section className={style.featureContainer}>
+      <h2>Why?</h2>
       <div className={style.featurePart}>
         <div className={style.featureTexts}>
-          <h2>Why?</h2>
           <p>
             According to the 2020 State of Data Science survey conducted by
             Annocada, data preparation still takes the majority of time in a
@@ -80,12 +81,12 @@ const Feature: React.FC = () => {
           </p>
         </div>
         <div className={style.featureSnippets}>
-          <LogoSnippet />
+          <ChartSnippet />
         </div>
       </div>
       <div className={style.featurePart}>
         <div className={style.featureSnippets}>
-          <div>WIP</div>
+          <ChartSnippet />
         </div>
         <div className={style.featureTexts}>
           <h2>DataPrep.Connector</h2>
@@ -103,7 +104,7 @@ const Feature: React.FC = () => {
           <p>Data understanding.</p>
         </div>
         <div className={style.featureSnippets}>
-          <div>WIP</div>
+          <ChartSnippet />
         </div>
       </div>
     </section>

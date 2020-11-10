@@ -7,7 +7,7 @@ import github from "../images/github.svg"
 export const ChartSnippet: React.FC = () => {
   return (
     <div>
-      <img src={chart} alt="Why DataPrep Chart" />
+      <img src={chart} alt="Why DataPrep Chart" id="chart-snippet" />
     </div>
   )
 }

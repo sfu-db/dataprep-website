@@ -72,6 +72,9 @@
 
 
 .featureContainer
+  h2
+    color: $primary-color-500
+    font-size: 36px
   @include breakpoint(desktop)
     max-width: 1300px
     margin: auto
@@ -85,7 +88,7 @@
   display: flex
   flex-flow: column nowrap
   justify-content: space-between
-  align-items: center
+  align-items: flex-start
 
   .featurePart
     display: flex
@@ -93,23 +96,13 @@
     align-items: center
 
     .featureTexts
-      flex: 0 1 581px
+      flex: 0 0 581px
       h2
-        color: $logo-color-1
+        color: $primary-color-500
         font-size: 36px
 
     .featureSnippets
-      position: relative
-      top: 45px
-      flex: 0 1 350px
-      width: 350px
-      height: 350px
-      border-radius: 350px
-      @include breakpoint(tablet)
-        flex: 0 1 250px
-        width: 250px
-        height: 250px
-        border-radius: 250px
+      flex: 0 1 600px
 
 
 .installContainer
