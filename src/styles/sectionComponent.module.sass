@@ -5,31 +5,25 @@
   display: flex
   justify-content: space-between
   align-items: center
-  @include breakpoint(desktop)
-  @include breakpoint(tablet)
-    height: 800px
-  @include breakpoint(mobile)
-    margin: 0 auto
+  height: 60em
+  @include responsive-layout(desktop)
+  @include responsive-layout(tablet)
+  @include responsive-layout(mobile)
+    height: auto
     flex-flow: column nowrap
-    height: 400px
   
   .introTexts
-    flex: 0 1 auto
+    flex: 0 1 60%
     h1
       color: $primary-color-500
   
   .introSnippets
-    flex: 0 1 auto
+    flex: 0 1 40%
 
     .introSnippetDeviation
       position: relative
-      left: 120px
+      left: 3em
       bottom: 40px
-      @include view(tablet)
-        left: 50px
-        bottom: 40px
-      @include view(mobile)
-        display: none
 
 
 .integrationContainer
@@ -37,13 +31,13 @@
   flex-flow: row nowrap
   justify-content: space-between
   align-items: flex-start
-  height: 550px
-  @include breakpoint(desktop)
-  @include breakpoint(tablet)
-  @include breakpoint(mobile)
+  height: 40em
+  @include responsive-layout(desktop)
+  @include responsive-layout(tablet)
+  @include responsive-layout(mobile)
     align-items: center
     flex-flow: column nowrap
-    height: 1350px
+    height: 90em
 
   .integrationPart
     flex: 0 1 30%
@@ -54,8 +48,8 @@
 
     .integrationTexts
       text-align: center
-      @include view(mobile)
-        max-width: 500px
+      @include responsive-size(mobile)
+        max-width: 35em
       h3
         color: $primary-color-500
       
@@ -63,18 +57,18 @@
         font-weight: 300
         
     .integrationSnippets
-      width: 245px
-      height: 245px
-      border-radius: 245px
+      width: 15em
+      height: 15em
+      border-radius: 15em
       background-color: $primary-color-50
 
 
 .featureContainer
   h2
     color: $primary-color-500
-  @include breakpoint(desktop)
-  @include breakpoint(tablet)
-  @include breakpoint(mobile)
+  @include responsive-layout(desktop)
+  @include responsive-layout(tablet)
+  @include responsive-layout(mobile)
     flex-flow: column nowrap
   display: flex
   flex-flow: column nowrap
@@ -86,14 +80,14 @@
     display: flex
     justify-content: space-between
     align-items: center
-    @include view(mobile)
+    @include responsive-size(mobile)
       margin: 0
 
     .featureTexts
       flex: 0 0 581px
-      @include view(tablet)
+      @include responsive-size(tablet)
         flex: 0 1 581px
-      @include view(mobile)
+      @include responsive-size(mobile)
         flex: 0 1 auto
 
       h2
@@ -101,16 +95,16 @@
 
     .featureSnippets
       flex: 0 1 600px
-      @include view(mobile)
+      @include responsive-size(mobile)
         display: none
 
 
 .installContainer
   background-color: $primary-color-50
   padding: 150px 20%
-  @include view(tablet)
+  @include responsive-size(tablet)
     padding: 150px 200px
-  @include view(mobile)
+  @include responsive-size(mobile)
     padding: 40px
   text-align: center
 

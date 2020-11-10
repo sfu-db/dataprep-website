@@ -17,15 +17,9 @@
 .brandContainer
   h1
     color: $primary-color-800
-  @include breakpoint(desktop)
-    max-width: 1000px
-    margin: auto
-  @include breakpoint(tablet)
-    max-width: 90%
-    margin: 100px auto
-  @include breakpoint(mobile)
-    max-width: 95%
-    margin: 0 auto
+  @include responsive-layout(desktop)
+  @include responsive-layout(tablet)
+  @include responsive-layout(mobile)
   .brandContent
     padding: 50px 10%
     background-color: $primary-color-50

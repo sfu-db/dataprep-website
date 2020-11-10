@@ -38,7 +38,7 @@ export const OpensourceSnippet: React.FC = () => {
         justifyContent: "center",
         alignItems: "center",
         flexFlow: "column nowrap",
-        height: "245px",
+        height: "15em",
       }}
     >
       <div className="snippet-img">

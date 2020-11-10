@@ -2,10 +2,10 @@
 @import 'metric'
   
 .navbar
-  padding-top: 20px
-  @include breakpoint(desktop)
-  @include breakpoint(tablet)
-  @include breakpoint(mobile)
+  padding-top: 1.25em
+  @include responsive-layout(desktop)
+  @include responsive-layout(tablet)
+  @include responsive-layout(mobile)
     flex-flow: column nowrap
     justify-content: center
   display: flex
@@ -14,13 +14,13 @@
 
   .logo
     flex: 0 1 270px
-    @include view(mobile)
+    @include responsive-size(mobile)
       flex: 0 1 auto
 
   ul
     padding: 0
-    flex: 0 1 400px
-    @include view(mobile)
+    flex: 0 1 25em
+    @include responsive-size(mobile)
       flex: 0 1 auto
     display: flex
     justify-content: space-between
@@ -28,7 +28,7 @@
 
     li
       font-size: large
-      @include view(mobile)
+      @include responsive-size(mobile)
         font-size: unset
       text-align: center
       flex: 1 1 auto

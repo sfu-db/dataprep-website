@@ -28,7 +28,7 @@ const Index: React.FC = () => {
       </SectionLayout>
       <CompComponent />
       <SectionComponent type="install" />
-      <FooterComponent />
+      {/* <FooterComponent /> */}
       <CopyrightCcomponent />
     </>
   )

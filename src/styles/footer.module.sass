@@ -5,9 +5,9 @@
   display: flex
   justify-content: space-between
   align-items: baseline
-  @include breakpoint(desktop)
-  @include breakpoint(tablet)
-  @include breakpoint(mobile)
+  @include responsive-layout(desktop)
+  @include responsive-layout(tablet)
+  @include responsive-layout(mobile)
     flex-flow: column nowrap
   div
     flex: 0 1 30%
