@@ -14,7 +14,7 @@ const CopyrightCcomponent: React.FC = () => (
       style={{
         textAlign: "center",
         color: "#e6e9f2",
-        fontSize: "small",
+        fontSize: "1em",
       }}
     >
       © 2020 SFU Database System Lab. All rights reserved.

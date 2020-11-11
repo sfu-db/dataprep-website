@@ -10,7 +10,7 @@ const Brand: React.FC = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Brand | DataPrep -- The fastest way to do data preparation in Python
+          Brand | DataPrep - The fastest way to do data preparation in Python
         </title>
         <link rel="canonical" href="http://dataprep.ai" />
       </Helmet>

@@ -28,6 +28,9 @@ const CompComponent: React.FC = () => (
         <Block name={"DataPrep.Clean"} status={"Under development"} />
         <Block name={"DataPrep.Feature"} status={"Planning"} />
         <Block name={"DataPrep.Integrate"} status={"Planning"} />
+        <div>
+          <h3>... and more</h3>
+        </div>
       </div>
     </div>
   </section>

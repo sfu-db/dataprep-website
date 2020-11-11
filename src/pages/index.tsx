@@ -14,7 +14,7 @@ const Index: React.FC = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          DataPrep -- The fastest way to do data preparation in Python
+          DataPrep - The fastest way to do data preparation in Python
         </title>
         <link rel="canonical" href="http://dataprep.ai" />
       </Helmet>
@@ -28,7 +28,7 @@ const Index: React.FC = () => {
       </SectionLayout>
       <CompComponent />
       <SectionComponent type="install" />
-      <FooterComponent />
+      {/* <FooterComponent /> */}
       <CopyrightCcomponent />
     </>
   )

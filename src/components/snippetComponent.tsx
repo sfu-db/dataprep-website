@@ -45,11 +45,11 @@ export const OpensourceSnippet: React.FC = () => {
         <img src={github} alt="GitHub Icon" id="opensource-snippet" />
       </div>
       <iframe
-        src="https://ghbtns.com/github-btn.html?user=sfu-db&repo=dataprep&type=star&count=true&size=large"
+        src="https://ghbtns.com/github-btn.html?user=sfu-db&repo=dataprep&type=star&count=true&size=small"
         frameBorder="0"
         scrolling="0"
-        width="135"
-        height="50"
+        width="89"
+        height="20"
         title="GitHub"
       ></iframe>
     </div>
@@ -162,6 +162,26 @@ export const TerminalSnippetSecondary: React.FC = () => {
           <li></li>
         </ol>
       </div>
+    </div>
+  )
+}
+
+export const NotebookFrame: React.FC<{ element: string }> = ({ element }) => {
+  return (
+    <div className={style.notebookIframeContainer}>
+      <iframe
+        style={{
+          background: "#ffffff",
+          borderRadius: "5px",
+          boxShadow: "0 5px 25px rgba(0, 0, 0, .4)",
+        }}
+        srcDoc={element}
+        frameBorder="0"
+        loading="lazy"
+        scrolling="0"
+        width="490"
+        height="443"
+      ></iframe>
     </div>
   )
 }

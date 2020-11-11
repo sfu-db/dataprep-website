@@ -7,8 +7,10 @@ import {
   ChartSnippet,
   TerminalSnippetPrimary,
   TerminalSnippetSecondary,
+  NotebookFrame,
 } from "../components/snippetComponent"
 import FadeSection from "../components/fadeSection"
+import plot from "../statics/plot.html"
 
 type SectionProp = {
   type: "intro" | "feature" | "install" | "integration"
@@ -97,7 +99,7 @@ const Feature: React.FC = () => {
       <FadeSection>
         <div className={style.featurePart}>
           <div className={style.featureSnippets}>
-            <ChartSnippet />
+            <TerminalSnippetSecondary />
           </div>
           <div className={style.featureTexts}>
             <h2>DataPrep.Connector</h2>
@@ -121,7 +123,7 @@ const Feature: React.FC = () => {
             </p>
           </div>
           <div className={style.featureSnippets}>
-            <ChartSnippet />
+            <NotebookFrame element={plot} />
           </div>
         </div>
       </FadeSection>

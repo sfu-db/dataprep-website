@@ -16,20 +16,23 @@ interface IResponse {
 
 const News: React.FC<NewsProp> | React.ReactNode = ({ isLoading, data }) => {
   if (!isLoading) {
-    if (!data || data.length === 0) return <p>No data found</p>
-    return (
-      <ul>
-        {data.slice(0, 10).map(item => (
-          <li key={item.id}>
-            {item.published_at.split("T")[0]}: DataPrep{" "}
-            <a href={item.html_url} target="_blank" rel="noreferrer">
-              {item.tag_name}
-            </a>{" "}
-            is released.
-          </li>
-        ))}
-      </ul>
-    )
+    if (!data || data.length === 0) {
+      return <p>No data found</p>
+    } else {
+      return (
+        <ul>
+          {data.slice(0, 10).map(item => (
+            <li key={item.id}>
+              {item.published_at.split("T")[0]}: DataPrep{" "}
+              <a href={item.html_url} target="_blank" rel="noreferrer">
+                {item.tag_name}
+              </a>{" "}
+              is released.
+            </li>
+          ))}
+        </ul>
+      )
+    }
   }
   return <p>Fetching data...</p>
 }
