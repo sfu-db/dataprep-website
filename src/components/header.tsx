@@ -13,6 +13,7 @@ const linkArray: Array<LinkItem> = [
     text: "Documentation",
     link: "https://sfu-db.github.io/dataprep/index.html",
   },
+  { text: "Install", link: "#install" },
   // { text: "Commnutiy" },
   { text: "GitHub", link: "https://github.com/sfu-db/dataprep" },
   { text: "Brand" },
@@ -22,9 +23,7 @@ const Header: React.FC = () => {
   const listItem = linkArray.map((item: LinkItem, key: number) =>
     item.link ? (
       <li key={key}>
-        <a href={item.link} target="_blank" rel="noreferrer">
-          {item.text}
-        </a>
+        <a href={item.link}>{item.text}</a>
       </li>
     ) : (
       <li key={key}>

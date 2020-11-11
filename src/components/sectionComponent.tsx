@@ -131,7 +131,7 @@ const Feature: React.FC = () => {
 
 const Installation: React.FC = () => {
   return (
-    <section className={style.installContainer}>
+    <section className={style.installContainer} id="install">
       <div className={style.installTexts}>
         <h1>Get started instantly</h1>
         <p>
