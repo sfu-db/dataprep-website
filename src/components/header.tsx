@@ -36,7 +36,7 @@ const Header: React.FC = () => {
     <div className={style.navbar}>
       <div className={style.logo}>
         <Link to="/">
-          <img src={logo} alt="Data Prep Logo" width="270" />
+          <img src={logo} alt="Data Prep Logo" width="300" />
         </Link>
       </div>
       <ul>{listItem}</ul>

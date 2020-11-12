@@ -9,7 +9,6 @@ import {
   TerminalSnippetSecondary,
   NotebookFrame,
 } from "../components/snippetComponent"
-import FadeSection from "../components/fadeSection"
 import plot from "../statics/plot.html"
 
 type SectionProp = {
@@ -80,53 +79,47 @@ const Integration: React.FC = () => {
 const Feature: React.FC = () => {
   return (
     <section className={style.featureContainer}>
-      <FadeSection>
-        <div className={style.featurePart}>
-          <div className={style.featureTexts}>
-            <h2>Why?</h2>
-            <p>
-              According to the 2020 State of Data Science survey conducted by
-              Annocada, data preparation still takes the majority of time in a
-              typical data professional’s day. To solve this issue in the next
-              decade, we have to THINK DIFFERENT.
-            </p>
-          </div>
-          <div className={style.featureSnippets}>
-            <ChartSnippet />
-          </div>
+      <div className={style.featurePart}>
+        <div className={style.featureTexts}>
+          <h2>Why?</h2>
+          <p>
+            According to the 2020 State of Data Science survey conducted by
+            Annocada, data preparation still takes the majority of time in a
+            typical data professional’s day. To solve this issue in the next
+            decade, we have to THINK DIFFERENT.
+          </p>
         </div>
-      </FadeSection>
-      <FadeSection>
-        <div className={style.featurePart}>
-          <div className={style.featureSnippets}>
-            <TerminalSnippetSecondary />
-          </div>
-          <div className={style.featureTexts}>
-            <h2>DataPrep.Connector</h2>
-            <p>
-              DataPrep.Connector is an intuitive, open-source API wrapper that
-              speeds up development by standardizing calls to multiple APIs as a
-              simple workflow. Streamline calls to multiple APIs through one
-              intuitive library.
-            </p>
-          </div>
+        <div className={style.featureSnippets}>
+          <ChartSnippet />
         </div>
-      </FadeSection>
-      <FadeSection>
-        <div className={style.featurePart}>
-          <div className={style.featureTexts}>
-            <h2>DataPrep.EDA</h2>
-            <p>
-              DataPrep.EDA is the fastest and the easiest EDA tool in Python. It
-              allows data scientists to understand a Pandas/Dask DataFrame with
-              a few lines of code in seconds.
-            </p>
-          </div>
-          <div className={style.featureSnippets}>
-            <NotebookFrame element={plot} />
-          </div>
+      </div>
+      <div className={style.featurePart}>
+        <div className={style.featureSnippets}>
+          <TerminalSnippetSecondary />
         </div>
-      </FadeSection>
+        <div className={style.featureTexts}>
+          <h2>DataPrep.Connector</h2>
+          <p>
+            DataPrep.Connector is an intuitive, open-source API wrapper that
+            speeds up development by standardizing calls to multiple APIs as a
+            simple workflow. Streamline calls to multiple APIs through one
+            intuitive library.
+          </p>
+        </div>
+      </div>
+      <div className={style.featurePart}>
+        <div className={style.featureTexts}>
+          <h2>DataPrep.EDA</h2>
+          <p>
+            DataPrep.EDA is the fastest and the easiest EDA tool in Python. It
+            allows data scientists to understand a Pandas/Dask DataFrame with a
+            few lines of code in seconds.
+          </p>
+        </div>
+        <div className={style.featureSnippets}>
+          <NotebookFrame element={plot} />
+        </div>
+      </div>
     </section>
   )
 }

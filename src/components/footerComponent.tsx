@@ -21,7 +21,7 @@ const News: React.FC<NewsProp> | React.ReactNode = ({ isLoading, data }) => {
     } else {
       return (
         <ul>
-          {data.slice(0, 10).map(item => (
+          {data.slice(0, 4).map(item => (
             <li key={item.id}>
               {item.published_at.split("T")[0]}: DataPrep{" "}
               <a href={item.html_url} target="_blank" rel="noreferrer">
@@ -101,10 +101,43 @@ const GS: React.FC = () => (
       in Python:
     </h4>
     <ul>
-      <li>Install the latest release.</li>
-      <li>Read the user guide.</li>
-      <li>Watch the tutorials.</li>
-      <li>Checkout the examples.</li>
+      <li>
+        Install the{" "}
+        <a href="https://github.com/sfu-db/dataprep/releases/latest">
+          latest release.
+        </a>
+      </li>
+      <li>
+        Read the{" "}
+        <a href="https://sfu-db.github.io/dataprep/user_guide/user_guide.html">
+          user guide.
+        </a>
+      </li>
+      <li>
+        Watch the{" "}
+        <a href="https://www.youtube.com/channel/UC7OpZsQwWcmuD0SUaOjGBMA/videos">
+          tutorials.
+        </a>
+      </li>
+      <li>
+        Checkout the{" "}
+        <a href="https://github.com/sfu-db/dataprep#examples--usages">
+          examples.
+        </a>
+      </li>
+    </ul>
+  </div>
+)
+
+const Event: React.FC = () => (
+  <div>
+    <h4>Talk at PyData 2020</h4>
+    <ul>
+      <li>
+        <a href="https://global.pydata.org/talks/340">
+          DataPrep ✕ Surge Connector Workshop
+        </a>
+      </li>
     </ul>
   </div>
 )
@@ -122,7 +155,10 @@ const FooterComponent: React.FC = () => {
     fetch("https://api.github.com/repos/sfu-db/dataprep/releases")
       .then(response => response.json())
       .then(data => setReleaseData({ loading: false, data: data }))
-      .catch(error => console.error(error))
+      .catch(error => {
+        console.error(error)
+        setReleaseData({ loading: false, data: [] })
+      })
   }, [setReleaseData])
   return (
     <section className={style.footerContainer}>
@@ -137,6 +173,10 @@ const FooterComponent: React.FC = () => {
       <div className={style.compDiv}>
         <h3>Getting Started</h3>
         <GS />
+      </div>
+      <div className={style.compDiv}>
+        <h3>Events</h3>
+        <Event />
       </div>
     </section>
   )

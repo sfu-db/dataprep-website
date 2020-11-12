@@ -6,6 +6,7 @@ import CopyrightCcomponent from "../components/copyrightComponent"
 import SectionComponent from "../components/sectionComponent"
 import CompComponent from "../components/compComponent"
 import SectionLayout from "../components/sectionLayout"
+import FadeSection from "../components/fadeSection"
 import { Helmet } from "react-helmet"
 
 const Index: React.FC = () => {
@@ -20,14 +21,24 @@ const Index: React.FC = () => {
       </Helmet>
       <WaveLayoutBottom>
         <Header />
-        <SectionComponent type="intro" />
+        <FadeSection>
+          <SectionComponent type="intro" />
+        </FadeSection>
       </WaveLayoutBottom>
-      <SectionComponent type="integration" />
+      <FadeSection>
+        <SectionComponent type="integration" />
+      </FadeSection>
       <SectionLayout>
-        <SectionComponent type="feature" />
+        <FadeSection>
+          <SectionComponent type="feature" />
+        </FadeSection>
       </SectionLayout>
-      <CompComponent />
-      <SectionComponent type="install" />
+      <FadeSection>
+        <CompComponent />
+      </FadeSection>
+      <FadeSection>
+        <SectionComponent type="install" />
+      </FadeSection>
       <FooterComponent />
       <CopyrightCcomponent />
     </>

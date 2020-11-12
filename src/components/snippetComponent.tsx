@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react"
-import graph from "../images/integration.png"
+import graph from "../images/integration.svg"
 import logoSnippet from "../images/logoSnippet.svg"
 import chart from "../images/chart.svg"
 import github from "../images/github.svg"
@@ -34,11 +34,12 @@ export const OpensourceSnippet: React.FC = () => {
   return (
     <div
       style={{
+        paddingTop: "2em",
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "space-between",
         alignItems: "center",
         flexFlow: "column nowrap",
-        height: "15em",
+        height: "12em",
       }}
     >
       <div className="snippet-img">
