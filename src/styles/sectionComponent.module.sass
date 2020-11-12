@@ -57,9 +57,10 @@
         font-weight: 300
         
     .integrationSnippets
-      width: 15em
-      height: 15em
-      border-radius: 15em
+      $diameter: 20em;
+      width: $diameter
+      height: $diameter
+      border-radius: $diameter
       background-color: $primary-color-50
 
 
@@ -78,7 +79,7 @@
   align-items: flex-start
 
   .featurePart
-    margin-bottom: 15em
+    margin: 1em 0
     display: flex
     justify-content: space-between
     align-items: center
@@ -93,6 +94,8 @@
 
       h2
         color: $primary-color-500
+      p
+        font-size: 120%
 
     .featureSnippets
       flex: 0 1 auto

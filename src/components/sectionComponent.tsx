@@ -80,10 +80,10 @@ const Integration: React.FC = () => {
 const Feature: React.FC = () => {
   return (
     <section className={style.featureContainer}>
-      <h2>Why?</h2>
       <FadeSection>
         <div className={style.featurePart}>
           <div className={style.featureTexts}>
+            <h2>Why?</h2>
             <p>
               According to the 2020 State of Data Science survey conducted by
               Annocada, data preparation still takes the majority of time in a

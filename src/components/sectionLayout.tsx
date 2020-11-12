@@ -2,7 +2,7 @@ import React from "react"
 
 const style = {
   backgroundColor: "#E4E7F2",
-  paddingBottom: "1px",
+  padding: "2em 0",
 }
 
 const SectionLayout: React.FC<React.ReactNode> = ({ children }) => {
