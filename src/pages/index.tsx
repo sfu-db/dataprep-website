@@ -7,18 +7,12 @@ import SectionComponent from "../components/sectionComponent"
 import CompComponent from "../components/compComponent"
 import SectionLayout from "../components/sectionLayout"
 import FadeSection from "../components/fadeSection"
-import { Helmet } from "react-helmet"
+import SEO from "../components/seo"
 
 const Index: React.FC = () => {
   return (
     <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>
-          DataPrep - The fastest way to do data preparation in Python
-        </title>
-        <link rel="canonical" href="http://dataprep.ai" />
-      </Helmet>
+      <SEO />
       <WaveLayoutBottom>
         <Header />
         <FadeSection>

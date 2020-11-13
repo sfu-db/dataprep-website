@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `DataPrep - The fastest way to do data preparation in Python`,
-    siteUrl: `https://dataprep.ai`,
-    author: `@eutialia`,
+    title: "DataPrep",
+    description: "The fastest way to do data preparation in Python",
+    siteUrl: "https://dataprep.ai",
+    author: "@eutialia",
   },
   plugins: [
     `gatsby-plugin-sass`,
