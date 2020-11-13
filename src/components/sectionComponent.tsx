@@ -7,12 +7,24 @@ import {
   ChartSnippet,
   TerminalSnippetPrimary,
   TerminalSnippetSecondary,
-  NotebookFrame,
+  EdaFrame,
+  ConnectorFrame,
+  CleanFrame,
+  EdaCode,
+  ConnectorCode,
+  CleanCode,
 } from "../components/snippetComponent"
 import plot from "../statics/plot.html"
 
 type SectionProp = {
   type: "intro" | "feature" | "install" | "integration"
+}
+
+type FeatureCardProp = {
+  title: string
+  content: string
+  snippetComponent: React.ReactNode
+  leftToRight: boolean
 }
 
 const Intro: React.FC = () => {
@@ -76,50 +88,72 @@ const Integration: React.FC = () => {
   )
 }
 
+const FeatureCard: React.FC<FeatureCardProp> = ({
+  title,
+  content,
+  snippetComponent,
+  leftToRight,
+}) => {
+  return (
+    <div className={style.featurePart}>
+      {leftToRight ? (
+        <>
+          <div className={style.featureTexts}>
+            <h2>{title}</h2>
+            <p>{content}</p>
+          </div>
+          <div className={style.featureSnippets}>{snippetComponent}</div>
+        </>
+      ) : (
+        <>
+          <div className={style.featureSnippets}>{snippetComponent}</div>
+          <div className={style.featureTexts}>
+            <h2>{title}</h2>
+            <p>{content}</p>
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
+
 const Feature: React.FC = () => {
   return (
     <section className={style.featureContainer}>
-      <div className={style.featurePart}>
-        <div className={style.featureTexts}>
-          <h2>Why?</h2>
-          <p>
-            According to the 2020 State of Data Science survey conducted by
+      <FeatureCard
+        title="Why?"
+        content="According to the 2020 State of Data Science survey conducted by
             Annocada, data preparation still takes the majority of time in a
             typical data professional’s day. To solve this issue in the next
-            decade, we have to THINK DIFFERENT.
-          </p>
-        </div>
-        <div className={style.featureSnippets}>
-          <ChartSnippet />
-        </div>
-      </div>
-      <div className={style.featurePart}>
-        <div className={style.featureSnippets}>
-          <TerminalSnippetSecondary />
-        </div>
-        <div className={style.featureTexts}>
-          <h2>DataPrep.Connector</h2>
-          <p>
-            DataPrep.Connector is an intuitive, open-source API wrapper that
-            speeds up development by standardizing calls to multiple APIs as a
-            simple workflow. Streamline calls to multiple APIs through one
-            intuitive library.
-          </p>
-        </div>
-      </div>
-      <div className={style.featurePart}>
-        <div className={style.featureTexts}>
-          <h2>DataPrep.EDA</h2>
-          <p>
-            DataPrep.EDA is the fastest and the easiest EDA tool in Python. It
-            allows data scientists to understand a Pandas/Dask DataFrame with a
-            few lines of code in seconds.
-          </p>
-        </div>
-        <div className={style.featureSnippets}>
-          <NotebookFrame element={plot} />
-        </div>
-      </div>
+            decade, we have to THINK DIFFERENT."
+        snippetComponent={<ChartSnippet />}
+        leftToRight={true}
+      />
+      <FeatureCard
+        title="DataPrep.Connector"
+        content="DataPrep.Connector is an intuitive, open-source API wrapper that
+          speeds up development by standardizing calls to multiple APIs as a
+          simple workflow. Streamline calls to multiple APIs through one
+          intuitive library."
+        snippetComponent={<ConnectorFrame codes={<ConnectorCode />} />}
+        leftToRight={false}
+      />
+      <FeatureCard
+        title="DataPrep.EDA"
+        content="DataPrep.EDA is the fastest and the easiest EDA tool in Python. It
+        allows data scientists to understand a Pandas/Dask DataFrame with a
+        few lines of code in seconds."
+        snippetComponent={<EdaFrame codes={<EdaCode />} element={plot} />}
+        leftToRight={true}
+      />
+      <FeatureCard
+        title="DataPrep.Clean"
+        content="DataPrep.Clean aims to provide a large number of functions with a
+        unified interface for cleaning and standardizing data of various
+        semantic types in a Pandas or Dask DataFrame."
+        snippetComponent={<CleanFrame codes={<CleanCode />} />}
+        leftToRight={false}
+      />
     </section>
   )
 }
