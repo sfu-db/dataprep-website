@@ -375,7 +375,7 @@ export const EdaCode: React.FC = () => (
       <li>
         df = pd.read_csv(
         <span className={style.paramSyntax}>
-          "https://www.openml.org/data/get_csv/15952{"\n"}61/phpMawTba"
+          "https://www.openml.org/data/get_csv/1595261/phpMawTba"
         </span>
         , na_values=
         <span className={style.paramSyntax}>[' ?']</span>)
