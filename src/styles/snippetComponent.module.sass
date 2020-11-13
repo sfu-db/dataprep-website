@@ -31,7 +31,11 @@ $container-width: 490px
       &:nth-child(odd)
         background: #ffffff
     td
+      max-width: 70px
+      overflow: hidden
+      text-overflow: ellipsis
       &:first-child
+        width: 1.5em
         font-weight: 800
 
 @mixin code-editer-style()
@@ -134,11 +138,14 @@ $container-width: 490px
     @include border-style()
 
 .connectorSnippetContainer
-  width: $container-width
+  width: $container-width + 83px
+  @include responsive-size(tablet)
+    width: $container-width + 22px
   .connectorTable
     @include border-style()
     table
       @include table-style()
+        width: 100%
 
 .cleanSnippetContainer
   width: $container-width

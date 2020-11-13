@@ -27,6 +27,12 @@ type FeatureCardProp = {
   leftToRight: boolean
 }
 
+type IntegrationCardProp = {
+  title: string
+  content: string
+  snippetComponent: React.ReactNode
+}
+
 const Intro: React.FC = () => {
   return (
     <section className={style.introContainer}>
@@ -45,45 +51,41 @@ const Intro: React.FC = () => {
   )
 }
 
+const IntegrationCard: React.FC<IntegrationCardProp> = ({
+  title,
+  content,
+  snippetComponent,
+}) => {
+  return (
+    <div className={style.integrationPart}>
+      <div className={style.integrationSnippets}>{snippetComponent}</div>
+      <div className={style.integrationTexts}>
+        <h3>{title}</h3>
+        <p>{content}</p>
+      </div>
+    </div>
+  )
+}
+
 const Integration: React.FC = () => {
   return (
     <section className={style.integrationContainer}>
-      <div className={style.integrationPart}>
-        <div className={style.integrationSnippets}>
-          <LogoSnippet />
-        </div>
-        <div className={style.integrationTexts}>
-          <h3>Design for Notebook Users</h3>
-          <p>
-            DataPrep is designed and optimized for computational notebooks, the
-            most popular environment among data scientists.
-          </p>
-        </div>
-      </div>
-      <div className={style.integrationPart}>
-        <div className={style.integrationSnippets}>
-          <IntegrationSnippet />
-        </div>
-        <div className={style.integrationTexts}>
-          <h3>Integrate with PyData</h3>
-          <p>
-            DataPrep is built in Python. It can be seamlessly integrated with
-            other Python libraries.
-          </p>
-        </div>
-      </div>
-      <div className={style.integrationPart}>
-        <div className={style.integrationSnippets}>
-          <OpensourceSnippet />
-        </div>
-        <div className={style.integrationTexts}>
-          <h3>Embrace Open Source</h3>
-          <p>
-            DataPrep is free, open-source software released under the MIT
-            license. Anyone can reuse DataPrep code for any purpose.
-          </p>
-        </div>
-      </div>
+      <IntegrationCard
+        title="Design for Notebook Users"
+        content="DataPrep is designed and optimized for computational notebooks, the most popular environment among data scientists."
+        snippetComponent={<LogoSnippet />}
+      />
+      <IntegrationCard
+        title="Integrate Seamlessly with PyData"
+        content="DataPrep is built on Pandas/Dask DataFrame thus it can be seamlessly integrated with other Python libraries."
+        snippetComponent={<IntegrationSnippet />}
+      />
+      <IntegrationCard
+        title="Embrace Open Source"
+        content="DataPrep is free, open-source software released under the MIT
+        license. Anyone can reuse DataPrep code for any purpose."
+        snippetComponent={<OpensourceSnippet />}
+      />
     </section>
   )
 }

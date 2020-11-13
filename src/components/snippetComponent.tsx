@@ -6,14 +6,14 @@ import chart from "../images/chart.svg"
 import github from "../images/github.svg"
 import style from "../styles/snippetComponent.module.sass"
 
-interface ICountryTableData {
+interface ITableData {
   head: string[]
   body: {
     [index: string]: string[]
   }
 }
 
-const countryTableData: ICountryTableData = {
+const countryTableData: ITableData = {
   head: ["", "country", "country_clean"],
   body: {
     "0": ["USA", "United States"],
@@ -21,6 +21,57 @@ const countryTableData: ICountryTableData = {
     "2": ["France", "France"],
     "3": ["233", "Estonia"],
     "4": ["tr", "Turkey"],
+  },
+}
+
+const dblpQueryData: ITableData = {
+  head: ["", "authors", "title", "venue", "pages", "year", "type", "doi"],
+  body: {
+    "0": [
+      "[Dong-Uk Lee, Ho Sung Cho, Jihwan Kim, Young J...",
+      "22.3 A 128Gb 8-High 512GB/s HBM2E DRAM with a ...",
+      "[ISSCC]",
+      "334-336",
+      "2020",
+      "Conference and Workshop Papers",
+      "10.1109/ISSCC19947.2020.9062977",
+    ],
+    "1": [
+      "[Heon-Cheol Lee, Seung-Hee Lee, Seung-Hwan Lee...",
+      "Comparison and analysis of scan matching techn...",
+      "[URAI]",
+      "165-168",
+      "2011",
+      "Conference and Workshop Papers",
+      "10.1109/URAI.2011.6145953",
+    ],
+    "2": [
+      "[Hyun-Woo Lee, Won-Joo Yun, Young-Kyoung Choi,...",
+      "A 1.6V 3.3Gb/s GDDR3 DRAM with dual-mode phase...",
+      "[ISSCC]",
+      "140-141",
+      "2009",
+      "Conference and Workshop Papers",
+      "10.1109/ISSCC.2009.4977347",
+    ],
+    "3": [
+      "[Dae-Won Lee, Kwang-Sik Chung, Hwa-Min Lee, Su...",
+      "Managing Fault Tolerance Information in Multi-...",
+      "[IDEAL]",
+      "104-108",
+      "2003",
+      "Conference and Workshop Papers",
+      "10.1007/978-3-540-45080-1_15",
+    ],
+    "4": [
+      "[Jang-Woo Lee, Dae-Hoon Na, Anil Kavala, Hwasu...",
+      "A 1.8 Gb/s/pin 16Tb NAND Flash Memory Multi-Ch...",
+      "[VLSI Circuits]",
+      "1-2",
+      "2020",
+      "Conference and Workshop Papers",
+      "10.1109/VLSICIRCUITS18222.2020.9163052",
+    ],
   },
 }
 
@@ -150,7 +201,7 @@ export const TerminalSnippetSecondary: React.FC = () => {
           <li>
             <span className={style.declareSyntax}>from</span>{" "}
             <span className={style.packageSyntax}>dataprep.connector</span>{" "}
-            <span className={style.declareSyntax}>import</span> connector
+            <span className={style.declareSyntax}>import</span> Connector
           </li>
           <li></li>
           <li>
@@ -160,7 +211,7 @@ export const TerminalSnippetSecondary: React.FC = () => {
             </span>
           </li>
           <li>
-            dc = connector(<span className={style.paramSyntax}>"youtube"</span>,
+            dc = Connector(<span className={style.paramSyntax}>"youtube"</span>,
             _auth={"{"}
             <span className={style.paramSyntax}>"access_token"</span>:
             auth_token
@@ -198,7 +249,7 @@ export const EdaFrame: React.FC<{
         loading="lazy"
         scrolling="0"
         width="490"
-        height="443"
+        height="449"
       ></iframe>
     </div>
   )
@@ -213,57 +264,27 @@ export const ConnectorFrame: React.FC<{ codes: React.ReactNode }> = ({
       <table>
         <thead>
           <tr>
-            <th></th>
-            <th>authors</th>
-            <th>title</th>
-            <th>venue</th>
-            <th>pages</th>
-            <th>publish year</th>
-            <th>publication type</th>
-            <th>publication url</th>
+            {dblpQueryData.head.map((item: number | string, id: number) => (
+              <th key={id}>{item}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>0</td>
-            <td>[Heon-Cheol Lee...</td>
-            <td>Comparison and analy...</td>
-            <td>[URAI]</td>
-            <td>165-168</td>
-            <td>2011</td>
-            <td>Conference and Work...</td>
-            <td>https://dblp.org/rec/..</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>[Dong-Uk Lee...</td>
-            <td>22.3 A 123Gb 0-High...</td>
-            <td>[ISSCC]</td>
-            <td>334-336</td>
-            <td>2020</td>
-            <td>Conference and Work...</td>
-            <td>https://dblp.org/rec/..</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>[Hyun-Woo Lee...</td>
-            <td>A 1.6V 3.3Gb/s GDDR...</td>
-            <td>[ISSCC]</td>
-            <td>140-141</td>
-            <td>2009</td>
-            <td>Conference and Work...</td>
-            <td>https://dblp.org/rec/..</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>[Young-Ju Kim...</td>
-            <td>A 16Gb 18Gb/S/pin...</td>
-            <td>[ISSCC]</td>
-            <td>204-206</td>
-            <td>2018</td>
-            <td>Conference and Work...</td>
-            <td>https://dblp.org/rec/..</td>
-          </tr>
+          {Object.keys(dblpQueryData.body).map((row: string, id: number) => {
+            const data = dblpQueryData.body[row]
+            return (
+              <tr key={id}>
+                <td>{row}</td>
+                <td>{data[0]}</td>
+                <td>{data[1]}</td>
+                <td>{data[2]}</td>
+                <td>{data[3]}</td>
+                <td>{data[4]}</td>
+                <td>{data[5]}</td>
+                <td>{data[6]}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>
@@ -287,9 +308,13 @@ export const CleanFrame: React.FC<{ codes: React.ReactNode }> = ({ codes }) => (
       <div className={style.cleanTable}>
         <table>
           <thead>
-            {countryTableData.head.map((item: number | string, id: number) => (
-              <th key={id}>{item}</th>
-            ))}
+            <tr>
+              {countryTableData.head.map(
+                (item: number | string, id: number) => (
+                  <th key={id}>{item}</th>
+                )
+              )}
+            </tr>
           </thead>
           <tbody>
             {Object.keys(countryTableData.body).map(
@@ -317,23 +342,19 @@ export const ConnectorCode: React.FC = () => (
       <li>
         <span className={style.declareSyntax}>from</span>{" "}
         <span className={style.packageSyntax}>dataprep.connector</span>{" "}
-        <span className={style.declareSyntax}>import</span> connector
+        <span className={style.declareSyntax}>import</span> Connector
       </li>
       <li>
-        auth_token ={" "}
-        <span className={style.paramSyntax}>
-          "{"<"}your_access_token{">"}"
-        </span>
-      </li>
-      <li>
-        dc = connector(
-        <span className={style.paramSyntax}>"./DataConnectorConfigs/DBLP"</span>
+        dc = Connector(
+        <span className={style.paramSyntax}>"./DataConnectorConfigs/dblp"</span>
         )
       </li>
       <li>
-        df = dc.query(<span className={style.paramSyntax}>"publication"</span>,{" "}
-        q=<span className={style.paramSyntax}>"lee"</span>)
+        df = <span className={style.declareSyntax}>await</span> dc.query(
+        <span className={style.paramSyntax}>"publication"</span>, q=
+        <span className={style.paramSyntax}>"lee"</span>)
       </li>
+      <li>df.head()</li>
     </ol>
   </div>
 )
