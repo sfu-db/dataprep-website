@@ -58,11 +58,11 @@ const Contribution: React.FC = () => (
           target="_blank"
           rel="noreferrer"
         >
-          souorce code and changes
+          source code and changes
         </a>
         .
       </li>
-      <li>Engage with other DataPrep users and develops on StackOverflow.</li>
+      <li>Engage with other DataPrep users and developers on StackOverflow.</li>
       <li>
         Help each other in the{" "}
         <a href="https://discord.gg/xwbkFNk" target="_blank" rel="noreferrer">
@@ -78,7 +78,7 @@ const Contribution: React.FC = () => (
         </a>
         .
       </li>
-      <li>Provide use cases and writing down your user experience.</li>
+      <li>Provide use cases and write down your user experience.</li>
       <li>
         Please take a look at our{" "}
         <a
