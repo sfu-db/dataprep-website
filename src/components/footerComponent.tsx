@@ -131,7 +131,7 @@ const GS: React.FC = () => (
 
 const Event: React.FC = () => (
   <div>
-    <h4>Talk at PyData 2020</h4>
+    <h4>Talk at PyData 2020:</h4>
     <ul>
       <li>
         <a href="https://global.pydata.org/talks/340">

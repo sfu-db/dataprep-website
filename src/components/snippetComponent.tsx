@@ -103,7 +103,7 @@ export const OpensourceSnippet: React.FC = () => {
   return (
     <div
       style={{
-        paddingTop: "2em",
+        paddingTop: "4em",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
