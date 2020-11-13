@@ -123,7 +123,7 @@ const Feature: React.FC = () => {
       <FeatureCard
         title="Why?"
         content="According to the 2020 State of Data Science survey conducted by
-            Annocada, data preparation still takes the majority of time in a
+            Anaconda, data preparation still takes the majority of time in a
             typical data professional’s day. To solve this issue in the next
             decade, we have to THINK DIFFERENT."
         snippetComponent={<ChartSnippet />}

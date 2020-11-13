@@ -332,7 +332,7 @@ export const ConnectorCode: React.FC = () => (
       </li>
       <li>
         df = dc.query(<span className={style.paramSyntax}>"publication"</span>,{" "}
-        q=<span className={style.paramSyntax}>"lee"</span>
+        q=<span className={style.paramSyntax}>"lee"</span>)
       </li>
     </ol>
   </div>
@@ -351,12 +351,17 @@ export const EdaCode: React.FC = () => (
         <span className={style.packageSyntax}>dataprep.eda</span>{" "}
         <span className={style.declareSyntax}>import</span> plot
       </li>
-      <li>d = "https://www.openml.org/data/get_csv/1595261/phpMawTba"</li>
       <li>
-        df = pd.read_csv(d , na_values=
+        df = pd.read_csv(
+        <span className={style.paramSyntax}>
+          "https://www.openml.org/data/get_csv/15952{"\n"}61/phpMawTba"
+        </span>
+        , na_values=
         <span className={style.paramSyntax}>[' ?']</span>)
       </li>
-      <li>plot(df, "age")</li>
+      <li>
+        plot(df, <span className={style.paramSyntax}>"age"</span>)
+      </li>
     </ol>
   </div>
 )
