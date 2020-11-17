@@ -5,7 +5,7 @@ import logo from "../images/dataprep-logo.png"
 const SEO: React.FC = () => (
   <Helmet>
     <meta charSet="utf-8" />
-    <title>DataPrep - The fastest way to do data preparation in Python</title>
+    <title>DataPrep——The easiest way to prepare data in Python</title>
     <meta
       content="DataPrep is designed and optimized for computational notebooks, the most popular environment among data scientists"
       name="description"

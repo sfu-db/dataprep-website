@@ -49,7 +49,7 @@ const Contribution: React.FC = () => (
         >
           Submit bugs
         </a>{" "}
-        and help us verify fixes as they are checked in.
+        and verify fixes.
       </li>
       <li>
         Review the{" "}

@@ -71,13 +71,13 @@ const Integration: React.FC = () => {
   return (
     <section className={style.integrationContainer}>
       <IntegrationCard
-        title="Design for Notebook Users"
-        content="DataPrep is designed and optimized for computational notebooks, the most popular environment among data scientists."
+        title="Designed for Notebook Users"
+        content="DataPrep is designed for computational notebooks, the most popular environment among data scientists."
         snippetComponent={<LogoSnippet />}
       />
       <IntegrationCard
         title="Integrate Seamlessly with PyData"
-        content="DataPrep is built on Pandas/Dask DataFrame thus it can be seamlessly integrated with other Python libraries."
+        content="DataPrep is built using Pandas/Dask DataFrame and can be seamlessly integrated with other Python libraries."
         snippetComponent={<IntegrationSnippet />}
       />
       <IntegrationCard
@@ -124,7 +124,7 @@ const Feature: React.FC = () => {
     <section className={style.featureContainer}>
       <FeatureCard
         title="Why?"
-        content="According to the 2020 State of Data Science survey conducted by
+        content="According to the 2020 State of Data Science survey by
             Anaconda, data preparation still takes the majority of time in a
             typical data professional’s day. To solve this issue in the next
             decade, we have to THINK DIFFERENT."
@@ -168,7 +168,25 @@ const Installation: React.FC = () => {
         <p>
           <span>pip install -U dataprep</span>
         </p>
-        <h3>And then check out documentation and examples!</h3>
+        <h3>
+          And then check out{" "}
+          <a
+            href="https://sfu-db.github.io/dataprep/index.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            documentation
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://github.com/sfu-db/dataprep#examples--usages"
+            target="_blank"
+            rel="noreferrer"
+          >
+            examples
+          </a>
+          !
+        </h3>
       </div>
     </section>
   )

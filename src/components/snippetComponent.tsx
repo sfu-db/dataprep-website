@@ -149,7 +149,7 @@ export const TerminalSnippetPrimary: React.FC = () => {
           <li>
             <span className={style.declareSyntax}>from</span>{" "}
             <span className={style.packageSyntax}>dataprep.connector</span>{" "}
-            <span className={style.declareSyntax}>import</span> connector
+            <span className={style.declareSyntax}>import</span> connect
           </li>
           <li>
             <span className={style.declareSyntax}>from</span>{" "}
@@ -158,10 +158,10 @@ export const TerminalSnippetPrimary: React.FC = () => {
           </li>
           <li></li>
           <li>
-            dc = connector(<span className={style.paramSyntax}>"dblp"</span>)
+            dc = connect(<span className={style.paramSyntax}>"dblp"</span>)
           </li>
           <li>
-            df = dc.query(
+            df = <span className={style.declareSyntax}>await</span> dc.query(
             <span className={style.paramSyntax}>"publication"</span>, q=
             <span className={style.paramSyntax}>"CVPR 2020"</span>, _count=
             <span className={style.declareSyntax}>2000</span>)
@@ -201,7 +201,7 @@ export const TerminalSnippetSecondary: React.FC = () => {
           <li>
             <span className={style.declareSyntax}>from</span>{" "}
             <span className={style.packageSyntax}>dataprep.connector</span>{" "}
-            <span className={style.declareSyntax}>import</span> Connector
+            <span className={style.declareSyntax}>import</span> connect
           </li>
           <li></li>
           <li>
@@ -211,7 +211,7 @@ export const TerminalSnippetSecondary: React.FC = () => {
             </span>
           </li>
           <li>
-            dc = Connector(<span className={style.paramSyntax}>"youtube"</span>,
+            dc = connect(<span className={style.paramSyntax}>"youtube"</span>,
             _auth={"{"}
             <span className={style.paramSyntax}>"access_token"</span>:
             auth_token
@@ -219,8 +219,8 @@ export const TerminalSnippetSecondary: React.FC = () => {
           </li>
           <li></li>
           <li>
-            df = dc.query(<span className={style.paramSyntax}>"videos"</span>,
-            q=
+            df = <span className={style.declareSyntax}>await</span> dc.query(
+            <span className={style.paramSyntax}>"videos"</span>, q=
             <span className={style.paramSyntax}>"Data Science"</span>, part=
             <span className={style.paramSyntax}>"snippet"</span>,{" "}
             <span className={style.declareSyntax}>type</span>=
@@ -342,12 +342,11 @@ export const ConnectorCode: React.FC = () => (
       <li>
         <span className={style.declareSyntax}>from</span>{" "}
         <span className={style.packageSyntax}>dataprep.connector</span>{" "}
-        <span className={style.declareSyntax}>import</span> Connector
+        <span className={style.declareSyntax}>import</span> connect
       </li>
       <li>
-        dc = Connector(
-        <span className={style.paramSyntax}>"./DataConnectorConfigs/dblp"</span>
-        )
+        dc = connect(
+        <span className={style.paramSyntax}>"dblp"</span>)
       </li>
       <li>
         df = <span className={style.declareSyntax}>await</span> dc.query(
