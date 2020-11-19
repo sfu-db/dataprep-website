@@ -76,7 +76,7 @@ const Integration: React.FC = () => {
         snippetComponent={<LogoSnippet />}
       />
       <IntegrationCard
-        title="Integrate Seamlessly with PyData"
+        title="Integrate Seamlessly with the Python Ecosystem"
         content="DataPrep is built using Pandas/Dask DataFrame and can be seamlessly integrated with other Python libraries."
         snippetComponent={<IntegrationSnippet />}
       />

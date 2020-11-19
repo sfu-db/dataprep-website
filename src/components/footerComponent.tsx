@@ -103,25 +103,41 @@ const GS: React.FC = () => (
     <ul>
       <li>
         Install the{" "}
-        <a href="https://github.com/sfu-db/dataprep/releases/latest">
+        <a
+          href="https://github.com/sfu-db/dataprep/releases/latest"
+          target="_blank"
+          rel="noreferrer"
+        >
           latest release.
         </a>
       </li>
       <li>
         Read the{" "}
-        <a href="https://sfu-db.github.io/dataprep/user_guide/user_guide.html">
+        <a
+          href="https://sfu-db.github.io/dataprep/user_guide/user_guide.html"
+          target="_blank"
+          rel="noreferrer"
+        >
           user guide.
         </a>
       </li>
       <li>
         Watch the{" "}
-        <a href="https://www.youtube.com/channel/UC7OpZsQwWcmuD0SUaOjGBMA/videos">
+        <a
+          href="https://www.youtube.com/channel/UC7OpZsQwWcmuD0SUaOjGBMA/videos"
+          target="_blank"
+          rel="noreferrer"
+        >
           tutorials.
         </a>
       </li>
       <li>
         Checkout the{" "}
-        <a href="https://github.com/sfu-db/dataprep#examples--usages">
+        <a
+          href="https://github.com/sfu-db/dataprep#examples--usages"
+          target="_blank"
+          rel="noreferrer"
+        >
           examples.
         </a>
       </li>
@@ -131,11 +147,19 @@ const GS: React.FC = () => (
 
 const Event: React.FC = () => (
   <div>
-    <h4>Talk at PyData 2020:</h4>
     <ul>
       <li>
-        <a href="https://global.pydata.org/talks/340">
-          DataPrep ✕ Surge Connector Workshop
+        <a
+          href="https://global.pydata.org/talks/340"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Short Talk at PyData 2020
+        </a>
+      </li>
+      <li>
+        <a href="https://lu.ma/31m0imch" target="_blank" rel="noreferrer">
+          SFU Surge Data Prep Open Workshop
         </a>
       </li>
     </ul>
