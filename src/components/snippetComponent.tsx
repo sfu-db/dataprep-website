@@ -115,11 +115,11 @@ export const OpensourceSnippet: React.FC = () => {
         <img src={github} alt="GitHub Icon" id="opensource-snippet" />
       </div>
       <iframe
-        src="https://ghbtns.com/github-btn.html?user=sfu-db&repo=dataprep&type=star&count=true&size=small"
+        src="https://ghbtns.com/github-btn.html?user=sfu-db&repo=dataprep&type=star&count=true&size=large"
         frameBorder="0"
         scrolling="0"
-        width="89"
-        height="20"
+        width="150"
+        height="30"
         title="GitHub"
       ></iframe>
     </div>
