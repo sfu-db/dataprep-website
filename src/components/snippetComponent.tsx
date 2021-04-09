@@ -148,27 +148,20 @@ export const TerminalSnippetPrimary: React.FC = () => {
         <ol className={style.terminalCommand}>
           <li>
             <span className={style.declareSyntax}>from</span>{" "}
-            <span className={style.packageSyntax}>dataprep.connector</span>{" "}
-            <span className={style.declareSyntax}>import</span> connect
+            <span className={style.packageSyntax}>dataprep.datasets</span>{" "}
+            <span className={style.declareSyntax}>import</span> load_dataset
           </li>
           <li>
             <span className={style.declareSyntax}>from</span>{" "}
             <span className={style.packageSyntax}>dataprep.eda</span>{" "}
-            <span className={style.declareSyntax}>import</span> plot
+            <span className={style.declareSyntax}>import</span> create_report
           </li>
           <li></li>
           <li>
-            dc = connect(<span className={style.paramSyntax}>"dblp"</span>)
+            df = load_dataset(
+            <span className={style.paramSyntax}>"titanic"</span>)
           </li>
-          <li>
-            df = <span className={style.declareSyntax}>await</span> dc.query(
-            <span className={style.paramSyntax}>"publication"</span>, q=
-            <span className={style.paramSyntax}>"CVPR 2020"</span>, _count=
-            <span className={style.declareSyntax}>2000</span>)
-          </li>
-          <li>
-            plot(df, <span className={style.paramSyntax}>"title"</span>)
-          </li>
+          <li>create_report(df).show()</li>
           <li></li>
           <li></li>
           <li></li>
@@ -362,9 +355,9 @@ export const EdaCode: React.FC = () => (
   <div className={style.codeArea}>
     <ol>
       <li>
-        <span className={style.declareSyntax}>import</span>{" "}
-        <span className={style.packageSyntax}>pandas</span>{" "}
-        <span className={style.declareSyntax}>as</span> pd
+        <span className={style.declareSyntax}>from</span>{" "}
+        <span className={style.packageSyntax}>dataprep.datasets</span>{" "}
+        <span className={style.declareSyntax}>import</span> load_dataset
       </li>
       <li>
         <span className={style.declareSyntax}>from</span>{" "}
@@ -372,15 +365,11 @@ export const EdaCode: React.FC = () => (
         <span className={style.declareSyntax}>import</span> plot
       </li>
       <li>
-        df = pd.read_csv(
-        <span className={style.paramSyntax}>
-          "https://www.openml.org/data/get_csv/1595261/phpMawTba"
-        </span>
-        , na_values=
-        <span className={style.paramSyntax}>[' ?']</span>)
+        df = load_dataset(
+        <span className={style.paramSyntax}>"titanic"</span>)
       </li>
       <li>
-        plot(df, <span className={style.paramSyntax}>"age"</span>)
+        plot(df, <span className={style.paramSyntax}>"Age"</span>)
       </li>
     </ol>
   </div>
