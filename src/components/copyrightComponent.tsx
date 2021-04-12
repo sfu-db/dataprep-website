@@ -17,7 +17,7 @@ const CopyrightCcomponent: React.FC = () => (
         fontSize: "1em",
       }}
     >
-      © 2020 SFU Database System Lab. All rights reserved.
+      © 2021 SFU Database System Lab. All rights reserved.
     </p>
   </div>
 )
