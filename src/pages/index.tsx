@@ -1,12 +1,12 @@
 import React from "react"
 import Header from "../components/header"
-import WaveLayoutBottom from "../components/waveLayoutBottom"
-import FooterComponent from "../components/footerComponent"
-import CopyrightCcomponent from "../components/copyrightComponent"
-import SectionComponent from "../components/sectionComponent"
-import CompComponent from "../components/compComponent"
-import SectionLayout from "../components/sectionLayout"
-import FadeSection from "../components/fadeSection"
+import WaveLayoutBottom from "../components/indexComponents/waveLayoutBottom"
+import Columns from "../components/indexComponents/columns"
+import Copyright from "../components/copyright"
+import Sections from "../components/indexComponents/sections"
+import Components from "../components/indexComponents/components"
+import SectionLayout from "../components/indexComponents/sectionLayout"
+import FadeSection from "../components/indexComponents/fadeSection"
 import SEO from "../components/seo"
 
 const Index: React.FC = () => {
@@ -16,25 +16,25 @@ const Index: React.FC = () => {
       <WaveLayoutBottom>
         <Header />
         <FadeSection>
-          <SectionComponent type="intro" />
+          <Sections type="intro" />
         </FadeSection>
       </WaveLayoutBottom>
       <FadeSection>
-        <SectionComponent type="integration" />
+        <Sections type="integration" />
       </FadeSection>
       <SectionLayout>
         <FadeSection>
-          <SectionComponent type="feature" />
+          <Sections type="feature" />
         </FadeSection>
       </SectionLayout>
       <FadeSection>
-        <CompComponent />
+        <Components />
       </FadeSection>
       <FadeSection>
-        <SectionComponent type="install" />
+        <Sections type="install" />
       </FadeSection>
-      <FooterComponent />
-      <CopyrightCcomponent />
+      <Columns />
+      <Copyright />
     </>
   )
 }

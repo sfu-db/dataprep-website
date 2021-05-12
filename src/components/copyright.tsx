@@ -1,6 +1,6 @@
 import React from "react"
 
-const CopyrightCcomponent: React.FC = () => (
+const Copyright: React.FC = () => (
   <div
     style={{
       backgroundColor: "#c0c7df",
@@ -22,4 +22,4 @@ const CopyrightCcomponent: React.FC = () => (
   </div>
 )
 
-export default CopyrightCcomponent
+export default Copyright

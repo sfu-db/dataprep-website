@@ -1,5 +1,5 @@
 import React from "react"
-import style from "../styles/SectionComponent.module.sass"
+import style from "../../styles/sections.module.sass"
 import {
   LogoSnippet,
   OpensourceSnippet,
@@ -13,8 +13,8 @@ import {
   EdaCode,
   ConnectorCode,
   CleanCode,
-} from "../components/snippetComponent"
-import plot from "../statics/plot.html"
+} from "./snippets"
+import plot from "../../statics/plot.html"
 
 type SectionProp = {
   type: "intro" | "feature" | "install" | "integration"
@@ -192,7 +192,7 @@ const Installation: React.FC = () => {
   )
 }
 
-const SectionComponent: React.FC<SectionProp> = ({ type }) => {
+const Sections: React.FC<SectionProp> = ({ type }) => {
   let toRender
 
   if (type === "intro") {
@@ -208,4 +208,4 @@ const SectionComponent: React.FC<SectionProp> = ({ type }) => {
   return toRender as React.ReactElement
 }
 
-export default SectionComponent
+export default Sections

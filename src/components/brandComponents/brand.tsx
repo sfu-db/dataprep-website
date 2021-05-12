@@ -1,15 +1,15 @@
 import React from "react"
-import style from "../styles/BrandComponent.module.sass"
-import logo1 from "../images/logo1.png"
-import logo2 from "../images/logo2.png"
-import logo3 from "../images/logo3.png"
-import logo4 from "../images/logo4.png"
-import icon1 from "../images/icon1.png"
-import icon2 from "../images/icon2.png"
-import icon3 from "../images/icon3.png"
-import icon4 from "../images/icon4.png"
+import style from "../../styles/brand.module.sass"
+import logo1 from "../../images/logo1.png"
+import logo2 from "../../images/logo2.png"
+import logo3 from "../../images/logo3.png"
+import logo4 from "../../images/logo4.png"
+import icon1 from "../../images/icon1.png"
+import icon2 from "../../images/icon2.png"
+import icon3 from "../../images/icon3.png"
+import icon4 from "../../images/icon4.png"
 
-const BrandComponent: React.FC = () => (
+const Brand: React.FC = () => (
   <section className={style.brandContainer}>
     <h1>Brand</h1>
     <div className={style.brandContent}>
@@ -51,4 +51,4 @@ const BrandComponent: React.FC = () => (
   </section>
 )
 
-export default BrandComponent
+export default Brand

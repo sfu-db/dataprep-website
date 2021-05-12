@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import style from "../styles/footer.module.sass"
+import style from "../../styles/columns.module.sass"
 
 type NewsProp = {
   isLoading: boolean
@@ -166,7 +166,7 @@ const Event: React.FC = () => (
   </div>
 )
 
-const FooterComponent: React.FC = () => {
+const Columns: React.FC = () => {
   const [releaseData, setReleaseData] = useState<{
     loading: boolean
     data: Array<IResponse | null> | null
@@ -206,4 +206,4 @@ const FooterComponent: React.FC = () => {
   )
 }
 
-export default FooterComponent
+export default Columns

@@ -1,7 +1,7 @@
 import React from "react"
 import Header from "../components/header"
-import BrandComponent from "../components/brandComponent"
-import CopyrightCcomponent from "../components/copyrightComponent"
+import BrandComponent from "../components/brandComponents/brand"
+import Copyright from "../components/copyright"
 import SEO from "../components/seo"
 
 const Brand: React.FC = () => {
@@ -10,7 +10,7 @@ const Brand: React.FC = () => {
       <SEO />
       <Header />
       <BrandComponent />
-      <CopyrightCcomponent />
+      <Copyright />
     </>
   )
 }

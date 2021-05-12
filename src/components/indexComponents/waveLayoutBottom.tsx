@@ -1,5 +1,5 @@
 import React from "react"
-import "../styles/waveLayoutBottom.sass"
+import "../../styles/waveLayoutBottom.sass"
 
 const WaveLayoutBottom: React.FC<React.ReactNode> = ({ children }) => {
   return (

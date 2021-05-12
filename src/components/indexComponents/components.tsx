@@ -1,5 +1,5 @@
 import React from "react"
-import style from "../styles/CompComponent.module.sass"
+import style from "../../styles/components.module.sass"
 
 type BlockProp = {
   name: string
@@ -17,7 +17,7 @@ const Block: React.FC<BlockProp> = ({ name, status }) => (
   </div>
 )
 
-const CompComponent: React.FC = () => (
+const Components: React.FC = () => (
   <section className={style.compContainer}>
     <h1>DataPrep Components</h1>
     <div className={style.blockContainer}>
@@ -36,4 +36,4 @@ const CompComponent: React.FC = () => (
   </section>
 )
 
-export default CompComponent
+export default Components

@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react"
-import graph from "../images/integration.svg"
-import logoSnippet from "../images/logoSnippet.svg"
-import chart from "../images/chart.svg"
-import github from "../images/github.svg"
-import style from "../styles/snippetComponent.module.sass"
+import graph from "../../images/integration.svg"
+import logoSnippet from "../../images/logoSnippet.svg"
+import chart from "../../images/chart.svg"
+import github from "../../images/github.svg"
+import style from "../../styles/snippets.module.sass"
 
 interface ITableData {
   head: string[]
