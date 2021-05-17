@@ -22,6 +22,7 @@ const Index: React.FC = () => {
         </FadeSection>
       </WaveLayoutBottom>
       <FadeSection>
+        <Sections type="quotes" />
         <Sections type="integration" />
       </FadeSection>
       <SectionLayout>

@@ -11,12 +11,12 @@
   @include responsive-layout(mobile)
     height: auto
     flex-flow: column nowrap
-  
+
   .introTexts
     flex: 0 1 50%
     h1
       color: $primary-color-500
-  
+
   .introSnippets
     flex: 0 1 40%
 
@@ -52,10 +52,10 @@
         max-width: 35em
       h3
         color: $primary-color-500
-      
+
       p
         font-weight: 300
-        
+
     .integrationSnippets
       $diameter: 20em;
       width: $diameter
@@ -136,3 +136,24 @@
     h3
       margin: 30px 0
       font-weight: 300
+
+.quotesContainer
+  @include responsive-layout(desktop)
+  @include responsive-layout(tablet)
+  @include responsive-layout(mobile)
+  h1
+    text-align: center
+    color: $primary-color-500
+
+  p
+    color: $primary-color-500
+  .quotesSource
+    text-align: right
+
+  &:after
+    content: ""
+    display: block
+    height: 5px
+    width: 50%
+    background-color: $primary-color-50
+    margin: 5em auto

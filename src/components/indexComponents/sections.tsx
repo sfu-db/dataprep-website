@@ -17,7 +17,7 @@ import {
 import plot from "../../statics/plot.html"
 
 type SectionProp = {
-  type: "intro" | "feature" | "install" | "integration"
+  type: "intro" | "feature" | "install" | "integration" | "quotes"
 }
 
 type FeatureCardProp = {
@@ -50,6 +50,25 @@ const Intro: React.FC = () => {
     </section>
   )
 }
+
+const Quotes: React.FC = () => (
+  <div className={style.quotesContainer}>
+    <h1>Think different.</h1>
+    <div>
+      <p className={style.quotesText}>
+        &quot;We were disappointed, if not surprised, to see that data wrangling
+        still takes the <strong>lion’s share of time</strong> in a typical data
+        professional’s day. Data preparation and cleansing takes{" "}
+        <strong>valuable time</strong>
+        away from <strong>real data science</strong> work and has a negative
+        impact on overall job satisfaction.&quot;
+      </p>
+      <p className={style.quotesSource}>
+        2020 State of Data Science: Moving From Hype Toward Maturity, Anaconda
+      </p>
+    </div>
+  </div>
+)
 
 const IntegrationCard: React.FC<IntegrationCardProp> = ({
   title,
@@ -203,6 +222,8 @@ const Sections: React.FC<SectionProp> = ({ type }) => {
     toRender = <Installation />
   } else if (type === "integration") {
     toRender = <Integration />
+  } else if (type === "quotes") {
+    toRender = <Quotes />
   }
 
   return toRender as React.ReactElement
