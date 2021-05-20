@@ -25,7 +25,7 @@ const Components: React.FC = () => (
       <div className={style.blocks}>
         <Block name={"DataPrep.Connector"} status={"Available to use"} />
         <Block name={"DataPrep.EDA"} status={"Available to use"} />
-        <Block name={"DataPrep.Clean"} status={"Under development"} />
+        <Block name={"DataPrep.Clean"} status={"Available to use"} />
         <Block name={"DataPrep.Feature"} status={"Planning"} />
         <Block name={"DataPrep.Integrate"} status={"Planning"} />
         <div>

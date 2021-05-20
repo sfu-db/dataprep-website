@@ -1,6 +1,6 @@
 @import 'color'
 @import 'metric'
-  
+
 .navbar
   padding-top: 1.25em
   @include responsive-layout(desktop)
@@ -31,6 +31,8 @@
       font-size: large
       @include responsive-size(mobile)
         font-size: 150%
+        padding: 5px 0.5em
+
       text-align: center
       flex: 1 1 auto
       justify-content: space-evenly
@@ -40,7 +42,7 @@
       border-bottom: 3px solid transparent
       &:hover
         border-bottom: 3px solid $primary-color-500
-      
+
       a
         text-decoration: none
         color: black

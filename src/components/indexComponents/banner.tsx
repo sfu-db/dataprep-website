@@ -1,13 +1,8 @@
 import React, { useState } from "react"
 import style from "../../styles/banner.module.sass"
 
-interface IBanner {
-  version: number | string
-  link: string
-}
-
-const Banner: React.FC<IBanner> = ({ version, link }) => {
-  const [isHiding, setHiding] = useState(false)
+const Banner: React.FC = () => {
+  const [isHiding, setHiding] = useState<boolean>(false)
 
   if (isHiding) {
     return <></>
@@ -17,9 +12,15 @@ const Banner: React.FC<IBanner> = ({ version, link }) => {
         <div className={style.innerDiv}>
           <div className={style.leftPsudoMargin}></div>
           <h4>
-            DataPrep V{version} is out now! Click{" "}
+            DataPrep V0.3 is out now! Click{" "}
             <strong>
-              <a href={link}>here</a>
+              <a
+                href="https://github.com/sfu-db/dataprep/releases/tag/v0.3.0"
+                target="_blank"
+                rel="noreferrer"
+              >
+                here
+              </a>
             </strong>{" "}
             for more.
           </h4>

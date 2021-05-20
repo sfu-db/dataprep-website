@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import style from "../../styles/columns.module.sass"
+import { getReleaseVer } from "../../adapters/xhr"
 
 type NewsProp = {
   isLoading: boolean
@@ -167,28 +168,33 @@ const Event: React.FC = () => (
 )
 
 const Columns: React.FC = () => {
-  const [releaseData, setReleaseData] = useState<{
-    loading: boolean
-    data: Array<IResponse | null> | null
-  }>({
-    loading: false,
-    data: null,
+  const [{ isLoading, data }, setReleaseData] = useState<NewsProp>({
+    isLoading: true,
+    data: [],
   })
+
   useEffect(() => {
-    setReleaseData({ loading: true, data: null })
-    fetch("https://api.github.com/repos/sfu-db/dataprep/releases")
-      .then(response => response.json())
-      .then(data => setReleaseData({ loading: false, data: data }))
-      .catch(error => {
-        console.error(error)
-        setReleaseData({ loading: false, data: [] })
+    getReleaseVer()
+      .then(fetched => {
+        setReleaseData({
+          isLoading: false,
+          data: fetched,
+        })
       })
-  }, [setReleaseData])
+      .catch(error => {
+        console.log(error)
+        setReleaseData({
+          isLoading: false,
+          data: [],
+        })
+      })
+  }, [])
+
   return (
     <section className={style.footerContainer}>
       <div className={style.compDiv}>
         <h3>News</h3>
-        <News isLoading={releaseData.loading} data={releaseData.data} />
+        <News isLoading={isLoading} data={data} />
       </div>
       <div className={style.compDiv}>
         <h3>Contribution</h3>

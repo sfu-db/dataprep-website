@@ -16,7 +16,7 @@ const Index: React.FC = () => {
       <SEO />
       <WaveLayoutBottom>
         <Header />
-        <Banner version={0.3} link="#" />
+        <Banner />
         <FadeSection>
           <Sections type="intro" />
         </FadeSection>
