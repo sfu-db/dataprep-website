@@ -1,21 +1,13 @@
 import React, { useEffect, useState } from "react"
 import style from "../../styles/columns.module.sass"
-import { getReleaseVer } from "../../adapters/xhr"
+import { getReleaseVer, IResponse } from "../../adapters/xhr"
 
 type NewsProp = {
   isLoading: boolean
   data: Array<IResponse>
 }
 
-interface IResponse {
-  url: string
-  id: number
-  published_at: string
-  tag_name: string
-  html_url: string
-}
-
-const News: React.FC<NewsProp> | React.ReactNode = ({ isLoading, data }) => {
+const News: React.FC<NewsProp> = ({ isLoading, data }) => {
   if (!isLoading) {
     if (!data || data.length === 0) {
       return <p>No data found</p>

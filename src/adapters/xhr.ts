@@ -1,4 +1,4 @@
-interface IResponse {
+export interface IResponse {
   url: string
   id: number
   published_at: string

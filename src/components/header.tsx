@@ -14,7 +14,7 @@ const linkArray: Array<LinkItem> = [
     link: "https://sfu-db.github.io/dataprep/index.html",
   },
   { text: "Install", link: "#install" },
-  { text: "Team" },
+  // { text: "Team" },
   { text: "GitHub", link: "https://github.com/sfu-db/dataprep" },
   { text: "Brand" },
 ]
