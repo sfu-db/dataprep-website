@@ -59,9 +59,9 @@ const Quotes: React.FC = () => (
         &quot;We were disappointed, if not surprised, to see that data wrangling
         still takes the <strong>lion’s share of time</strong> in a typical data
         professional’s day. Data preparation and cleansing takes{" "}
-        <strong>valuable time</strong>
-        away from <strong>real data science</strong> work and has a negative
-        impact on overall job satisfaction.&quot;
+        <strong>valuable time</strong> away from{" "}
+        <strong>real data science</strong> work and has a negative impact on
+        overall job satisfaction.&quot;
       </p>
       <p className={style.quotesSource}>
         2020 State of Data Science: Moving From Hype Toward Maturity, Anaconda
