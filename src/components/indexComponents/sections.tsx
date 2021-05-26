@@ -142,15 +142,6 @@ const Feature: React.FC = () => {
   return (
     <section className={style.featureContainer}>
       <FeatureCard
-        title="Why?"
-        content="According to the 2020 State of Data Science survey by
-            Anaconda, data preparation still takes the majority of time in a
-            typical data professional’s day. To solve this issue in the next
-            decade, we have to THINK DIFFERENT."
-        snippetComponent={<ChartSnippet />}
-        leftToRight={true}
-      />
-      <FeatureCard
         title="DataPrep.Connector"
         content="DataPrep.Connector is an intuitive, open-source API wrapper that
           speeds up development by standardizing calls to multiple APIs as a
