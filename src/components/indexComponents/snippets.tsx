@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from "react"
+import React, { useEffect, useState } from "react"
 import graph from "../../images/integration.svg"
 import logoSnippet from "../../images/logoSnippet.svg"
 import chart from "../../images/chart.svg"
 import github from "../../images/github.svg"
 import style from "../../styles/snippets.module.sass"
+import readCsv from "../../adapters/csv"
 
 interface ITableData {
   head: string[]
@@ -14,63 +15,111 @@ interface ITableData {
 }
 
 const countryTableData: ITableData = {
-  head: ["", "country", "country_clean"],
+  head: [
+    "",
+    "CREATED",
+    "PHONE",
+    "EMAIL",
+    "LOCAL ADDRESS",
+    "city",
+    "LOCAL ADDRESS_clean",
+  ],
   body: {
-    "0": ["USA", "United States"],
-    "1": ["country: Canada", "Canada"],
-    "2": ["France", "France"],
-    "3": ["233", "Estonia"],
-    "4": ["tr", "Turkey"],
+    "0": [
+      "04/03/2017",
+      "(718) 326-0384",
+      "",
+      "56-01 NURGE AVE., MASPETH, NY",
+      "NEW YORK",
+      "56-01 Nurge Ave., Maspeth, NY",
+    ],
+    "1": [
+      "04/03/2017",
+      "(516) 223-2010",
+      "",
+      "228 MILLER AVENUE, FREEPORT, NY",
+      "New York",
+      "228 Miller Ave., Freeport, NY",
+    ],
+    "2": [
+      "03/01/2021",
+      "646-450-7057",
+      "davidzuidema@aol.com",
+      "1274 49TH STREET SUITE #13G, BROOKLYN, NY",
+      "new york",
+      "1274 49th St., Suite 13G, Brooklyn, NY",
+    ],
+    "3": [
+      "04/03/2017",
+      "(718) 356-3936",
+      "",
+      "67 EAST FIGUREA AVENUE, STATEN ISLAND, NY",
+      "New York",
+      "67 E. Figurea Ave., Staten Island, NY",
+    ],
+    "4": [
+      "04/03/2017",
+      "(516) 660-1343",
+      "tom191@gmail.com",
+      "855 E Broadway, Suite 5E, Long Beach, NY",
+      "New York",
+      "855 E. Broadway, Suite 5E, Long Beach, NY",
+    ],
   },
 }
 
 const dblpQueryData: ITableData = {
-  head: ["", "authors", "title", "venue", "pages", "year", "type", "doi"],
+  head: ["", "title", "venue", "publisher", "year", "type", "key", "ee", "..."],
   body: {
     "0": [
-      "[Dong-Uk Lee, Ho Sung Cho, Jihwan Kim, Young J...",
-      "22.3 A 128Gb 8-High 512GB/s HBM2E DRAM with a ...",
-      "[ISSCC]",
-      "334-336",
+      "Zero-Resource Knowledge-Grounded Dialogue Generation.",
+      "['NeurIPS']",
+      "",
       "2020",
       "Conference and Workshop Papers",
-      "10.1109/ISSCC19947.2020.9062977",
+      "conf/nips/LiX0ZZT20",
+      "https://proceedings.neurips.cc/paper/2020/hash/609c5e5089a9aa967232aba2a4d03114-Abstract.html",
+      "...",
     ],
     "1": [
-      "[Heon-Cheol Lee, Seung-Hee Lee, Seung-Hwan Lee...",
-      "Comparison and analysis of scan matching techn...",
-      "[URAI]",
-      "165-168",
-      "2011",
-      "Conference and Workshop Papers",
-      "10.1109/URAI.2011.6145953",
-    ],
-    "2": [
-      "[Hyun-Woo Lee, Won-Joo Yun, Young-Kyoung Choi,...",
-      "A 1.6V 3.3Gb/s GDDR3 DRAM with dual-mode phase...",
-      "[ISSCC]",
-      "140-141",
-      "2009",
-      "Conference and Workshop Papers",
-      "10.1109/ISSCC.2009.4977347",
-    ],
-    "3": [
-      "[Dae-Won Lee, Kwang-Sik Chung, Hwa-Min Lee, Su...",
-      "Managing Fault Tolerance Information in Multi-...",
-      "[IDEAL]",
-      "104-108",
-      "2003",
-      "Conference and Workshop Papers",
-      "10.1007/978-3-540-45080-1_15",
-    ],
-    "4": [
-      "[Jang-Woo Lee, Dae-Hoon Na, Anil Kavala, Hwasu...",
-      "A 1.8 Gb/s/pin 16Tb NAND Flash Memory Multi-Ch...",
-      "[VLSI Circuits]",
-      "1-2",
+      "Multi-Fidelity Bayesian Optimization via Deep Neural Networks.",
+      "['NeurIPS']",
+      "",
       "2020",
       "Conference and Workshop Papers",
-      "10.1109/VLSICIRCUITS18222.2020.9163052",
+      "conf/nips/LiXKZ20",
+      "https://proceedings.neurips.cc/paper/2020/hash/60e1deb043af37db5ea4ce9ae8d2c9ea-Abstract.html",
+      "...",
+    ],
+    "2": [
+      "Dirichlet Graph Variational Autoencoder.",
+      "['NeurIPS']",
+      "",
+      "2020",
+      "Conference and Workshop Papers",
+      "conf/nips/LiYLZZR0H20",
+      "https://proceedings.neurips.cc/paper/2020/hash/38a77aa456fc813af07bb428f2363c8d-Abstract.html",
+      "...",
+    ],
+    "3": [
+      "End-to-End Learning and Intervention in Games.",
+      "['NeurIPS']",
+      "",
+      "2020",
+      "Conference and Workshop Papers",
+      "conf/nips/LiYNW20",
+      "https://proceedings.neurips.cc/paper/2020/hash/c21f4ce780c5c9d774f79841b81fdc6d-Abstract.html",
+      "...",
+    ],
+    "4": [
+      "EvolveGraph - Multi-Agent Trajectory Prediction with Dynamic Relational Reasoning.",
+      "['NeurIPS']",
+      "",
+      "2020",
+      "Conference and Workshop Papers",
+      "conf/nips/LiYTC20",
+      "https://proceedings.neurips.cc/paper/2020/hash/e4d8163c7a068b65a64c89bd745ec360-Abstract.html",
+      "...",
     ],
   },
 }
@@ -198,27 +247,19 @@ export const TerminalSnippetSecondary: React.FC = () => {
           </li>
           <li></li>
           <li>
-            auth_token ={" "}
+            dc = connect(<span className={style.paramSyntax}>"twitter"</span>,
+            _auth=
             <span className={style.paramSyntax}>
-              "{"<"}your_access_token{">"}"
+              {"{"}"client_id":client_id, "client_secret":client_secret{"}"}
             </span>
-          </li>
-          <li>
-            dc = connect(<span className={style.paramSyntax}>"youtube"</span>,
-            _auth={"{"}
-            <span className={style.paramSyntax}>"access_token"</span>:
-            auth_token
-            {"}"})
+            )
           </li>
           <li></li>
           <li>
             df = <span className={style.declareSyntax}>await</span> dc.query(
-            <span className={style.paramSyntax}>"videos"</span>, q=
-            <span className={style.paramSyntax}>"Data Science"</span>, part=
-            <span className={style.paramSyntax}>"snippet"</span>,{" "}
-            <span className={style.declareSyntax}>type</span>=
-            <span className={style.paramSyntax}>"videos"</span>, _count=
-            <span className={style.declareSyntax}>40</span>)
+            <span className={style.paramSyntax}>"twitter"</span>, q=
+            <span className={style.paramSyntax}>"covid-19"</span>, _count=
+            <span className={style.paramSyntax}>1000</span>)
           </li>
           <li></li>
           <li></li>
@@ -275,6 +316,7 @@ export const ConnectorFrame: React.FC<{ codes: React.ReactNode }> = ({
                 <td>{data[4]}</td>
                 <td>{data[5]}</td>
                 <td>{data[6]}</td>
+                <td>{data[7]}</td>
               </tr>
             )
           })}
@@ -290,11 +332,14 @@ export const CleanFrame: React.FC<{ codes: React.ReactNode }> = ({ codes }) => (
     <div className={style.cleanOutput}>
       <div className={style.cleanDesc}>
         <ul>
-          <li>Country Cleaning Report: </li>
-          <li style={{ textIndent: "5em" }}>5 values cleaned (100.0%)</li>
+          <li>Address Cleaning Report: </li>
+          <li style={{ textIndent: "5em" }}>848 values cleaned (84.8%)</li>
+          <li style={{ textIndent: "5em" }}>
+            150 values unable to be parsed (15.0%), set to NaN
+          </li>
           <li>
-            Result contains 5 (100.0%) values in the correct format and 0 null
-            values (0.0%)
+            Result contains 848 (84.8%) values in the correct format and 152
+            null values (15.2%)
           </li>
         </ul>
       </div>
@@ -318,6 +363,10 @@ export const CleanFrame: React.FC<{ codes: React.ReactNode }> = ({ codes }) => (
                     <td>{row}</td>
                     <td>{data[0]}</td>
                     <td>{data[1]}</td>
+                    <td>{data[2]}</td>
+                    <td>{data[3]}</td>
+                    <td>{data[4]}</td>
+                    <td>{data[5]}</td>
                   </tr>
                 )
               }
@@ -339,14 +388,15 @@ export const ConnectorCode: React.FC = () => (
       </li>
       <li>
         dc = connect(
-        <span className={style.paramSyntax}>"dblp"</span>)
+        <span className={style.paramSyntax}>"dblp"</span>, _concurrenncy=
+        <span className={style.paramSyntax}>5</span>)
       </li>
       <li>
         df = <span className={style.declareSyntax}>await</span> dc.query(
         <span className={style.paramSyntax}>"publication"</span>, q=
-        <span className={style.paramSyntax}>"lee"</span>)
+        <span className={style.paramSyntax}>"NeurIPS 2020"</span>, _count=
+        <span className={style.paramSyntax}>5000</span>)
       </li>
-      <li>df.head()</li>
     </ol>
   </div>
 )
@@ -379,23 +429,20 @@ export const CleanCode: React.FC = () => (
   <div className={style.codeArea}>
     <ol>
       <li>
-        <span className={style.declareSyntax}>import</span>{" "}
-        <span className={style.packageSyntax}>pandas</span>{" "}
-        <span className={style.declareSyntax}>as</span> pd
+        <span className={style.declareSyntax}>from</span>{" "}
+        <span className={style.packageSyntax}>dataprep.datasets</span>{" "}
+        <span className={style.declareSyntax}>import</span> load_dataset
       </li>
       <li>
         <span className={style.declareSyntax}>from</span>{" "}
         <span className={style.packageSyntax}>dataprep.clean</span>{" "}
-        <span className={style.declareSyntax}>import</span> clean_country
+        <span className={style.declareSyntax}>import</span> clean_address
       </li>
       <li>
-        df = pd.DataFrame({"{"}"country":{" "}
-        <span className={style.paramSyntax}>
-          ["USA", "country: Canada", " France ", "233", " tr "]{"}"}
-        </span>
-        )
+        df = load_dataset(
+        <span className={style.paramSyntax}>"waste_hauler"</span>)
       </li>
-      <li>clean_country(df, "country")</li>
+      <li>clean_address(df, "LOCAL ADDRESS")</li>
     </ol>
   </div>
 )

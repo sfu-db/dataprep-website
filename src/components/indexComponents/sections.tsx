@@ -142,15 +142,6 @@ const Feature: React.FC = () => {
   return (
     <section className={style.featureContainer}>
       <FeatureCard
-        title="DataPrep.Connector"
-        content="DataPrep.Connector is an intuitive, open-source API wrapper that
-          speeds up development by standardizing calls to multiple APIs as a
-          simple workflow. Streamline calls to multiple APIs through one
-          intuitive library."
-        snippetComponent={<ConnectorFrame codes={<ConnectorCode />} />}
-        leftToRight={false}
-      />
-      <FeatureCard
         title="DataPrep.EDA"
         content="DataPrep.EDA is the fastest and the easiest EDA tool in Python. It
         allows data scientists to understand a Pandas/Dask DataFrame with a
@@ -165,6 +156,15 @@ const Feature: React.FC = () => {
         semantic types in a Pandas or Dask DataFrame."
         snippetComponent={<CleanFrame codes={<CleanCode />} />}
         leftToRight={false}
+      />
+      <FeatureCard
+        title="DataPrep.Connector"
+        content="DataPrep.Connector is an intuitive, open-source API wrapper that
+          speeds up development by standardizing calls to multiple APIs as a
+          simple workflow. Streamline calls to multiple APIs through one
+          intuitive library."
+        snippetComponent={<ConnectorFrame codes={<ConnectorCode />} />}
+        leftToRight={true}
       />
     </section>
   )

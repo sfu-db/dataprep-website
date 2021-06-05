@@ -23,7 +23,7 @@ $container-width: 490px
     tr
       th
         &:last-child
-          padding: 5px      
+          padding: 5px
   tbody
     tr
       &:nth-child(even)
@@ -31,7 +31,7 @@ $container-width: 490px
       &:nth-child(odd)
         background: #ffffff
     td
-      max-width: 70px
+      max-width: 8ch
       overflow: hidden
       text-overflow: ellipsis
       &:first-child
@@ -58,7 +58,7 @@ $container-width: 490px
       color: #eae9ea
       content: counter(item)"\a0"
       counter-increment: item
-  
+
 
 .terminalContainer
   border-radius: 5px
@@ -88,7 +88,7 @@ $container-width: 490px
       border-radius: 0.8em
       margin-left: 5px
       border: 1px transparent solid
-    
+
     .terminalBtnRed
       background-color: #EC6A5F
       border-color: #D04E42
@@ -105,7 +105,7 @@ $container-width: 490px
     font-family: sans-serif
     font-size: 0.8em
     user-select: none
-  
+
   .terminalTitlePlacehodler
     flex: 0 0 20%
     @include responsive-size(mobile)
@@ -154,7 +154,7 @@ $container-width: 490px
   .cleanOutput
     @include border-style()
     background: #ffffff
-    padding: 0 5px
+    padding: 0 2px
   .cleanDesc
     ul
       list-style: none
