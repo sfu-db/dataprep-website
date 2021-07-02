@@ -26,7 +26,7 @@ const Member = ({ name, avatarUrl, avatarSize, profileUrl }: MemberProps) => (
 
 const Team = () => (
   <section>
-    <div className="grid grid-cols-3 md:grid-cols-5 xl:grid-cols-7 row-auto">
+    <div className="min-h-screen grid grid-cols-3 md:grid-cols-5 xl:grid-cols-7 row-auto">
       {teamList.map(member => (
         <Member
           key={member.id}

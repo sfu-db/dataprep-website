@@ -18,17 +18,17 @@ const linkArray: Array<LinkItem> = [
 ]
 
 const Navbar = () => {
-  const listItem = linkArray.map((item: LinkItem, key: number) =>
+  const listItem = linkArray.map(item =>
     item.link ? (
       <li
-        key={key}
+        key={item.text}
         className="text-base text-center flex-auto inline-block py-1 px-2 transition-colors duration-300 ease-linear border-b-2 border-solid border-transparent hover:border-primary-500 lg:px-5 lg:text-xl"
       >
         <a href={item.link}>{item.text}</a>
       </li>
     ) : (
       <li
-        key={key}
+        key={item.text}
         className="text-base text-center flex-auto inline-block py-1 px-2 transition-colors duration-300 ease-linear border-b-2 border-solid border-transparent hover:border-primary-500 lg:px-5 lg:text-xl"
       >
         <Link href={"/" + item.text.toLowerCase()}>
