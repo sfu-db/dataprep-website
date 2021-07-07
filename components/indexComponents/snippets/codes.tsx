@@ -55,25 +55,26 @@ export const EdaCode = () => (
 )
 
 export const CleanCode = () => (
-  // from dataprep.datasets import load_dataset
-  // from dataprep.clean import clean_address
-  // df = load_dataset("waste_hauler")
-  // clean_address(df, "LOCAL ADDRESS")
+  // import pandas as pd
+  // from dataprep.clean import clean_country
+  // df = pd.DataFrame({"country": ["USA", "country: Canada", " France ", "233", " tr "]})
+  // clean_country(df, "country")
   <CodeFrame>
     <li>
-      <Declare text="from" /> <Package text="dataprep.datasets" />{" "}
-      <Declare text="import" /> load_dataset
+      <Declare text="import" /> <Package text="pandas" /> <Declare text="as" />{" "}
+      pd
     </li>
     <li>
       <Declare text="from" /> <Package text="dataprep.clean" />{" "}
-      <Declare text="import" /> clean_address
+      <Declare text="import" /> clean_country
     </li>
     <li>
-      df = load_dataset(
-      <Param text='"waste_hauler"' />)
+      df = pd.DataFrame(
+      <Param text='{"country": ["USA", "country: Canada", " France ", "233", " tr "]}' />
+      )
     </li>
     <li>
-      clean_address(df, <Param text='"LOCAL ADDRESS"' />)
+      clean_country(df, <Param text='"country"' />)
     </li>
   </CodeFrame>
 )

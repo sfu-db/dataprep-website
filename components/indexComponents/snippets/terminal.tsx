@@ -53,8 +53,6 @@ export const TerminalEda = () => {
           </li>
           <li>create_report(df).show()</li>
           <li></li>
-          <li></li>
-          <li></li>
         </>
       }
     ></Terminal>
@@ -94,7 +92,38 @@ export const TerminalConnector = () => {
             <Param text="1000" />)
           </li>
           <li></li>
+        </>
+      }
+    ></Terminal>
+  )
+}
+
+export const TerminalClean = () => {
+  // from dataprep.datasets import load_dataset
+  // from dataprep.clean import clean_address
+  // df = load_dataset("waste_hauler")
+  // clean_address(df, "LOCAL ADDRESS")
+  return (
+    <Terminal
+      documentTitle="dataprep_clean.py"
+      documentContent={
+        <>
+          <li>
+            <Declare text="from" /> <Package text="dataprep.datasets" />{" "}
+            <Declare text="import" /> load_dataset
+          </li>
+          <li>
+            <Declare text="from" /> <Package text="dataprep.clean" />{" "}
+            <Declare text="import" /> clean_address
+          </li>
           <li></li>
+          <li>
+            df = load_dataset(
+            <Param text='"waste_hauler"' />)
+          </li>
+          <li>
+            clean_address(df, <Param text='"LOCAL ADDRESS"' />)
+          </li>
           <li></li>
         </>
       }

@@ -8,7 +8,7 @@
 }
 .tableStyle td {
   padding: 0.5em 0.2em;
-  max-width: 18ch;
+  max-width: 20ch;
   overflow-wrap: break-word;
   word-break: break-word;
 }

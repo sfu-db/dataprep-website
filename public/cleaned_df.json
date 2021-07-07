@@ -1,11 +1,11 @@
 {
-	"columns": ["CREATED", "PHONE", "EMAIL", "LOCAL ADDRESS", "city", "..."],
+	"columns": ["country", "country_clean"],
 	"index": [0, 1, 2, 3, 4],
 	"data": [
-		["04/03/2017", "(718) 326-0384", "NaN", "56-01 NURGE AVE., MASPETH, NY", "NEW YORK", "..."],
-		["04/03/2017", "(516) 223-2010", "NaN", "228 MILLER AVENUE, FREEPORT, NY", "New York", "..."],
-		["03/01/2021", "646-450-7057", "davidzuidema@aol.com", "1274 49TH STREET SUITE #13G, BROOKLYN, NY", "new york", "..."],
-		["04/03/2017", "(718) 356-3936", "NaN", "67 EAST FIGUREA AVENUE, STATEN ISLAND, NY", "New York", "..."],
-		["04/03/2017", "(516) 660-1343", "tom191@gmail.com", "855 E Broadway, Suite 5E, Long Beach, NY", "New York", "..."]
+		["USA", "United States"],
+		["country: Canada", "Canada"],
+		[" France ", "France"],
+		["233", "Estonia"],
+		[" tr ", "Turkey"]
 	]
 }

@@ -23,7 +23,9 @@ interface ITableData {
 }
 
 const Frame = ({ codes, render }: FrameProps) => (
-  <div style={{ width: "490px" }}>
+  <div
+    style={codes.type === EdaCode ? { width: "490px" } : { maxWidth: "490px" }}
+  >
     {codes}
     {render}
   </div>
@@ -62,14 +64,11 @@ const TableWrapper = ({ outputDiv, tableData }: TableWrapperProps) => (
 const CleanDesc = () => (
   <div className="bg-white">
     <ul className="list-none font-mono text-xs pt-2 pl-2">
-      <li>Address Cleaning Report: </li>
-      <li style={{ textIndent: "8ch" }}>848 values cleaned (84.8%)</li>
-      <li style={{ textIndent: "8ch" }}>
-        150 values unable to be parsed (15.0%), set to NaN
-      </li>
+      <li>Country Cleaning Report: </li>
+      <li style={{ textIndent: "8ch" }}>5 values cleaned (100.0%)</li>
       <li>
-        Result contains 848 (84.8%) values in the correct format and 152 null
-        values (15.2%)
+        Result contains 5 (100.0%) values in the correct format and 0 null
+        values (0.0%)
       </li>
     </ul>
   </div>
