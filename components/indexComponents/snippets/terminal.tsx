@@ -53,6 +53,8 @@ export const TerminalEda = () => {
           </li>
           <li>create_report(df).show()</li>
           <li></li>
+          <li></li>
+          <li></li>
         </>
       }
     ></Terminal>
@@ -92,6 +94,8 @@ export const TerminalConnector = () => {
             <Param text="1000" />)
           </li>
           <li></li>
+          <li></li>
+          <li></li>
         </>
       }
     ></Terminal>
@@ -124,6 +128,8 @@ export const TerminalClean = () => {
           <li>
             clean_address(df, <Param text='"LOCAL ADDRESS"' />)
           </li>
+          <li></li>
+          <li></li>
           <li></li>
         </>
       }
