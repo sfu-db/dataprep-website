@@ -12,7 +12,7 @@ export const Gh = () => {
       <img src="/images/ghicon.svg" alt="GitHub Icon" />
       <iframe
         src="https://ghbtns.com/github-btn.html?user=sfu-db&repo=dataprep&type=star&count=true&size=large"
-        frameBorder="0"
+        frameBorder="1"
         scrolling="0"
         width="155"
         height="30"
