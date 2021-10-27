@@ -11,12 +11,12 @@
     "slide_link": "",
     "address": "SIGMOD 2021",
     "post_date": "2021-10-09",
-    "link": ""
+    "link": "https://www.youtube.com/watch?v=PrgHB6BDlTk"
   },
   {
     "title": "DataPrep: The Easiest Way to Prepare Data in Python. Databricks, Jan 2021",
     "link": "",
-    "slide_link": "/data/talks/DataPrep-NLP-Zurich.pdf",
+    "slide_link": "/data/talks/The Easiest Way to Prepare Data in Python.pdf",
     "author": "Admin",
     "address": "SIGMOD 2021",
     "post_date": "2021-10-09"

@@ -26,14 +26,13 @@
   }
 }
 
-@media screen and (max-width: 2100px) {
+@media screen and (min-width: 1550px) {
   .learning-sidebar {
     width: 280px;
     border-right: 1px solid whitesmoke;
     text-align: right;
     padding: 25px 1.2rem 0 0;
   }
-
   .siderbar-toc ul {
     /* border: green 1px solid; */
     list-style-type: none;
@@ -47,15 +46,14 @@
   }
   .video-iframe {
     width: 560px;
-    height: 315px;
+    height: 350px;
   }
 }
+
 @media screen and (max-width: 1540px) {
   .learning-sidebar {
     display: none;
   }
-}
-@media screen and (max-width: 1200px) {
   .learning-container {
     row-gap: 0px;
   }
@@ -63,6 +61,11 @@
     margin-left: 2%;
     flex-grow: 1;
     padding: 0 1.5rem;
+  }
+  .video-iframe {
+    margin-left: 0%;
+    width: 550px;
+    height: 350px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -72,15 +75,16 @@
   .learning-container {
     row-gap: 0px;
   }
-  .video-iframe {
-    margin-left: 0%;
-    width: 90%;
-    height: auto;
-  }
+
   .learning-wrapper {
     margin-left: 0%;
 
     padding: 0 0;
+  }
+  .video-iframe {
+    margin-left: 0%;
+    width: 90%;
+    height: 280px;
   }
 }
 
