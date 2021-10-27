@@ -25,3 +25,224 @@
     @apply text-xl;
   }
 }
+
+@media screen and (max-width: 2100px) {
+  .learning-sidebar {
+    width: 280px;
+    border-right: 1px solid whitesmoke;
+    text-align: right;
+    padding: 25px 1.2rem 0 0;
+  }
+
+  .siderbar-toc ul {
+    /* border: green 1px solid; */
+    list-style-type: none;
+    position: fixed;
+    width: 240px;
+    z-index: 2;
+    height: auto;
+  }
+  .learning-container {
+    row-gap: 0px;
+  }
+  .video-iframe {
+    width: 560px;
+    height: 315px;
+  }
+}
+@media screen and (max-width: 1540px) {
+  .learning-sidebar {
+    display: none;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .learning-container {
+    row-gap: 0px;
+  }
+  .learning-wrapper {
+    margin-left: 2%;
+    flex-grow: 1;
+    padding: 0 1.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .learning-sidebar {
+    display: none;
+  }
+  .learning-container {
+    row-gap: 0px;
+  }
+  .video-iframe {
+    margin-left: 0%;
+    width: 90%;
+    height: auto;
+  }
+  .learning-wrapper {
+    margin-left: 0%;
+
+    padding: 0 0;
+  }
+}
+
+.github-star-iframe {
+  margin-left: 20px;
+}
+
+.learning-container {
+  display: flex;
+  flex-direction: row;
+  row-gap: 50px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  line-height: 75px;
+  font-size: 30px;
+  padding-top: 50px;
+}
+
+.siderbar-toc ul li {
+  text-align: right;
+  line-height: 35px;
+  font-weight: 300;
+  /* margin-right: 10%; */
+}
+
+.category {
+  text-decoration: none;
+  font-size: 24px;
+  color: #1b5162;
+  display: block;
+  /* border: red 1px solid; */
+  /* border-bottom: 1px solid red; */
+
+  /* -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease; */
+}
+
+.category:hover {
+  font-size: 30px;
+  background: #dcdcdc;
+  color: cadetblue;
+  text-decoration: none;
+}
+.learning-wrapper {
+  flex-grow: 1;
+
+  min-height: calc(100vh - 200px);
+}
+.learning-wrapper > h1,
+.learning-content > h2,
+.learning-content h3 {
+  color: #1b5162;
+  margin: 2.75rem 0 1.05rem;
+  font-family: Pop;
+  font-weight: 400;
+  font-synthesis: 1.15;
+  cursor: pointer;
+}
+.learning-wrapper > h1 {
+  margin-top: 5px;
+  font-size: 36px;
+}
+
+.learning-wrapper > h2 {
+  font-size: 32px;
+}
+
+.headerlink {
+  visibility: hidden;
+  font-size: 0.8em;
+  padding: 0 4px;
+  text-decoration: none;
+}
+
+.learning-wrapper > h1:hover > a.headerlink,
+.learning-content > h2:hover > a.headerlink,
+.learning-content > h3:hover > a.headerlink,
+.learning-content > h4:hover > a.headerlink,
+.learning-wrapper > h5:hover > a.headerlink,
+.learning-wrapper > h6:hover > a.headerlink {
+  visibility: visible;
+}
+
+.blog-lists {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  display: block;
+  list-style-type: circle;
+  margin-block-start: 1em;
+  /* margin-block-end: 1em; */
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 75px;
+  /* white-space: nowrap; */
+}
+.blog-lists > li {
+  display: list-item;
+  max-width: 100%;
+  width: auto;
+  /* color: red; */
+  line-height: 15px;
+  font-size: 0.8em;
+}
+.blog-lists > li > p > a {
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  color: rgb(30, 121, 139);
+  font-size: 1em;
+  font-family: "Poppins, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont ";
+  word-wrap: break-word;
+}
+
+.slide-link {
+  font-size: 16px;
+  margin-left: 5px;
+  color: blue;
+  font-style: italic;
+  cursor: pointer;
+  /* box-shadow: 0px 0px 15px; */
+}
+.slide-link:hover {
+  font-style: normal;
+}
+
+.blog-lists > li > p > a > span {
+  font-size: 0.9em;
+  font-weight: 450;
+}
+
+.blog-lists > li > p > a:hover {
+  background-color: transparent;
+  text-decoration: none;
+  font-style: italic;
+  cursor: pointer;
+  /* color: #1b5162; */
+  color: #10343f;
+}
+
+.video-lists {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  display: block;
+  list-style-type: none;
+  margin-block-start: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 75px;
+}
+.video-lists li {
+  margin-top: 25px;
+}
+.video-lists iframe {
+  margin-left: 25px;
+}
+
+.learning-content h3 {
+  font-size: 28px;
+  margin-top: 5px;
+  color: rgb(30, 121, 139);
+}

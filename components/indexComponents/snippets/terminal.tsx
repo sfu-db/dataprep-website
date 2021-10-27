@@ -81,7 +81,7 @@ export const TerminalConnector = () => {
             <Param text='"twitter"' />, _auth=
             <Param
               text={
-                '{"}"client_id":client_id, "client_secret":client_secret{"}'
+                '{"client_id":client_id, "client_secret":client_secret}'
               }
             />
             )

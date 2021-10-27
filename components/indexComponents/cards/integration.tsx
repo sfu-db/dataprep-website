@@ -14,9 +14,10 @@ export const Gh = () => {
         src="https://ghbtns.com/github-btn.html?user=sfu-db&repo=dataprep&type=star&count=true&size=large"
         frameBorder="0"
         scrolling="0"
-        width="135"
+        width="155"
         height="30"
         title="GitHub"
+        className="github-star-iframe"
       ></iframe>
     </div>
   )

@@ -83,21 +83,38 @@ export const ConnectorCode = () => (
   // from dataprep.connector import connect
   // dc = connect("dblp", _concurrenncy=5)
   // df = await dc.query("publication", q="NeurIPS 2020", _count=5000)
-  <CodeFrame>
-    <li>
-      <Declare text="from" /> <Package text="dataprep.connector" />{" "}
-      <Declare text="import" /> connect
-    </li>
-    <li>
-      dc = connect(
-      <Param text='"dblp"' />, _concurrenncy=
-      <Param text="5" />)
-    </li>
-    <li>
-      df = <Declare text="await" /> dc.query(
-      <Param text='"publication"' />, q=
-      <Param text='"NeurIPS 2020"' />, _count=
-      <Param text="5000" />)
-    </li>
-  </CodeFrame>
+  <section>
+    <CodeFrame>
+      <li>
+        <Declare text="from" /> <Package text="dataprep.connector" />{" "}
+        <Declare text="import" /> connect
+      </li>
+      <li>
+        dc = connect(
+        <Param text='"dblp"' />, _concurrenncy=
+        <Param text="5" />)
+      </li>
+      <li>
+        df = <Declare text="await" /> dc.query(
+        <Param text='"publication"' />, q=
+        <Param text='"NeurIPS 2020"' />, _count=
+        <Param text="5000" />)
+      </li>
+    </CodeFrame>
+    <CodeFrame>
+      <li>
+        <Declare text="from" /> <Package text="dataprep.connector" />{" "}
+        <Declare text="import" /> read_sql
+      </li>
+      <li>
+        sql = <Param text='"SELECT * FROM publication"' />
+      </li>
+      <li>
+        conn = <Param text='"postgresql://username:password@ip:5432/dblp"' />
+      </li>
+      <li>
+        df = read_sql(conn,sql)
+      </li>
+    </CodeFrame>
+  </section>
 )

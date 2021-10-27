@@ -81,6 +81,7 @@ const Features = () => {
         content="DataPrep.EDA is the fastest and the easiest EDA tool in Python. It
           allows data scientists to understand a Pandas/Dask DataFrame with a
           few lines of code in seconds."
+        sub_content=""
         snippetComponent={
           <Frame
             codes={<EdaCode />}
@@ -104,6 +105,7 @@ const Features = () => {
         content="DataPrep.Clean aims to provide a large number of functions with a
           unified interface for cleaning and standardizing data of various
           semantic types in a Pandas or Dask DataFrame."
+        sub_content=""
         snippetComponent={
           <Frame
             codes={<CleanCode />}
@@ -116,10 +118,14 @@ const Features = () => {
       />
       <ExampleCard
         title="DataPrep.Connector"
-        content="DataPrep.Connector is an intuitive, open-source API wrapper that
+        content="DataPrep.Connector provides an intuitive, open-source API wrapper that
             speeds up development by standardizing calls to multiple APIs as a
             simple workflow. Streamline calls to multiple APIs through one
-            intuitive library."
+            intuitive library. 
+            
+            "
+        sub_content="DataPrep.Connector also support loading data from databases through SQL queries.
+         With one line of code, you can speed up pandas.read_sql by 10X with 3X less memory usage!"
         snippetComponent={
           <Frame
             codes={<ConnectorCode />}

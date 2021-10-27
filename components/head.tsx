@@ -8,11 +8,12 @@ type LinkItem = {
 
 const linkArray: Array<LinkItem> = [
   {
-    text: "Documentation",
+    text: "Document",
     link: "https://sfu-db.github.io/dataprep/index.html",
   },
-  { text: "Install", link: "/#install" },
+  { text: "Learning" },
   { text: "Team" },
+
   { text: "GitHub", link: "https://github.com/sfu-db/dataprep" },
   { text: "Brand" },
 ]
