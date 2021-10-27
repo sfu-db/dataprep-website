@@ -1,0 +1,21 @@
+{
+  "banner": "",
+  "catalog_item": [
+    {
+      "item": "Talks",
+      "link": "#Talk"
+    },
+    {
+      "item": "Blogs",
+      "link": "#Blog"
+    },
+    {
+      "item": "Videos",
+      "link": "#video"
+    },
+    {
+      "item": "Notebooks",
+      "link": "#Notebooks"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "title": "DataPrep v0.3.0 has been released",
+    "link": "https://towardsdatascience.com/dataprep-v0-3-0-has-been-released-be49b1be0e72",
+    "author": "Admin",
+    "post_date": "2021-05-22"
+  },
+  {
+    "title": "DataPrep.Connector: The easiest way to retrieve data from APIs",
+    "link": "https://towardsdatascience.com/dataprep-connector-the-easiest-way-to-retrieve-data-from-apis-ea50422268a1",
+    "author": "Admin",
+    "post_date": "2021-03-26"
+  },
+  {
+    "title": "ConnectorX: The fastest library for loading your Python data frame",
+    "link": "https://towardsdatascience.com/connectorx-the-fastest-way-to-load-data-from-databases-a65d4d4062d5#:~:text=ConnectorX%20is%20an%20open%2Dsource,for%20further%20process%20and%20analysis.&text=ConnectorX%20consists%20of%20two%20main,DataFrame).",
+    "author": "Admin",
+    "post_date": "2021-03-24"
+  },
+  {
+    "title": "DataPrep.Clean: Accelerate Your Data Cleaning",
+    "link": "https://towardsdatascience.com/dataprep-clean-accelerate-your-data-cleaning-83406b4645bf",
+    "author": "Admin",
+    "post_date": "2021-03-16"
+  },
+  {
+    "title": "Exploratory Data Analysis: DataPrep.EDA vs Pandas-Profiling",
+    "link": "https://towardsdatascience.com/exploratory-data-analysis-dataprep-eda-vs-pandas-profiling-7137683fe47f#:~:text=the%20performance%20are-,DataPrep.,(significant%20for%20large%20datasets).",
+    "author": "Admin",
+    "post_date": "2020-05-07"
+  },
+  {
+    "title": "DataPrep.EDA: Accelerate your EDA",
+    "link": "https://towardsdatascience.com/dataprep-eda-accelerate-your-eda-eb845a4088bc",
+    "author": "Admin",
+    "post_date": "2020-04-14"
+  }
+]

@@ -1,11 +1,46 @@
 {
-	"columns": ["title", "venue", "publisher", "year", "type"],
-	"index": [0, 1, 2, 3, 4],
+	"columns": [
+		"title",
+		"venue",
+		"publisher",
+		"year",
+		"type"
+	],
+	"index": [
+		0,
+		1,
+		2,
+		3,
+		4
+	],
 	"data": [
-		["Zero-Resource Knowledge-Grounded Dialogue Generation.", "[NeurIPS]", "null", "2020", "Conference and Workshop Papers"],
-		["Multi-Fidelity Bayesian Optimization via Deep Neural Networks.", "[NeurIPS]", "null", "2020", "Conference and Workshop Papers"],
-		["Dirichlet Graph Variational Autoencoder.", "[NeurIPS]", "null", "2020", "Conference and Workshop Papers"],
-		["End-to-End Learning and Intervention in Games.", "[NeurIPS]", "null", "2020", "Conference and Workshop Papers"],
-		["EvolveGraph - Multi-Agent Trajectory Prediction with Dynamic Relational Reasoning.", "[NeurIPS]", "null", "2020", "Conference and Workshop Papers"]
+		[
+			"Zero-Resource Knowledge-Grounded Dialogue Generation.",
+			"[NeurIPS]",
+			"null",
+			"2020",
+			"Conference and Workshop Papers"
+		],
+		[
+			"Multi-Fidelity Bayesian Optimization via Deep Neural Networks.",
+			"[NeurIPS]",
+			"null",
+			"2020",
+			"Conference and Workshop Papers"
+		],
+		[
+			"Dirichlet Graph Variational Autoencoder.",
+			"[NeurIPS]",
+			"null",
+			"2020",
+			"Conference and Workshop Papers"
+		],
+		[
+			"End-to-End Learning and Intervention in Games.",
+			"[NeurIPS]",
+			"null",
+			"2020",
+			"Conference and Workshop Papers"
+		]
 	]
 }
