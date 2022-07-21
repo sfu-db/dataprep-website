@@ -9,10 +9,10 @@ const Banner = () => {
       <div className="my-1 flex justify-center items-center w-full z-10 h-14 bg-primary-500 rounded-xl shadow">
         <div className="w-10 h-10 flex-initial"></div>
         <h3 className="text-base font-medium flex-auto text-center text-primary-50 lg:text-xl">
-          DataPrep V0.4 is out now! Click{" "}
+          DataPrep V0.4.4 is out now! Click{" "}
           <strong>
             <a
-              href="https://github.com/sfu-db/dataprep/releases/tag/v0.4.0"
+              href="https://github.com/sfu-db/dataprep/releases/tag/v0.4.4"
               target="_blank"
               rel="noreferrer"
               className="hover:text-primary-100"
