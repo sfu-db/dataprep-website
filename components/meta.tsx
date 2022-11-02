@@ -4,13 +4,13 @@ import logo from "../public/images/dataprep-logo.png"
 const Meta = () => (
   <Head>
     <meta charSet="utf-8" />
-    <title>DataPrep——The easiest way to prepare data in Python</title>
+    <title>DataPrep — Low code data preparation in Python</title>
     <meta
       content="DataPrep is designed and optimized for computational notebooks, the most popular environment among data scientists"
       name="description"
     />
     <meta
-      content="DataPrep — The easiest way to prepare data in Python"
+      content="DataPrep — Low code data preparation in Python"
       property="og:sitename"
     />
     <meta content="https://dataprep.ai" property="url" />
@@ -20,7 +20,7 @@ const Meta = () => (
     />
     <meta content="https://dataprep.ai" property="og:url" />
     <meta
-      content="DataPrep — The easiest way to prepare data in Python"
+      content="DataPrep — Low code data preparation in Python"
       property="og:title"
     />
     <meta property="og:image" content={`${logo}`}></meta>
@@ -29,7 +29,7 @@ const Meta = () => (
       name="twitter:description"
     />
     <meta
-      content="DataPrep — The easiest way to prepare data in Python"
+      content="DataPrep — Low code data preparation in Python"
       property="twitter:title"
     />
     <meta property="twitter:image" content={`${logo}`}></meta>
